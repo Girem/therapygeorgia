@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>გიორგი ირემაშვილი — ფსიქოთერაპევტი | therapygeorgia.ge</title>
+  <meta name="description" content="პროფესიონალური ინტეგრირებული ფსიქოთერაპია თბილისში. გიორგი ირემაშვილი, MD — ჰუმანისტური, ეგზისტენციური და CBT მიდგომები." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1D9E75; --teal-light: #E1F5EE; --teal-dark: #0F6E56; --teal-mid: #5DCAA5;
+      --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+      --bg: #ffffff; --bg-secondary: #f5f5f3;
+      --border: rgba(0,0,0,0.1); --border-med: rgba(0,0,0,0.18);
+      --radius-md: 8px; --radius-lg: 12px;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
+    .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; }
+    .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; }
+    .logo span { color: var(--teal-mid); }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 5rem; }
+    .hero-text h1 { font-size: 32px; font-weight: 500; line-height: 1.35; margin-bottom: 1rem; }
+    .hero-text p { font-size: 16px; color: var(--text-secondary); margin-bottom: 1.75rem; }
+    .btn-primary { display: inline-block; padding: 12px 28px; background: var(--teal); color: #fff; border-radius: var(--radius-lg); font-size: 14px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; color: var(--text-primary); border-radius: var(--radius-lg); font-size: 14px; font-weight: 500; text-decoration: none; border: 0.5px solid var(--border-med); cursor: pointer; margin-left: 12px; }
+    .btn-outline:hover { background: var(--bg-secondary); }
+    .avatar-card { background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 2rem; text-align: center; border: 0.5px solid var(--border); }
+    .avatar-circle { width: 96px; height: 96px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 24px; font-weight: 500; color: var(--teal-dark); }
+    .avatar-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
+    .avatar-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .section-label { font-size: 12px; font-weight: 500; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .section-title { font-size: 22px; font-weight: 500; margin-bottom: 2rem; }
+    .approaches { margin-bottom: 5rem; }
+    .approaches-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .approach-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; }
+    .approach-card h4 { font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+    .approach-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .approach-tag { display: inline-block; margin-bottom: 10px; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 500; }
+    .tag-humanistic { background: #E1F5EE; color: #0F6E56; }
+    .tag-cbt { background: #E6F1FB; color: #185FA5; }
+    .tag-philosophy { background: #EEEDFE; color: #3C3489; }
+    .about { margin-bottom: 5rem; display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+    .about-creds { display: flex; flex-direction: column; gap: 10px; }
+    .cred { background: var(--bg-secondary); padding: 12px 14px; font-size: 13px; color: var(--text-secondary); border-left: 3px solid var(--teal-mid); }
+    .cred strong { display: block; color: var(--text-primary); font-weight: 500; margin-bottom: 2px; font-size: 13px; }
+    .about-text p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; }
+    .blog { margin-bottom: 5rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .blog-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; text-decoration: none; color: inherit; display: block; }
+    .blog-card:hover { border-color: var(--border-med); }
+    .blog-tag { font-size: 11px; color: var(--teal); font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .blog-card h4 { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
+    .blog-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .blog-date { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+    .contact-section { margin-bottom: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .contact-intro h2 { font-size: 22px; font-weight: 500; margin-bottom: 0.75rem; }
+    .contact-intro > p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+    .contact-info { display: flex; flex-direction: column; gap: 10px; margin-top: 1.5rem; }
+    .contact-row { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+    .contact-row .icon { width: 30px; height: 30px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
+    .contact-row span { color: var(--text-secondary); }
+    .contact-row a { color: var(--text-secondary); text-decoration: none; }
+    .contact-row a:hover { color: var(--teal); }
+    .contact-form { background: var(--bg-secondary); border-radius: var(--radius-lg); border: 0.5px solid var(--border); padding: 1.75rem; display: flex; flex-direction: column; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+    .form-group input, .form-group textarea, .form-group select { font-family: inherit; font-size: 14px; padding: 10px 12px; border: 0.5px solid var(--border-med); border-radius: var(--radius-md); background: var(--bg); color: var(--text-primary); outline: none; resize: none; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--teal-mid); }
+    .form-submit { padding: 12px; background: var(--teal); color: #fff; border: none; border-radius: var(--radius-lg); font-size: 14px; font-weight: 500; cursor: pointer; font-family: inherit; }
+    .form-submit:hover { background: var(--teal-dark); }
+    .success-msg { display: none; text-align: center; padding: 1rem; background: var(--teal-light); border-radius: var(--radius-md); color: var(--teal-dark); font-size: 14px; }
+    footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid var(--border); font-size: 13px; color: var(--text-muted); }
+    footer a { color: var(--teal); text-decoration: none; }
+    @media (max-width: 640px) {
+      .hero, .about, .contact-section { grid-template-columns: 1fr; }
+      .approaches-grid, .blog-grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+      .hero-text h1 { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="/" class="logo">therapy<span>georgia</span>.ge</a>
+    <div class="nav-links">
+      <a href="#approaches">მიდგომები</a>
+      <a href="#about">ჩემს შესახებ</a>
+      <a href="#blog">ბლოგი</a>
+      <a href="#contact">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>გზა ფსიქიკური ჯანმრთელობისკენ იწყება აქ</h1>
+      <p>პროფესიონალური, ჰუმანისტური ფსიქოთერაპია — სადაც თქვენ, როგორც ადამიანი, ხართ მთავარი. ექიმი და ფსიქოთერაპევტი, თბილისი.</p>
+      <a href="#contact" class="btn-primary">კონსულტაციის დაჯავშნა</a>
+      <a href="#about" class="btn-outline">გაიგე მეტი</a>
+    </div>
+    <div class="avatar-card">
+      <div class="avatar-circle">გი</div>
+      <h3>გიორგი ირემაშვილი</h3>
+      <p>მედიცინის დოქტორი (MD) · ინტეგრირებული ფსიქოთერაპიის პრაქტიკოსი<br>თბილისი, საქართველო</p>
+    </div>
+  </section>
+
+  <section class="approaches" id="approaches">
+    <div class="section-label">თერაპიული მიდგომები</div>
+    <div class="section-title">ინტეგრირებული, ადამიანზე ორიენტირებული პრაქტიკა</div>
+    <div class="approaches-grid">
+      <div class="approach-card">
+        <div class="approach-tag tag-humanistic">ჰუმანისტური</div>
+        <h4>პიროვნებაზე ორიენტირებული თერაპია</h4>
+        <p>Carl Rogers-ის მიდგომა — უპირობო მიღება, ემპათია და ავთენტურობა. თქვენ ხართ საკუთარი ცხოვრების ექსპერტი.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-tag tag-humanistic">ეგზისტენციური</div>
+        <h4>ეგზისტენციური თერაპია</h4>
+        <p>ცხოვრების აზრის, თავისუფლების, პასუხისმგებლობისა და სიკვდილის შიშის გამოკვლევა — ღრმა, ჭეშმარიტი დიალოგის გზით.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-tag tag-humanistic">ჰუმანისტური</div>
+        <h4>ჰუმანისტური ფსიქოლოგია</h4>
+        <p>Maslow, Frankl და სხვათა ტრადიციაში — ადამიანის ზრდის, პოტენციალისა და კეთილდღეობის რწმენა.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-tag tag-cbt">CBT</div>
+        <h4>კოგნიტური-ბიჰევიორული თერაპია</h4>
+        <p>სტრუქტურირებული, მტკიცებულებებზე დაფუძნებული ტექნიკები — აზროვნების ნიმუშების ამოცნობა და შეცვლა.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-tag tag-philosophy">ფილოსოფია</div>
+        <h4>ფილოსოფიური კონსულტირება</h4>
+        <p>სტოიციზმი, ეთიკა, ეგზისტენციალიზმი — ფილოსოფიური იდეები, როგორც ცხოვრებისეული სახელმძღვანელო.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-tag tag-cbt">ინტეგრირებული</div>
+        <h4>ინტეგრირებული მიდგომა</h4>
+        <p>ყველა ზემოაღნიშნული მეთოდი ერთმანეთთან — თქვენს უნიკალურ საჭიროებებზე მორგებული, მოქნილი და ჰოლისტური.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-creds">
+      <div class="section-label">ჩემს შესახებ</div>
+      <div class="cred"><strong>განათლება</strong>თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი, მედიცინის დოქტორი (MD)</div>
+      <div class="cred"><strong>ფსიქოთერაპიული განათლება</strong>ინტეგრირებული ფსიქოთერაპიის პრაქტიკოსი</div>
+      <div class="cred"><strong>თერაპიული მიდგომები</strong>ჰუმანისტური და ეგზისტენციური · CBT</div>
+      <div class="cred"><strong>ენები</strong>ქართული · ინგლისური · რუსული</div>
+    </div>
+    <div class="about-text">
+      <div class="section-title" style="margin-top: 2rem;">ჩემი მიდგომა</div>
+      <p>თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც მიმართულია კლიენტის გამოწვევის მასზე მორგებული გზით გადაჭრაზე. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს ხედავს მთლიანად — არა მხოლოდ სიმპტომებით.</p>
+      <p>სადაც საჭიროა, ვაერთიანებ CBT-ის პრაქტიკულ ტექნიკებს და ფილოსოფიური ტრადიციის სიბრძნეს — სტოიციზმს, ეგზისტენციალიზმს — ცვლილების გზის გასაადვილებლად.</p>
+      <p>სამედიცინო განათლება კი საშუალებას მაძლევს, მენტალური ჯანმრთელობა ფიზიკურ და სოციალურ ჰოლისტიკურ ჭრილში დავინახო.</p>
+    </div>
+  </section>
+
+  <section class="blog" id="blog">
+    <div class="section-label">ბლოგი</div>
+    <div class="section-title">სტატიები ფსიქიკური ჯანმრთელობის შესახებ</div>
+    <div class="blog-grid">
+      <a href="/blog/frankl.html" class="blog-card">
+        <div class="blog-tag">ეგზისტენციური</div>
+        <h4>ცხოვრების აზრის ძიება — ფრანკლის გაკვეთილები</h4>
+        <p>Viktor Frankl-ის ლოგოთერაპია და როგორ ვიპოვოთ მიზანი ყველაზე რთულ პერიოდშიც.</p>
+        <div class="blog-date">2025 · 6 წუთიანი კითხვა</div>
+      </a>
+      <a href="/blog/stoicism.html" class="blog-card">
+        <div class="blog-tag">სტოიციზმი</div>
+        <h4>სტოიკოსი ფილოსოფოსები და თანამედროვე შფოთვა</h4>
+        <p>მარკუს ავრელიუსი, ეპიქტეტე — მათი სიბრძნე დღეს რატომ არის ისეთივე აქტუალური.</p>
+        <div class="blog-date">2025 · 5 წუთიანი კითხვა</div>
+      </a>
+      <a href="/blog/rogers.html" class="blog-card">
+        <div class="blog-tag">პიროვნებაზე ორიენტირებული</div>
+        <h4>უპირობო მიღება: Rogers-ი და საკუთარი თავის სიყვარული</h4>
+        <p>რატომ გვიჭირს საკუთარი თავის მიღება და როგორ გვეხმარება ამაში თერაპია.</p>
+        <div class="blog-date">2025 · 4 წუთიანი კითხვა</div>
+      </a>
+      <a href="/blog/cbt.html" class="blog-card">
+        <div class="blog-tag">CBT</div>
+        <h4>კოგნიტური დამახინჯებები: ამოიცანი და შეცვალე</h4>
+        <p>ყველაზე გავრცელებული ნეგატიური აზროვნების ნიმუშები და მათი გადალახვის გზები.</p>
+        <div class="blog-date">2025 · 5 წუთიანი კითხვა</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="contact-intro">
+      <div class="section-label">კონტაქტი</div>
+      <h2>მზად ხართ დაიწყოთ?</h2>
+      <p>პირველი ნაბიჯი ყველაზე მნიშვნელოვანია. შეავსეთ ფორმა და დაგიკავშირდებით 24 საათში.</p>
+      <div class="contact-info">
+        <div class="contact-row"><div class="icon">📍</div><span>თბილისი, საქართველო</span></div>
+        <div class="contact-row"><div class="icon">📞</div><span><a href="tel:+995579070205">+995 579 070 205</a></span></div>
+        <div class="contact-row"><div class="icon">🌐</div><span><a href="https://therapygeorgia.ge">therapygeorgia.ge</a></span></div>
+        <div class="contact-row"><div class="icon">📷</div><span><a href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a></span></div>
+        <div class="contact-row"><div class="icon">🕐</div><span>ორშ–პარ · 10:00–19:00</span></div>
+        <div class="contact-row"><div class="icon">🕐</div><span>კვირა · 10:00–14:00</span></div>
+      </div>
+    </div>
+    <div class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label for="fname">სახელი</label>
+        <input type="text" id="fname" placeholder="თქვენი სახელი" />
+      </div>
+      <div class="form-group">
+        <label for="femail">ელ-ფოსტა</label>
+        <input type="email" id="femail" placeholder="name@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="fphone">ტელეფონი (არასავალდებულო)</label>
+        <input type="tel" id="fphone" placeholder="+995 5XX XXX XXX" />
+      </div>
+      <div class="form-group">
+        <label for="ftype">სესიის ტიპი</label>
+        <select id="ftype">
+          <option value="">აირჩიეთ...</option>
+          <option>ინდივიდუალური თერაპია</option>
+          <option>ონლაინ სესია</option>
+          <option>საწყისი კონსულტაცია</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fmsg">შეტყობინება</label>
+        <textarea id="fmsg" rows="4" placeholder="მოკლედ აღწერეთ, რითი შეიძლება დაგეხმაროთ..."></textarea>
+      </div>
+      <button class="form-submit" onclick="handleSubmit()">გაგზავნა</button>
+      <div class="success-msg" id="successMsg">გმადლობთ! დაგიკავშირდებით 24 საათში.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
+  </footer>
+
+</div>
+<script>
+  function handleSubmit() {
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    if (!name || !email) { alert('გთხოვთ შეავსოთ სახელი და ელ-ფოსტა.'); return; }
+    document.querySelector('.form-submit').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    ['fname','femail','fphone','ftype','fmsg'].forEach(function(id) {
+      var el = document.getElementById(id); el.disabled = true; el.style.opacity = '0.5';
+    });
+  }
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+</body>
+</html>
