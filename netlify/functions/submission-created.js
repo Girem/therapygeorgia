@@ -1,3 +1,5 @@
+const https = require('https');
+
 exports.handler = async function (event) {
   try {
     const { payload } = JSON.parse(event.body);
@@ -11,13 +13,27 @@ exports.handler = async function (event) {
       `🗂 სესიის ტიპი: ${d.type || '—'}\n` +
       `💬 შეტყობინება:\n${d.message || '—'}`;
 
-    await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: process.env.TELEGRAM_CHAT_ID,
-        text: text
-      })
+    const body = JSON.stringify({
+      chat_id: process.env.TELEGRAM_CHAT_ID,
+      text: text
+    });
+
+    await new Promise((resolve, reject) => {
+      const req = https.request({
+        hostname: 'api.telegram.org',
+        path: `/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': Buffer.byteLength(body)
+        }
+      }, (res) => {
+        res.on('data', () => {});
+        res.on('end', resolve);
+      });
+      req.on('error', reject);
+      req.write(body);
+      req.end();
     });
 
     return { statusCode: 200 };
