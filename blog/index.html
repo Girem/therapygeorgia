@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ბლოგი | therapygeorgia.ge</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content="სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --teal: #1D9E75; --teal-light: #E1F5EE; --teal-dark: #0F6E56; --teal-mid: #5DCAA5;
+      --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
+      --bg: #ffffff; --bg-secondary: #f5f5f3;
+      --border: rgba(0,0,0,0.1); --border-med: rgba(0,0,0,0.18);
+      --radius-md: 8px; --radius-lg: 12px;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
+    .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; }
+    .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--teal-mid); }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .section-label { font-size: 12px; font-weight: 500; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
+    .page-title { font-size: 28px; font-weight: 500; margin-bottom: 0.5rem; }
+    .page-subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 2.5rem; }
+    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .blog-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: border-color 0.15s; }
+    .blog-card:hover { border-color: var(--border-med); }
+    .blog-tag { font-size: 11px; color: var(--teal); font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .blog-card h2 { font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
+    .blog-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .blog-date { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+    footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid var(--border); font-size: 13px; color: var(--text-muted); margin-top: 3rem; }
+    footer a { color: var(--teal); text-decoration: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
+    @media (max-width: 640px) {
+      .page { padding: 0 1rem 3rem; }
+      nav { flex-wrap: wrap; margin-bottom: 2rem; }
+      .hamburger { display: flex; }
+      .nav-links { display: none; width: 100%; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); margin-top: 1rem; padding-top: 0.25rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.75rem 0; border-bottom: 0.5px solid var(--border); font-size: 15px; }
+      .nav-links a:last-child { border-bottom: none; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .page-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <nav>
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="38" fill="#E1F5EE"/>
+        <text x="50" y="60" text-anchor="middle" font-family="Georgia,serif" font-size="28" font-weight="700" fill="#1D9E75" letter-spacing="-1">TG</text>
+        <path d="M72 20 C76 14,84 14,82 20 C80 26,74 28,70 26 C68 30,66 34,68 38 C64 34,62 28,64 24 C66 20,70 18,72 20Z" fill="#1D9E75" opacity="0.6"/>
+      </svg>
+      therapy<span>georgia</span>.ge
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="მენიუ">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/#approaches">თერაპიული მიდგომები</a>
+      <a href="/#about">ჩემს შესახებ</a>
+      <a href="/blog/">ბლოგი</a>
+      <a href="/#contact">კონტაქტი</a>
+    </div>
+  </nav>
+
+  <div class="section-label">ბლოგი</div>
+  <h1 class="page-title">სტატიები ფსიქიკური ჯანმრთელობის შესახებ</h1>
+  <p class="page-subtitle">ფსიქოთერაპია, ფილოსოფია და თვითგანვითარება — პრაქტიკული შეხედულებები.</p>
+
+  <div class="blog-grid">
+    <a href="/blog/frankl.html" class="blog-card">
+      <div class="blog-tag">ეგზისტენციური</div>
+      <h2>ცხოვრების აზრის ძიება — ფრანკლის გაკვეთილები</h2>
+      <p>Viktor Frankl-ის ლოგოთერაპია და როგორ ვიპოვოთ მიზანი ყველაზე რთულ პერიოდშიც.</p>
+      <div class="blog-date">2025 · 6 წუთიანი საკითხავი</div>
+    </a>
+    <a href="/blog/stoicism.html" class="blog-card">
+      <div class="blog-tag">სტოიციზმი</div>
+      <h2>სტოიკოსი ფილოსოფოსები და თანამედროვე შფოთვა</h2>
+      <p>მარკუს ავრელიუსი, ეპიქტეტე — მათი სიბრძნე დღეს რატომ არის ისეთივე აქტუალური.</p>
+      <div class="blog-date">2025 · 5 წუთიანი საკითხავი</div>
+    </a>
+    <a href="/blog/rogers.html" class="blog-card">
+      <div class="blog-tag">პიროვნებაზე ორიენტირებული</div>
+      <h2>უპირობო მიღება: Rogers-ი და საკუთარი თავის სიყვარული</h2>
+      <p>რატომ გვიჭირს საკუთარი თავის მიღება და როგორ გვეხმარება ამაში თერაპია.</p>
+      <div class="blog-date">2025 · 4 წუთიანი საკითხავი</div>
+    </a>
+    <a href="/blog/cbt.html" class="blog-card">
+      <div class="blog-tag">CBT</div>
+      <h2>კოგნიტური დამახინჯებები: ამოიცანი და შეცვალე</h2>
+      <p>ყველაზე გავრცელებული ნეგატიური აზროვნების ნიმუშები და მათი გადალახვის გზები.</p>
+      <div class="blog-date">2025 · 5 წუთიანი საკითხავი</div>
+    </a>
+  </div>
+
+  <footer>
+    <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
+  </footer>
+
+</div>
+<script>
+  document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
+</body>
+</html>
