@@ -217,22 +217,23 @@
         <div class="contact-row"><div class="icon">🕐</div><span>კვირა · 10:00–14:00</span></div>
       </div>
     </div>
-    <div class="contact-form" id="contactForm">
+    <form class="contact-form" id="contactForm" name="contact" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <div class="form-group">
         <label for="fname">სახელი</label>
-        <input type="text" id="fname" placeholder="თქვენი სახელი" />
+        <input type="text" id="fname" name="name" placeholder="თქვენი სახელი" required />
       </div>
       <div class="form-group">
         <label for="femail">ელ-ფოსტა</label>
-        <input type="email" id="femail" placeholder="name@example.com" />
+        <input type="email" id="femail" name="email" placeholder="name@example.com" required />
       </div>
       <div class="form-group">
         <label for="fphone">ტელეფონი (არასავალდებულო)</label>
-        <input type="tel" id="fphone" placeholder="+995 5XX XXX XXX" />
+        <input type="tel" id="fphone" name="phone" placeholder="+995 5XX XXX XXX" />
       </div>
       <div class="form-group">
         <label for="ftype">სესიის ტიპი</label>
-        <select id="ftype">
+        <select id="ftype" name="type">
           <option value="">აირჩიეთ...</option>
           <option>ინდივიდუალური თერაპია</option>
           <option>ონლაინ სესია</option>
@@ -241,11 +242,11 @@
       </div>
       <div class="form-group">
         <label for="fmsg">შეტყობინება</label>
-        <textarea id="fmsg" rows="4" placeholder="მოკლედ აღწერეთ, რითი შეიძლება დაგეხმაროთ..."></textarea>
+        <textarea id="fmsg" name="message" rows="4" placeholder="მოკლედ აღწერეთ, რითი შეიძლება დაგეხმაროთ..."></textarea>
       </div>
-      <button class="form-submit" onclick="handleSubmit()">გაგზავნა</button>
+      <button type="submit" class="form-submit">გაგზავნა</button>
       <div class="success-msg" id="successMsg">გმადლობთ! დაგიკავშირდებით 24 საათში.</div>
-    </div>
+    </form>
   </section>
 
   <footer>
@@ -254,16 +255,28 @@
 
 </div>
 <script>
-  function handleSubmit() {
-    const name = document.getElementById('fname').value.trim();
-    const email = document.getElementById('femail').value.trim();
-    if (!name || !email) { alert('გთხოვთ შეავსოთ სახელი და ელ-ფოსტა.'); return; }
-    document.querySelector('.form-submit').style.display = 'none';
-    document.getElementById('successMsg').style.display = 'block';
-    ['fname','femail','fphone','ftype','fmsg'].forEach(function(id) {
-      var el = document.getElementById(id); el.disabled = true; el.style.opacity = '0.5';
-    });
-  }
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = '...';
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(e.target)).toString()
+      });
+      btn.style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+      e.target.querySelectorAll('input, textarea, select').forEach(function(el) {
+        el.disabled = true; el.style.opacity = '0.5';
+      });
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'გაგზავნა';
+      alert('შეცდომა. სცადეთ თავიდან.');
+    }
+  });
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       var target = document.querySelector(this.getAttribute('href'));
