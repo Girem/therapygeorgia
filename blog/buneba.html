@@ -25,6 +25,10 @@
     .nav-links a:hover { color: var(--text-primary); }
     .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: var(--text-primary); text-decoration: none; margin-bottom: 2rem; padding: 10px 20px; border: 0.5px solid rgba(0,0,0,0.18); border-radius: 12px; background: transparent; }
     .back-link:hover { background: var(--bg-secondary); }
+    .btn-primary { display: inline-block; padding: 12px 28px; background: var(--teal); color: #fff; border-radius: var(--radius-lg); font-size: 14px; font-weight: 500; text-decoration: none; }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-outline { display: inline-block; padding: 12px 28px; background: transparent; color: var(--text-primary); border-radius: var(--radius-lg); font-size: 14px; font-weight: 500; text-decoration: none; border: 0.5px solid rgba(0,0,0,0.18); margin-left: 12px; }
+    .btn-outline:hover { background: var(--bg-secondary); }
     .article-tag { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 11px; font-weight: 500; background: #E1F5EE; color: #0F6E56; margin-bottom: 1rem; }
     .article-header { margin-bottom: 2.5rem; }
     .article-header h1 { font-size: 28px; font-weight: 500; line-height: 1.35; margin-bottom: 1rem; }
@@ -86,7 +90,7 @@
     </div>
   </nav>
 
-  <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:2rem;">
+  <div style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:2rem;">
     <a href="/" class="back-link" style="margin-bottom:0;">← მთავარ გვერდზე დაბრუნება</a>
     <a href="/blog/" class="back-link" style="margin-bottom:0;">← ბლოგზე დაბრუნება</a>
   </div>
@@ -181,11 +185,16 @@
 
     <p>მომავალში შესაძლებელია, რომ ფსიქოთერაპია კიდევ უფრო მეტად განვითარდეს ეკოლოგიური მიმართულებით, სადაც ადამიანისა და გარემოს ურთიერთობა გახდება ცენტრალური თემა.</p>
 
+    <div style="margin: 2rem 0;">
+      <a href="/#contact" class="btn-primary">კონსულტაციის დაჯავშნა</a>
+      <a href="/#about" class="btn-outline">გაიგე მეტი</a>
+    </div>
+
     <div class="author-card">
       <div class="author-avatar">გი</div>
       <div class="author-info">
-        <strong>გიორგი ირემაშვილი</strong>
-        <span>ფსიქოთერაპევტი</span>
+        <strong>გიორგი ირემაშვილი, MD</strong>
+        <span>მედიცინის დოქტორი და ინტეგრირებული ფსიქოთერაპიის პრაქტიკოსი. ვმუშაობ ჰუმანისტური, ეგზისტენციური და CBT მიდგომებით. თბილისი, საქართველო.</span>
       </div>
     </div>
 
