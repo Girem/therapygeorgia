@@ -9,7 +9,7 @@
   <meta property="og:title" content="therapygeorgia.ge — კლიენტზე ორიენტირებული ფსიქოთერაპია თბილისში" />
   <meta property="og:description" content="პროფესიონალური ინტეგრირებული ფსიქოთერაპია თბილისში. ჰუმანისტური, ეგზისტენციური და CBT მიდგომები. პირველი გასაუბრება უფასოა." />
   <meta property="og:image" content="https://therapygeorgia.ge/og-image.png" />
-  <meta property="og:url" content="https://therapygeorgia.netlify.app" />
+  <meta property="og:url" content="https://therapygeorgia.ge" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
@@ -51,12 +51,14 @@
     }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
     .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; transition: box-shadow 0.2s; }
+    nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
     .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .logo span { color: var(--teal-mid); }
     .nav-links { display: flex; gap: 1.75rem; align-items: center; }
     .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
     .nav-links a:hover { color: var(--text-primary); }
+    .nav-links a.nav-active { color: var(--teal); font-weight: 500; }
     .hero { margin-bottom: 5rem; max-width: 600px; margin-left: auto; margin-right: auto; text-align: center; }
     .hero-text h1 { font-size: 32px; font-weight: 500; line-height: 1.35; margin-bottom: 1rem; }
     .hero-text p { font-size: 16px; color: var(--text-secondary); margin-bottom: 1.75rem; }
@@ -272,6 +274,7 @@
       <div class="contact-info">
         <div class="contact-row"><div class="icon">📍</div><span>თბილისი, საქართველო</span></div>
         <div class="contact-row"><div class="icon">📞</div><span><a href="tel:+995579070205">+995 579 070 205</a></span></div>
+        <div class="contact-row"><div class="icon">💬</div><span><a href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp-ზე წერა</a></span></div>
         <div class="contact-row"><div class="icon">🌐</div><span><a href="https://therapygeorgia.ge">therapygeorgia.ge</a></span></div>
         <div class="contact-row"><div class="icon">📷</div><span><a href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a></span></div>
         <div class="contact-row"><div class="icon">🕐</div><span>ორშ–პარ · 10:00–19:00</span></div>
@@ -348,6 +351,29 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  // Sticky nav shadow
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
+  // Active nav highlight on scroll
+  var sections = document.querySelectorAll('section[id]');
+  var anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        anchorLinks.forEach(function(link) {
+          link.classList.remove('nav-active');
+          if (link.getAttribute('href') === '#' + entry.target.id) {
+            link.classList.add('nav-active');
+          }
+        });
+      }
+    });
+  }, { threshold: 0.35 });
+  sections.forEach(function(s) { observer.observe(s); });
 </script>
 </body>
 </html>
