@@ -113,7 +113,7 @@
     .success-msg { display: none; text-align: center; padding: 1rem; background: var(--teal-light); border-radius: var(--radius-md); color: var(--teal-dark); font-size: 14px; }
     .faq { margin-bottom: 5rem; }
     .faq-outer { border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-    .faq-outer-q { width: 100%; text-align: left; background: var(--bg); border: none; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 15px; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-outer-q { width: 100%; text-align: left; background: var(--bg); border: none; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 15px; font-weight: 500; color: var(--teal); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .faq-outer-q:hover { background: var(--bg-secondary); }
     .faq-outer-body { display: none; border-top: 0.5px solid var(--border); }
     .faq-outer.open .faq-outer-body { display: block; }
@@ -122,9 +122,9 @@
     .faq-item:last-child { border-bottom: none; }
     .faq-q { width: 100%; text-align: left; background: var(--bg-secondary); border: none; padding: 0.9rem 1.25rem; font-family: inherit; font-size: 14px; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .faq-q:hover { background: var(--bg); }
-    .faq-icon { font-size: 20px; color: var(--teal); transition: transform 0.2s; flex-shrink: 0; line-height: 1; }
-    .faq-outer.open .faq-outer-q .faq-icon { transform: rotate(45deg); }
-    .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+    .faq-icon { color: var(--teal); transition: transform 0.2s; flex-shrink: 0; display: flex; }
+    .faq-outer.open .faq-outer-q .faq-icon { transform: rotate(180deg); }
+    .faq-item.open .faq-q .faq-icon { transform: rotate(180deg); }
     .faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.75; background: var(--bg-secondary); }
     .faq-item.open .faq-a { display: block; }
     .phone-wrap { display: flex; align-items: center; border: 0.5px solid var(--border-med); border-radius: var(--radius-md); background: var(--bg); overflow: hidden; }
@@ -279,32 +279,32 @@
 
   <section class="faq" id="faq">
     <div class="faq-outer" id="faqOuter">
-      <button class="faq-outer-q" id="faqOuterBtn">ხშირად დასმული კითხვები <span class="faq-icon">+</span></button>
+      <button class="faq-outer-q" id="faqOuterBtn">ხშირად დასმული კითხვები <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="faq-outer-body">
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-q">რა ღირს სესია? <span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>სტანდარტული სესიის საფასური <strong>75₾</strong>-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, შეთანხმებული ფასდაკლებული ტარიფი <strong>50₾</strong> შეიძლება გამოიყენებოდეს.</p></div>
+            <button class="faq-q">სესია რა ღირს ? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a"><p>სესიის სტანდარტული საფასური <strong>75₾</strong>-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, სხვა ფასდაკლებული ტარიფით სარგებლობააც შესაძლებელია.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">პირველი სესია - რა ხდება? <span class="faq-icon">+</span></button>
+            <button class="faq-q">პირველი სესია - რას შეიძლება ველოდო? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
             <div class="faq-a"><p>პირველი შეხვედრა <strong>უფასოა</strong> და გაცნობითი ხასიათისაა - ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და პირობებს. ეს შეხვედრა ნაკლებად თერაპიული და უფრო ადმინისტრაციულ-გაცნობითია.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">ონლაინ სესია შესაძლებელია? <span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>დიახ, ვმუშაობ როგორც <strong>პირისპირ</strong>, ასევე <strong>ონლაინ</strong> ფორმატში. სასურველი ვარიანტი ფორმაში შეგიძლიათ მიუთითოთ.</p></div>
+            <button class="faq-q">ონლაინ სესია შესაძლებელია? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a"><p>დიახ, ვმუშაობ როგორც <strong>პირისპირ</strong>, ასევე <strong>ონლაინ</strong> ფორმატში.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">ვის მუშაობთ? ბავშვებთანაც? <span class="faq-icon">+</span></button>
+            <button class="faq-q">რომელ ასაკობრივ ჯგუფთან ვმუშაობ? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
             <div class="faq-a"><p>ვმუშაობ <strong>ყველა ასაკის</strong> კლიენტებთან - ბავშვებთან, მოზარდებთან და ზრდასრულებთან.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">რამდენი სესია დამჭირდება? <span class="faq-icon">+</span></button>
+            <button class="faq-q">რამდენი სესია დამჭირდება? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
             <div class="faq-a"><p>ეს წინასწარ ვერ განისაზღვრება - ყოველი კლიენტი და ყოველი გამოწვევა ინდივიდუალურია. პროცესის ხანგრძლივობა ერთად, გზის გამავლობაში განისაზღვრება.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">კონფიდენციალურია? <span class="faq-icon">+</span></button>
-            <div class="faq-a"><p>სრულად. სესიების შინაარსი <strong>სრულად კონფიდენციალურია</strong> და მესამე მხარეს არ გადაეცემა.</p></div>
+            <button class="faq-q">შეხვედრა კონფიდენციალურია? <svg class="faq-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+            <div class="faq-a"><p>სრულად. სესიების შინაარსი <strong>სრულად კონფიდენციალურია</strong> და ჩემი მხრიდან მესამე მხარეს არ გადაეცემა. თუმცა თქვენ სხხვებთან ნებისმიერი რამის მოყოლა შეგიძლიათ</p></div>
           </div>
         </div>
       </div>
