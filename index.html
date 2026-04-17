@@ -112,14 +112,20 @@
     .form-submit:hover { background: var(--teal-dark); }
     .success-msg { display: none; text-align: center; padding: 1rem; background: var(--teal-light); border-radius: var(--radius-md); color: var(--teal-dark); font-size: 14px; }
     .faq { margin-bottom: 5rem; }
-    .faq-list { border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-outer { border: 0.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+    .faq-outer-q { width: 100%; text-align: left; background: var(--bg); border: none; padding: 1.1rem 1.25rem; font-family: inherit; font-size: 15px; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-outer-q:hover { background: var(--bg-secondary); }
+    .faq-outer-body { display: none; border-top: 0.5px solid var(--border); }
+    .faq-outer.open .faq-outer-body { display: block; }
+    .faq-list { }
     .faq-item { border-bottom: 0.5px solid var(--border); }
     .faq-item:last-child { border-bottom: none; }
-    .faq-q { width: 100%; text-align: left; background: var(--bg); border: none; padding: 1rem 1.25rem; font-family: inherit; font-size: 14px; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .faq-q:hover { background: var(--bg-secondary); }
+    .faq-q { width: 100%; text-align: left; background: var(--bg-secondary); border: none; padding: 0.9rem 1.25rem; font-family: inherit; font-size: 14px; font-weight: 500; color: var(--text-primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .faq-q:hover { background: var(--bg); }
     .faq-icon { font-size: 20px; color: var(--teal); transition: transform 0.2s; flex-shrink: 0; line-height: 1; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.75; }
+    .faq-outer.open .faq-outer-q .faq-icon { transform: rotate(45deg); }
+    .faq-item.open .faq-q .faq-icon { transform: rotate(45deg); }
+    .faq-a { display: none; padding: 0 1.25rem 1rem; font-size: 14px; color: var(--text-secondary); line-height: 1.75; background: var(--bg-secondary); }
     .faq-item.open .faq-a { display: block; }
     .phone-wrap { display: flex; align-items: center; border: 0.5px solid var(--border-med); border-radius: var(--radius-md); background: var(--bg); overflow: hidden; }
     .phone-prefix { padding: 10px 10px 10px 12px; font-size: 14px; color: var(--text-secondary); background: var(--bg-secondary); border-right: 0.5px solid var(--border-med); white-space: nowrap; user-select: none; }
@@ -272,32 +278,35 @@
   </section>
 
   <section class="faq" id="faq">
-    <div class="section-label">ხშირი კითხვები</div>
-    <div class="section-title">გაქვთ კითხვები?</div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">რა ღირს სესია? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>სტანდარტული სესიის საფასური <strong>75₾</strong>-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, შეთანხმებული ფასდაკლებული ტარიფი <strong>50₾</strong> შეიძლება გამოიყენებოდეს.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">პირველი სესია — რა ხდება? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>პირველი შეხვედრა <strong>უფასოა</strong> და გაცნობითი ხასიათისაა — ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და პირობებს. ეს შეხვედრა ნაკლებად თერაპიული და უფრო ადმინისტრაციულ-გაცნობითია.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">ონლაინ სესია შესაძლებელია? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>დიახ, ვმუშაობ როგორც <strong>პირისპირ</strong>, ასევე <strong>ონლაინ</strong> ფორმატში. სასურველი ვარიანტი ფორმაში შეგიძლიათ მიუთითოთ.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">ვის მუშაობთ? ბავშვებთანაც? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>ვმუშაობ <strong>ყველა ასაკის</strong> კლიენტებთან — ბავშვებთან, მოზარდებთან და ზრდასრულებთან.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">რამდენი სესია დამჭირდება? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>ეს წინასწარ ვერ განისაზღვრება — ყოველი კლიენტი და ყოველი გამოწვევა ინდივიდუალურია. პროცესის ხანგრძლივობა ერთად, გზის გამავლობაში განისაზღვრება.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">კონფიდენციალურია? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>სრულად. სესიების შინაარსი <strong>სრულად კონფიდენციალურია</strong> და მესამე მხარეს არ გადაეცემა.</p></div>
+    <div class="faq-outer" id="faqOuter">
+      <button class="faq-outer-q" id="faqOuterBtn">ხშირად დასმული კითხვები <span class="faq-icon">+</span></button>
+      <div class="faq-outer-body">
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-q">რა ღირს სესია? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>სტანდარტული სესიის საფასური <strong>75₾</strong>-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, შეთანხმებული ფასდაკლებული ტარიფი <strong>50₾</strong> შეიძლება გამოიყენებოდეს.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">პირველი სესია - რა ხდება? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>პირველი შეხვედრა <strong>უფასოა</strong> და გაცნობითი ხასიათისაა - ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და პირობებს. ეს შეხვედრა ნაკლებად თერაპიული და უფრო ადმინისტრაციულ-გაცნობითია.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">ონლაინ სესია შესაძლებელია? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>დიახ, ვმუშაობ როგორც <strong>პირისპირ</strong>, ასევე <strong>ონლაინ</strong> ფორმატში. სასურველი ვარიანტი ფორმაში შეგიძლიათ მიუთითოთ.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">ვის მუშაობთ? ბავშვებთანაც? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>ვმუშაობ <strong>ყველა ასაკის</strong> კლიენტებთან - ბავშვებთან, მოზარდებთან და ზრდასრულებთან.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">რამდენი სესია დამჭირდება? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>ეს წინასწარ ვერ განისაზღვრება - ყოველი კლიენტი და ყოველი გამოწვევა ინდივიდუალურია. პროცესის ხანგრძლივობა ერთად, გზის გამავლობაში განისაზღვრება.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">კონფიდენციალურია? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>სრულად. სესიების შინაარსი <strong>სრულად კონფიდენციალურია</strong> და მესამე მხარეს არ გადაეცემა.</p></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -409,7 +418,12 @@
     }
   });
 
-  // FAQ accordion
+  // FAQ outer toggle
+  document.getElementById('faqOuterBtn').addEventListener('click', function() {
+    document.getElementById('faqOuter').classList.toggle('open');
+  });
+
+  // FAQ inner accordion
   document.querySelectorAll('.faq-q').forEach(function(btn) {
     btn.addEventListener('click', function() {
       var item = this.closest('.faq-item');
