@@ -46,7 +46,7 @@
     .highlight-box { background: var(--teal-light); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin: 2rem 0; }
     .highlight-box p { color: var(--teal-dark) !important; margin-bottom: 0 !important; font-size: 15px !important; line-height: 1.7 !important; }
     .author-card { margin-top: 3rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: var(--radius-lg); border: 0.5px solid var(--border); display: flex; align-items: center; gap: 1.25rem; }
-    .author-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--teal-light); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: var(--teal-dark); flex-shrink: 0; }
+    .author-avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; object-position: top; flex-shrink: 0; }
     .author-info { font-size: 13px; }
     .author-info strong { display: block; font-size: 14px; font-weight: 500; margin-bottom: 2px; }
     .author-info span { color: var(--text-secondary); }
@@ -159,7 +159,7 @@
     </div>
 
     <div class="author-card">
-      <div class="author-avatar">გი</div>
+      <img class="author-avatar" src="/photo.jpg" alt="გიორგი ირემაშვილი" />
       <div class="author-info">
         <strong>გიორგი ირემაშვილი, MD</strong>
         <span>მედიცინის დოქტორი და ინტეგრირებული ფსიქოთერაპიის პრაქტიკოსი. ჰუმანისტური, ეგზისტენციური მიდგომები. თბილისი, საქართველო.</span>
