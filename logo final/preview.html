@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TherapyGeorgia.ge — Logo (final)</title>
+<link rel="icon" type="image/svg+xml" href="svg/favicon.svg">
+<style>
+  :root {
+    --teal: #1D9E75;
+    --ink: #2c3e48;
+    --ink-2: #555;
+    --muted: #888;
+    --bg-2: #f5f5f3;
+    --border: rgba(0,0,0,0.1);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 24px 96px;
+    background: var(--bg-2);
+    color: var(--ink);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; }
+  h1 { font-size: 30px; margin: 0 0 8px; }
+  .lede { color: var(--ink-2); margin: 0 0 40px; max-width: 640px; line-height: 1.6; }
+  h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.4px;
+    color: var(--muted); font-weight: 600; margin: 40px 0 14px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 32px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 180px;
+    position: relative;
+  }
+  .card.dark { background: #1a1a1a; }
+  .card.teal { background: #1a4348; }
+  .card.soft { background: #E1F5EE; }
+  .card .label {
+    position: absolute; top: 14px; left: 18px;
+    font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .card.dark .label, .card.teal .label { color: rgba(255,255,255,0.6); }
+  .card img { max-width: 100%; height: auto; }
+  .tiny-row { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .tiny-row .swatch {
+    background: #fff; padding: 10px; border: 1px solid var(--border);
+    border-radius: 10px;
+    display: inline-flex; align-items: center; gap: 10px;
+  }
+  .tiny-row .swatch img { width: 48px; height: 48px; }
+  .tiny-row .swatch.xs img { width: 24px; height: 24px; }
+  .tiny-row .swatch.xxs img { width: 16px; height: 16px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>TherapyGeorgia.ge — logo system</h1>
+  <p class="lede">Built using your original brain-with-plant artwork (the exact file, not a recreation), paired with the "TherapyGeorgia.ge" wordmark in your brand colors.</p>
+
+  <h2>Primary — Horizontal</h2>
+  <div class="grid">
+    <div class="card"><span class="label">White</span><img src="png/logo-horizontal@2x.png" style="width:560px"></div>
+    <div class="card soft"><span class="label">Teal light</span><img src="png/logo-horizontal@2x.png" style="width:560px"></div>
+  </div>
+
+  <h2>Stacked</h2>
+  <div class="grid">
+    <div class="card"><span class="label">White</span><img src="png/logo-stacked@2x.png" style="width:340px"></div>
+    <div class="card soft"><span class="label">Teal light</span><img src="png/logo-stacked@2x.png" style="width:340px"></div>
+  </div>
+
+  <h2>Icon only</h2>
+  <div class="grid">
+    <div class="card"><span class="label">White</span><img src="png/icon-only@2x.png" style="width:160px"></div>
+    <div class="card teal"><span class="label">On dark teal</span><img src="png/icon-only@2x.png" style="width:160px"></div>
+  </div>
+
+  <h2>Favicon — small sizes</h2>
+  <div class="tiny-row">
+    <div class="swatch"><img src="png/favicon@2x.png"> <span style="font-size:12px;color:var(--muted)">48px</span></div>
+    <div class="swatch xs"><img src="png/favicon@2x.png"> <span style="font-size:12px;color:var(--muted)">24px</span></div>
+    <div class="swatch xxs"><img src="png/favicon@2x.png"> <span style="font-size:12px;color:var(--muted)">16px</span></div>
+  </div>
+</div>
+<footer class="wrap">therapygeorgia.ge — final logo</footer>
+</body>
+</html>
