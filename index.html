@@ -51,7 +51,7 @@
     }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
     .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; transition: box-shadow 0.2s; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 1.5rem; margin: 0 -1.5rem 3rem; border-bottom: 0.5px solid var(--border); transition: box-shadow 0.2s; }
     nav.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
     .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .logo span { color: var(--teal-mid); }
@@ -139,7 +139,7 @@
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
     @media (max-width: 640px) {
       .page { padding: 0 1rem 3rem; }
-      nav { flex-wrap: wrap; margin-bottom: 2rem; }
+      nav { flex-wrap: wrap; margin: 0 -1rem 2rem; padding-left: 1rem; padding-right: 1rem; }
       .hamburger { display: flex; }
       .nav-links { display: none; width: 100%; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); margin-top: 1rem; padding-top: 0.25rem; }
       .nav-links.open { display: flex; }
@@ -177,7 +177,7 @@
     <div class="nav-links" id="navLinks">
       <a href="#approaches">თერაპიული მიდგომები</a>
       <a href="#about">ჩემს შესახებ</a>
-      <a href="/blog/" style="background:#E1F5EE; color:#0F6E56; font-weight:500; padding:3px 10px; border-radius:99px; font-size:13px;">ბლოგი</a>
+      <a href="/blog/">ბლოგი</a>
       <a href="#contact">კონტაქტი</a>
     </div>
   </nav>
