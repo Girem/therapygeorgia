@@ -250,6 +250,12 @@
         <p>ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი და shinrin-yoku პრაქტიკა.</p>
         <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
       </a>
+      <a href="/blog/blog-therapiis-7-rchevebi.html" class="blog-card">
+        <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
+        <h4>თერაპიის 7 რჩევა: სესიებიდან მეტის მისაღებად</h4>
+        <p>7 პრაქტიკული რჩევა, რომელიც დაგეხმარებათ თერაპიის სესიებიდან მეტი სარგებლის მიღებაში.</p>
+        <div class="blog-date">2026 · 10 წუთიანი საკითხავი</div>
+      </a>
       <!-- PLACEHOLDER POSTS - hidden until improved. To show, uncomment and ensure total active cards ≤ 4.
       <a href="/blog/frankl.html" class="blog-card">
         <div class="blog-tag">ეგზისტენციური</div>
@@ -447,13 +453,17 @@
 
   // Active nav highlight on scroll
   var sections = document.querySelectorAll('section[id]');
-  var anchorLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  var anchorLinks = document.querySelectorAll('.nav-links a');
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
         anchorLinks.forEach(function(link) {
           link.classList.remove('nav-active');
-          if (link.getAttribute('href') === '#' + entry.target.id) {
+          var href = link.getAttribute('href');
+          if (href === '#' + entry.target.id) {
+            link.classList.add('nav-active');
+          }
+          if (entry.target.id === 'blog' && href === '/blog/') {
             link.classList.add('nav-active');
           }
         });
