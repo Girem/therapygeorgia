@@ -139,6 +139,7 @@
     .phone-error { display: none; font-size: 12px; color: #e53e3e; margin-top: 4px; }
     footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid var(--border); font-size: 13px; color: var(--text-muted); }
     footer a { color: var(--teal); text-decoration: none; }
+    .mobile-contact-bar { display: none; }
     .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
     @media (max-width: 640px) {
@@ -161,6 +162,40 @@
       .contact-section { grid-template-columns: 1fr; }
       .approaches, .about, .blog, .contact-section { margin-bottom: 3rem; }
       .section-title { font-size: 19px; }
+      .page { padding-bottom: 6rem; }
+      .mobile-contact-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 120;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+        background: rgba(255, 255, 255, 0.96);
+        border-top: 0.5px solid var(--border);
+        box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.07);
+      }
+      .mobile-contact-bar a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-lg);
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+      .mobile-call {
+        background: var(--teal);
+        color: #fff;
+      }
+      .mobile-whatsapp {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+        border: 0.5px solid var(--border-med);
+      }
     }
   </style>
 </head>
@@ -382,6 +417,10 @@
     <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
   </footer>
 
+</div>
+<div class="mobile-contact-bar" aria-label="სწრაფი კონტაქტი">
+  <a class="mobile-call" href="tel:+995579070205">დარეკვა</a>
+  <a class="mobile-whatsapp" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 <script>
   // Phone validation
