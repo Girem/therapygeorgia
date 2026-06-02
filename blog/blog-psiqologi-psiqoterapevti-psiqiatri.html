@@ -78,9 +78,9 @@
 
   <nav>
     <a href="/" class="logo">
-      <img src="/logo-horizontal.svg" alt="TherapyGeorgia.ge" height="36" />
+      <img src="/logo-horizontal.svg" alt="TherapyGeorgia.ge" width="137" height="36" decoding="async" />
     </a>
-    <button class="hamburger" id="hamburger" aria-label="მენიუ">
+    <button class="hamburger" id="hamburger" type="button" aria-label="მენიუ" aria-controls="navLinks" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" id="navLinks">
@@ -176,7 +176,9 @@
 </div>
 <script>
   document.getElementById('hamburger').addEventListener('click', function() {
-    document.getElementById('navLinks').classList.toggle('open');
+    var navLinks = document.getElementById('navLinks');
+    var isOpen = navLinks.classList.toggle('open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 </script>
 </body>
