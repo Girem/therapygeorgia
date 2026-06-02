@@ -1,1 +1,18 @@
 .claude/
+
+# macOS metadata
+.DS_Store
+**/.DS_Store
+
+# Local document render previews
+.docx_render_*/
+.pdf_render_*/
+
+# Local CV/export files, not part of the website
+Giorgi_Iremashvili_*_CV.docx
+Giorgi_Iremashvili_*_CV.pdf
+Giorgi_Iremashvili_*_CV_*.docx
+Giorgi_Iremashvili_*_CV_*.pdf
+
+# Local social/export workspace
+social-assets/
