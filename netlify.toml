@@ -1,3 +1,8 @@
 [build]
   command = "node generate-sitemap.js"
   functions = "netlify/functions"
+
+[[redirects]]
+  from = "/psychotherapist-tbilisi.html"
+  to = "/fsiqoterapevti-tbilisshi.html"
+  status = 301
