@@ -5,17 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ფსიქოთერაპევტი თბილისში და ონლაინ | TherapyGeorgia.ge</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="canonical" href="https://therapygeorgia.ge/fsiqoterapevti-tbilisshi.html" />
+  <link rel="canonical" href="https://therapygeorgia.ge/fsiqoterapevti-tbilisshi" />
   <meta name="description" content="ფსიქოთერაპევტი თბილისში და ონლაინ. ინდივიდუალური შეხვედრები, ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომები." />
   <meta property="og:title" content="ფსიქოთერაპევტი თბილისში და ონლაინ" />
   <meta property="og:description" content="გიორგი ირემაშვილის ინდივიდუალური ფსიქოთერაპიული პრაქტიკა თბილისში და ონლაინ. პირველი გასაუბრება უფასოა." />
   <meta property="og:image" content="https://therapygeorgia.ge/og-image.png" />
-  <meta property="og:url" content="https://therapygeorgia.ge/fsiqoterapevti-tbilisshi.html" />
+  <meta property="og:url" content="https://therapygeorgia.ge/fsiqoterapevti-tbilisshi" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ფსიქოთერაპევტი თბილისში და ონლაინ" />
   <meta name="twitter:description" content="ინდივიდუალური ფსიქოთერაპიული შეხვედრები თბილისში და ონლაინ. პირველი გასაუბრება უფასოა." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service",
+    "name": "ფსიქოთერაპია თბილისში და ონლაინ",
+    "serviceType": "Individual psychotherapy",
+    "areaServed": [
+      { "@type": "City", "name": "Tbilisi" },
+      { "@type": "Country", "name": "Georgia" }
+    ],
+    "availableChannel": [
+      {
+        "@type": "ServiceChannel",
+        "serviceLocation": {
+          "@type": "Place",
+          "name": "TherapyGeorgia.ge",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tbilisi",
+            "addressCountry": "GE"
+          }
+        }
+      },
+      {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi"
+      }
+    ],
+    "provider": {
+      "@type": "Person",
+      "@id": "https://therapygeorgia.ge/chems-shesakheb#giorgi-iremashvili",
+      "name": "გიორგი ირემაშვილი",
+      "jobTitle": "ექიმი · ფსიქოთერაპევტი",
+      "url": "https://therapygeorgia.ge/chems-shesakheb"
+    }
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -40,8 +78,18 @@
       line-height: 1.7;
     }
     a { color: inherit; }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(47, 111, 98, 0.35);
+      outline-offset: 3px;
+    }
     img,
     svg { max-width: 100%; }
+    .skip-link { position: absolute; left: 1rem; top: 1rem; z-index: 1000; transform: translateY(-160%); padding: 0.75rem 1rem; border-radius: var(--radius); background: var(--green-dark); color: #fff; text-decoration: none; font-weight: 700; }
+    .skip-link:focus-visible { transform: translateY(0); }
     .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
     .wrap { width: min(1450px, calc(100vw - 86px)); margin: 0 auto; }
     .header {
@@ -76,6 +124,12 @@
       font-size: 14px;
       font-weight: 650;
     }
+    .whatsapp-action,
+    .mobile-wa {
+      border-color: transparent !important;
+      background: #25D366 !important;
+      color: #fff !important;
+    }
     .header-actions { justify-self: end; display: inline-flex; align-items: center; gap: 0.8rem; }
     .language-switcher {
       display: inline-flex;
@@ -98,6 +152,24 @@
       font-weight: 650;
     }
     .language-switcher button[aria-pressed="true"] { background: var(--green-dark); color: #fff; }
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--green-dark);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-toggle span { width: 20px; height: 2px; border-radius: 99px; background: currentColor; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .hero {
       max-width: 920px;
       margin: 0 auto;
@@ -210,6 +282,27 @@
     }
     .content p:last-child { margin-bottom: 0; }
     .step { padding: 1.35rem; text-align: center; }
+    .step-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .step-link {
+      min-height: 40px;
+      padding: 8px 14px;
+      border: 1px solid rgba(47, 111, 98, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--green-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 650;
+    }
     .step-number {
       width: 36px;
       height: 36px;
@@ -229,6 +322,8 @@
       text-align: center;
     }
     .cta-panel p { max-width: 670px; margin: 0.65rem auto 1.4rem; font-size: 15px; line-height: 1.8; }
+    .cta-panel .actions { justify-content: center; }
+    .cta-panel .actions a { min-width: 160px; }
     footer { padding-top: 3rem; color: var(--green-muted); font-size: 13px; text-align: center; }
     .mobile-contact { display: none; }
     @media (max-width: 1120px) {
@@ -242,13 +337,15 @@
     @media (max-width: 680px) {
       .page { padding-top: 1rem; padding-bottom: 5.6rem; }
       .wrap { width: min(100% - 28px, 1450px); }
-      .header { grid-template-columns: 1fr; }
+      .header { grid-template-columns: 1fr auto; align-items: center; }
       .brand img { width: 190px; }
-      .header-actions { justify-self: stretch; justify-content: space-between; }
+      .header-actions { justify-self: end; justify-content: flex-end; }
+      .menu-toggle { display: inline-flex; }
       .top-cta { display: none; }
-      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .nav { display: none; grid-column: 1 / -1; width: 100%; grid-template-columns: 1fr; gap: 0.5rem; padding-top: 0.75rem; }
+      .nav.open { display: grid; }
       .nav a {
-        padding: 8px 10px;
+        padding: 11px 12px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: rgba(255,255,255,0.58);
@@ -260,6 +357,7 @@
       h1 { font-size: 36px; }
       .lead { font-size: 15px; }
       .actions { display: grid; grid-template-columns: 1fr; }
+      .step-actions { display: grid; grid-template-columns: 1fr; }
       .fact-grid,
       .card-grid,
       .steps { grid-template-columns: 1fr; }
@@ -268,8 +366,8 @@
         width: calc(100% + 28px);
         margin-left: -14px;
         margin-right: -14px;
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
       .fact,
       .card,
@@ -300,27 +398,20 @@
         font-weight: 600;
       }
       .mobile-call { background: var(--green-dark); color: #fff; }
-      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
     }
 
     @media (max-width: 420px) {
       .page { padding-top: 0.8rem; }
       .wrap { width: min(100% - 22px, 1450px); }
-      .brand img { width: 172px; }
+      .brand img { width: 150px; }
       .header-actions { gap: 0.55rem; }
-      .language-switcher button { min-width: 31px; font-size: 11px; }
-      .nav { grid-template-columns: 1fr; }
+      .language-switcher button { min-width: 29px; font-size: 11px; }
+      .menu-toggle { width: 40px; height: 40px; }
       h1 { font-size: 30px; line-height: 1.22; }
       .section-title { font-size: 27px; }
       .hero { padding-top: 2rem; }
       .actions { gap: 0.7rem; }
-      .section.soft {
-        width: calc(100% + 22px);
-        margin-left: -11px;
-        margin-right: -11px;
-        padding-left: 11px;
-        padding-right: 11px;
-      }
+      .section.soft { padding-left: 20px; padding-right: 20px; }
       .fact,
       .card,
       .step,
@@ -331,16 +422,17 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">მთავარ შინაარსზე გადასვლა</a>
   <div class="page">
     <header class="wrap header">
       <a href="/" class="brand" aria-label="TherapyGeorgia">
-        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" width="728" height="184" alt="TherapyGeorgia" />
       </a>
-      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+      <nav class="nav" id="mainNav" aria-label="მთავარი ნავიგაცია">
         <a href="/" data-i18n="nav.home">მთავარი</a>
-        <a href="/fsiqoterapevti-tbilisshi.html" class="active" data-i18n="nav.services">მომსახურებები</a>
+        <a href="/fsiqoterapevti-tbilisshi" class="active" data-i18n="nav.services">მომსახურებები</a>
         <a href="/blog/" data-i18n="nav.blog">ბლოგი</a>
-        <a href="/chems-shesakheb.html" data-i18n="nav.about">ჩემს შესახებ</a>
+        <a href="/chems-shesakheb" data-i18n="nav.about">ჩემს შესახებ</a>
         <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
       </nav>
       <div class="header-actions">
@@ -349,11 +441,16 @@
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
           <button type="button" data-lang="ru" aria-pressed="false">RU</button>
         </div>
+        <button class="menu-toggle" type="button" aria-label="მენიუს გახსნა" aria-controls="mainNav" aria-expanded="false">
+          <span>Instagram </span>
+          <span>Instagram </span>
+          <span>Instagram </span>
+        </button>
         <a class="top-cta" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="wrap hero" aria-label="მომსახურებები">
         <div class="kicker" data-i18n="hero.kicker">ფსიქოთერაპია თბილისში და ონლაინ</div>
         <div class="ornament" aria-hidden="true">
@@ -371,7 +468,7 @@
           </svg>
         </div>
         <h1 data-i18n="hero.title">ფსიქოთერაპევტი თბილისში და ონლაინ</h1>
-        <p class="lead" data-i18n="hero.lead">თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia არის ჩემი - ექიმი გიორგი ირემაშვილის ინდივიდუალური ფსიქოთერაპიული პრაქტიკა. სამუშაო სივრცე მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.</p>
+        <p class="lead" data-i18n="hero.lead">თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia ჩემი — ექიმ გიორგი ირემაშვილის — ინდივიდუალური ფსიქოთერაპიული პრაქტიკაა. სამუშაო სივრცე შექმნილია მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.</p>
         <div class="actions">
           <a class="btn-main" href="#contact" data-i18n="cta.first">პირველი უფასო გასაუბრება</a>
           <a class="btn-secondary" href="tel:+995579070205" data-i18n="cta.call">დარეკვა</a>
@@ -383,10 +480,10 @@
           <h2 class="section-title" data-i18n="facts.title">როგორ მუშაობს სერვისი</h2>
         </div>
         <div class="fact-grid">
-          <div class="fact"><strong data-i18n="fact.format.label">ფორმატი</strong><span data-i18n="fact.format.text">პირისპირ თბილისში ან ონლაინ</span></div>
-          <div class="fact"><strong data-i18n="fact.languages.label">ენები</strong><span data-i18n="fact.languages.text">ქართული, ინგლისური, რუსული, გერმანული</span></div>
-          <div class="fact"><strong data-i18n="fact.first.label">შეხვედრა</strong><span data-i18n="fact.first.text">პირველი გასაუბრება უფასოა</span></div>
-          <div class="fact"><strong data-i18n="fact.approaches.label">მიდგომები</strong><span data-i18n="fact.approaches.text">ჰუმანისტური, ეგზისტენციური, ინტეგრირებული</span></div>
+          <div class="fact"><strong data-i18n="fact.format.label">ფორმატი</strong><span data-i18n="fact.format.text">პირისპირ თბილისში ან ონლაინ</span>Instagram </div>
+          <div class="fact"><strong data-i18n="fact.languages.label">ენები</strong><span data-i18n="fact.languages.text">ქართული, ინგლისური, რუსული, გერმანული</span>Instagram </div>
+          <div class="fact"><strong data-i18n="fact.first.label">შეხვედრა</strong><span data-i18n="fact.first.text">პირველი გასაუბრება უფასოა</span>Instagram </div>
+          <div class="fact"><strong data-i18n="fact.approaches.label">მიდგომები</strong><span data-i18n="fact.approaches.text">ჰუმანისტური, ეგზისტენციური, ინტეგრირებული</span>Instagram </div>
         </div>
       </section>
 
@@ -434,6 +531,11 @@
             <div class="step-number">1</div>
             <h3 data-i18n="step1.title">დამიკავშირდით</h3>
             <p data-i18n="step1.text">შეგიძლიათ, დარეკოთ, მომწეროთ WhatsApp-ზე ან შეავსოთ საკონტაქტო ფორმა.</p>
+            <div class="step-actions" aria-label="საკონტაქტო მოქმედებები">
+              <a class="step-link" href="tel:+995579070205" data-i18n="step1.call">დარეკვა</a>
+              <a class="step-link whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="step-link" href="/#contact" data-i18n="step1.form">საკონტაქტო ფორმა</a>
+            </div>
           </article>
           <article class="step">
             <div class="step-number">2</div>
@@ -451,11 +553,11 @@
       <section class="wrap section soft" id="contact" aria-label="კონტაქტი">
         <div class="cta-panel">
           <div class="kicker" data-i18n="contact.kicker">კონტაქტი</div>
-          <h2 class="section-title" data-i18n="contact.title">პირველი შეხვედრა უფასოა</h2>
+          <h2 class="section-title" data-i18n="contact.title">პირველი გასაუბრება უფასოა</h2>
           <p data-i18n="contact.text">პირველ გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი.</p>
           <div class="actions">
             <a class="btn-main" href="tel:+995579070205" data-i18n="cta.call">დარეკვა</a>
-            <a class="btn-secondary" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn-secondary whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn-secondary" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
           </div>
         </div>
@@ -468,7 +570,7 @@
   </div>
 
   <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
-    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">დარეკვა</a>
+    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">📞 დარეკვა</a>
     <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 
@@ -483,10 +585,10 @@
         "cta.contact": "დამიკავშირდი",
         "cta.first": "პირველი უფასო გასაუბრება",
         "cta.call": "დარეკვა",
-        "mobile.call": "დარეკვა",
+        "mobile.call": "📞 დარეკვა",
         "hero.kicker": "ფსიქოთერაპია თბილისში და ონლაინ",
         "hero.title": "ფსიქოთერაპევტი თბილისში და ონლაინ",
-        "hero.lead": "თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia არის ჩემი - ექიმი გიორგი ირემაშვილის ინდივიდუალური ფსიქოთერაპიული პრაქტიკა. სამუშაო სივრცე მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.",
+        "hero.lead": "თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia ჩემი — ექიმ გიორგი ირემაშვილის — ინდივიდუალური ფსიქოთერაპიული პრაქტიკაა. სამუშაო სივრცე შექმნილია მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.",
         "facts.title": "როგორ მუშაობს სერვისი",
         "fact.format.label": "ფორმატი",
         "fact.format.text": "პირისპირ თბილისში ან ონლაინ",
@@ -514,12 +616,14 @@
         "process.title": "როგორ იწყება თერაპია",
         "step1.title": "დამიკავშირდით",
         "step1.text": "შეგიძლიათ, დარეკოთ, მომწეროთ WhatsApp-ზე ან შეავსოთ საკონტაქტო ფორმა.",
+        "step1.call": "დარეკვა",
+        "step1.form": "საკონტაქტო ფორმა",
         "step2.title": "პირველი უფასო გასაუბრება",
         "step2.text": "ამ შეხვედრაზე განვიხილავთ თქვენს სიტუაციას, მოლოდინებს, სამუშაო ფორმატს და შესაძლო შემდეგ ნაბიჯებს.",
         "step3.title": "თერაპიული პროცესი",
         "step3.text": "თუ ერთად მუშაობა შესაფერისი იქნება, შევთანხმდებით სესიების ფორმატზე, სიხშირეზე და მიზნებზე.",
         "contact.kicker": "კონტაქტი",
-        "contact.title": "პირველი შეხვედრა უფასოა",
+        "contact.title": "პირველი გასაუბრება უფასოა",
         "contact.text": "პირველ გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი."
       },
       en: {
@@ -531,7 +635,7 @@
         "cta.contact": "Contact me",
         "cta.first": "First free conversation",
         "cta.call": "Call",
-        "mobile.call": "Call",
+        "mobile.call": "📞 Call",
         "hero.kicker": "Psychotherapy in Tbilisi and online",
         "hero.title": "Psychotherapist in Tbilisi and online",
         "hero.lead": "If you are looking for a psychotherapist in Tbilisi or prefer online sessions, TherapyGeorgia.ge is the individual psychotherapy practice of Giorgi Iremashvili, MD. The working space is calm, confidential, and person-centered.",
@@ -562,6 +666,8 @@
         "process.title": "How therapy begins",
         "step1.title": "Contact me",
         "step1.text": "You can call, write on WhatsApp, or fill out the contact form.",
+        "step1.call": "Call",
+        "step1.form": "Contact form",
         "step2.title": "First free conversation",
         "step2.text": "We discuss your situation, expectations, working format, and possible next steps.",
         "step3.title": "Therapeutic process",
@@ -579,7 +685,7 @@
         "cta.contact": "Связаться",
         "cta.first": "Первый бесплатный разговор",
         "cta.call": "Позвонить",
-        "mobile.call": "Позвонить",
+        "mobile.call": "📞 Позвонить",
         "hero.kicker": "Психотерапия в Тбилиси и онлайн",
         "hero.title": "Психотерапевт в Тбилиси и онлайн",
         "hero.lead": "Если вы ищете психотерапевта в Тбилиси или предпочитаете онлайн-сессию, TherapyGeorgia.ge - это индивидуальная психотерапевтическая практика Гиорги Иремашвили, MD. Рабочее пространство спокойное, конфиденциальное и ориентированное на человека.",
@@ -610,6 +716,8 @@
         "process.title": "Как начинается терапия",
         "step1.title": "Свяжитесь со мной",
         "step1.text": "Вы можете позвонить, написать в WhatsApp или заполнить контактную форму.",
+        "step1.call": "Позвонить",
+        "step1.form": "Форма связи",
         "step2.title": "Первый бесплатный разговор",
         "step2.text": "Мы обсудим вашу ситуацию, ожидания, формат работы и возможные следующие шаги.",
         "step3.title": "Терапевтический процесс",
@@ -621,6 +729,8 @@
     };
     const languageButtons = document.querySelectorAll("[data-lang]");
     const translatableNodes = document.querySelectorAll("[data-i18n]");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("mainNav");
     function setLanguage(lang) {
       const dictionary = translations[lang] || translations.ka;
       document.documentElement.lang = lang;
@@ -632,6 +742,26 @@
       localStorage.setItem("therapygeorgia-lang", lang);
     }
     languageButtons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+    function closeMenu() {
+      mainNav?.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "მენიუს გახსნა");
+    }
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mainNav?.classList.toggle("open") || false;
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "მენიუს დახურვა" : "მენიუს გახსნა");
+      if (isOpen) mainNav?.querySelector("a")?.focus();
+    });
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
     setLanguage(localStorage.getItem("therapygeorgia-lang") || "ka");
   </script>
 </body>

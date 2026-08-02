@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ბუნებასთან ქრონიკული გაუცხოება | therapygeorgia.ge</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="canonical" href="https://therapygeorgia.ge/blog/buneba.html" />
+  <link rel="canonical" href="https://therapygeorgia.ge/blog/buneba" />
   <meta name="description" content="ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი — ფსიქოთერაპიული პერსპექტივა." />
   <meta property="og:title" content="ბუნებასთან ქრონიკული გაუცხოება | therapygeorgia.ge" />
   <meta property="og:description" content="ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი — ფსიქოთერაპიული პერსპექტივა." />
   <meta property="og:image" content="https://therapygeorgia.ge/blog/therapygeorgia_og_final%20(1).png" />
-  <meta property="og:url" content="https://therapygeorgia.ge/blog/buneba.html" />
+  <meta property="og:url" content="https://therapygeorgia.ge/blog/buneba" />
   <meta property="og:type" content="article" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ბუნებასთან ქრონიკული გაუცხოება | therapygeorgia.ge" />
@@ -22,7 +22,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://therapygeorgia.ge/blog/buneba.html"
+      "@id": "https://therapygeorgia.ge/blog/buneba"
     },
     "headline": "ბუნებასთან ქრონიკული გაუცხოება - ფსიქოთერაპიული პერსპექტივა",
     "description": "ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი - ფსიქოთერაპიული პერსპექტივა.",
@@ -67,6 +67,13 @@
     }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
     .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(29, 158, 117, 0.35);
+      outline-offset: 3px;
+    }
+    .skip-link { position: absolute; left: 1rem; top: 1rem; z-index: 1000; transform: translateY(-160%); padding: 0.75rem 1rem; border-radius: var(--radius-md); background: var(--teal-dark); color: #fff; text-decoration: none; font-weight: 700; }
+    .skip-link:focus-visible { transform: translateY(0); }
     nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; }
     .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
     .logo span { color: var(--teal-mid); }
@@ -88,6 +95,10 @@
     .article-body a { color: var(--teal-dark); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .article-body a:hover { color: var(--teal); }
     .article-body h2 { font-size: 19px; font-weight: 500; color: var(--text-primary); margin: 2.5rem 0 1rem; }
+    .trust-note { margin-top: 2.5rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--bg-secondary); }
+    .trust-note h2 { margin-top: 0; font-size: 16px; }
+    .trust-note ul { padding-left: 1.25rem; color: var(--text-secondary); }
+    .trust-note li { margin-bottom: 0.5rem; }
     .article-body blockquote { border-left: 3px solid var(--teal-mid); padding: 0.75rem 1.25rem; margin: 2rem 0; background: var(--teal-light); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
     .article-body blockquote p { font-size: 15px; color: var(--teal-dark); margin-bottom: 0; font-style: italic; }
     .function-card { background: var(--bg-secondary); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
@@ -278,6 +289,7 @@
     }
     .btn-primary { background: #235249; }
     .btn-primary:hover { background: #1d473f; }
+    .article-body .btn-primary { color: #fff; text-decoration: none; }
     .btn-outline {
       border-color: rgba(47, 111, 98, 0.22);
       color: #235249;
@@ -335,6 +347,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+    }
+    .whatsapp-action,
+    .mobile-wa {
+      border-color: transparent !important;
+      background: #25D366 !important;
+      color: #fff !important;
+    }
+    .instagram-action {
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #833AB4 0%, #E1306C 48%, #FCAF45 100%) !important;
+      color: #fff !important;
+      gap: 0.4rem;
     }
     footer {
       width: min(1450px, calc(100vw - 86px));
@@ -446,22 +470,24 @@
   </style>
 </head>
 <body>
+<a class="skip-link" href="#main">მთავარ შინაარსზე გადასვლა</a>
 <div class="page">
 
   <header class="wrap site-header">
     <a href="/" class="brand" aria-label="TherapyGeorgia">
-      <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+      <img src="/logo final/svg/therapy-georgia-recreated.svg" width="728" height="184" alt="TherapyGeorgia" />
     </a>
     <nav class="site-nav" aria-label="მთავარი ნავიგაცია">
       <a href="/">მთავარი</a>
-      <a href="/fsiqoterapevti-tbilisshi.html">მომსახურებები</a>
+      <a href="/fsiqoterapevti-tbilisshi">მომსახურებები</a>
       <a href="/blog/" class="active">ბლოგი</a>
-      <a href="/chems-shesakheb.html">ჩემს შესახებ</a>
+      <a href="/chems-shesakheb">ჩემს შესახებ</a>
       <a href="#contact">კონტაქტი</a>
     </nav>
     <a class="top-cta" href="#contact">დამიკავშირდი</a>
   </header>
 
+  <main id="main">
   <div class="wrap article-shell">
     <div class="article-breadcrumbs">
       <a href="/" class="back-link">← მთავარ გვერდზე დაბრუნება</a>
@@ -474,7 +500,7 @@
     <h1>ბუნებასთან ქრონიკული გაუცხოება — ფსიქოთერაპიული პერსპექტივა</h1>
     <div class="article-meta">
       <span>გიორგი ირემაშვილი</span>
-      <span>24 მარტი, 2026</span>
+      <time datetime="2026-03-24">24 მარტი, 2026</time>
       <span>8 წუთიანი საკითხავი</span>
     </div>
   </div>
@@ -537,7 +563,7 @@
       <p>განსაკუთრებული ყურადღება ეთმობა სუნის, ხმებისა და ვიზუალური დეტალების აღქმას, სხეულზე ფოკუსირებას, ნელი ტემპის შენარჩუნებასა და გარემოსთან ურთიერთობის განცდას.</p>
     </blockquote>
 
-    <p>კვლევები მიუთითებს, რომ ასეთი პრაქტიკები ამცირებს კორტიზოლის დონეს, აუმჯობესებს განწყობას და ამცირებს შფოთვის სიმპტომებს. <a href="/fsiqoterapevti-tbilisshi.html">ფსიქოთერაპიაში</a> ბუნებაზე დაფუძნებული ინტერვენციები შეიძლება გამოყენებულ იქნეს, მაგალითად:</p>
+    <p>კვლევები მიუთითებს, რომ ასეთი პრაქტიკები ამცირებს კორტიზოლის დონეს, აუმჯობესებს განწყობას და ამცირებს შფოთვის სიმპტომებს. <a href="/fsiqoterapevti-tbilisshi">ფსიქოთერაპიაში</a> ბუნებაზე დაფუძნებული ინტერვენციები შეიძლება გამოყენებულ იქნეს, მაგალითად:</p>
 
     <ul class="bullet-list">
       <li>სესიის ნაწილი ღია სივრცეში ჩატარება</li>
@@ -560,18 +586,19 @@
     <p>მომავალში შესაძლებელია, რომ ფსიქოთერაპია კიდევ უფრო მეტად განვითარდეს ეკოლოგიური მიმართულებით, სადაც ადამიანისა და გარემოს ურთიერთობა გახდება ცენტრალური თემა. თუ ეს თემა თქვენს გამოცდილებას ეხმიანება, შეგიძლიათ, <a href="#contact">პირველი უფასო გასაუბრებით</a> დაიწყოთ.</p>
 
     <div style="margin: 2rem 0;">
-      <a href="#contact" class="btn-primary">კონსულტაციის დაჯავშნა</a>
-      <a href="/chems-shesakheb.html" class="btn-outline">გაიგე მეტი</a>
+      <a href="#contact" class="btn-primary">პირველი უფასო გასაუბრება</a>
+      <a href="/chems-shesakheb" class="btn-outline">გაიგე მეტი</a>
     </div>
 
-    <div class="author-card">
-      <img class="author-avatar" src="/author-avatar.jpg" alt="გიორგი ირემაშვილი" width="52" height="52" loading="lazy" decoding="async" />
-      <div class="author-info">
-        <strong>გიორგი ირემაშვილი, MD</strong>
-        <span>მედიცინის დოქტორი და ინტეგრირებული ფსიქოთერაპიის პრაქტიკოსი. ჰუმანისტური, ეგზისტენციური მიდგომები. თბილისი, საქართველო.</span>
-      </div>
-    </div>
-
+    <aside class="trust-note" aria-label="სტატიის სანდოობის შენიშვნა">
+      <h2>შენიშვნა</h2>
+      <p>ეს სტატია ინფორმაციულია და არ ცვლის ინდივიდუალურ ფსიქოთერაპიას, დიაგნოზს ან სამედიცინო დახმარებას. თუ თავს ან სხვას საფრთხეს უქმნით, დაუკავშირდით გადაუდებელ დახმარებას ნომერზე <a href="tel:112">112</a>.</p>
+      <h2>წყაროები</h2>
+      <ul>
+        <li><a href="https://www.who.int/europe/publications/i/item/9789289055666" target="_blank" rel="noopener">World Health Organization: Urban green spaces and health</a>Instagram </li>
+        <li><a href="https://pubmed.ncbi.nlm.nih.gov/32182650/" target="_blank" rel="noopener">PubMed: Nature and mental health review</a>Instagram </li>
+      </ul>
+    </aside>
   </article>
 
   <section class="wrap contact-section" id="contact" aria-label="კონტაქტი">
@@ -581,12 +608,14 @@
       <p>თუ ეს თემა თქვენთვის ახლობელია, შეგიძლიათ, დამიკავშირდეთ ტელეფონით, WhatsApp-ით, ელ-ფოსტით ან Instagram-ზე.</p>
       <div class="contact-actions">
         <a class="contact-action primary" href="tel:+995579070205">დარეკვა</a>
-        <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="contact-action whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
         <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
-        <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+        <a class="contact-action instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
       </div>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი</p>
@@ -594,14 +623,26 @@
 
 </div>
 <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
-  <a class="mobile-call" href="tel:+995579070205">დარეკვა</a>
+  <a class="mobile-call" href="tel:+995579070205">📞 დარეკვა</a>
   <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
 </div>
 <script>
-  document.getElementById('hamburger')?.addEventListener('click', function() {
-    var navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  function closeArticleMenu() {
+    navLinks?.classList.remove('open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+  }
+  hamburger?.addEventListener('click', function() {
     var isOpen = navLinks.classList.toggle('open');
     this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    if (isOpen) navLinks?.querySelector('a')?.focus();
+  });
+  navLinks?.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', closeArticleMenu);
+  });
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') closeArticleMenu();
   });
 </script>
 </body>

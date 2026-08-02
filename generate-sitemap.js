@@ -15,15 +15,16 @@ function getLastMod(filepath) {
 // Discover published blog posts from blog/index.html (commented-out links are ignored)
 const blogIndex = fs.readFileSync('blog/index.html', 'utf8');
 const blogIndexNoComments = blogIndex.replace(/<!--[\s\S]*?-->/g, '');
-const blogLinks = [...blogIndexNoComments.matchAll(/href="\/blog\/([^"]+\.html)"/g)]
-  .map(m => `blog/${m[1]}`);
+const blogLinks = [...blogIndexNoComments.matchAll(/href="\/blog\/([^"#/]+)(?:\.html)?"/g)]
+  .map(m => `blog/${m[1]}.html`);
 
 const pages = [
   { path: 'index.html',      url: '/',       priority: '1.0', changefreq: 'weekly'  },
-  { path: 'fsiqoterapevti-tbilisshi.html', url: '/fsiqoterapevti-tbilisshi.html', priority: '0.95', changefreq: 'monthly' },
-  { path: 'chems-shesakheb.html', url: '/chems-shesakheb.html', priority: '0.85', changefreq: 'monthly' },
+  { path: 'fsiqoterapevti-tbilisshi.html', url: '/fsiqoterapevti-tbilisshi', priority: '0.95', changefreq: 'monthly' },
+  { path: 'chems-shesakheb.html', url: '/chems-shesakheb', priority: '0.85', changefreq: 'monthly' },
+  { path: 'konfidencialurobis-politika.html', url: '/konfidencialurobis-politika', priority: '0.3', changefreq: 'yearly' },
   { path: 'blog/index.html', url: '/blog/',  priority: '0.9', changefreq: 'weekly'  },
-  ...blogLinks.map(p => ({ path: p, url: `/${p}`, priority: '0.8', changefreq: 'monthly' }))
+  ...blogLinks.map(p => ({ path: p, url: `/${p.replace(/\.html$/, '')}`, priority: '0.8', changefreq: 'monthly' }))
 ];
 
 const urls = pages.map(({ path, url, priority, changefreq }) => {

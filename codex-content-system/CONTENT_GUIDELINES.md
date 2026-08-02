@@ -156,7 +156,10 @@ Preferred blog structure:
 4. Practical explanations, examples, or reflective questions
 5. One short highlight/summary box if useful
 6. Soft CTA near the end
-7. Author note for Giorgi Iremashvili, MD
+7. Contact section or soft CTA
+
+Do not add the old author card at the end of blog posts. Avoid repeating this block in new posts:
+"გიორგი ირემაშვილი, MD" plus the short professional bio.
 
 Recommended length:
 - short educational article: 700-1,000 words
@@ -198,7 +201,7 @@ Keep visual style consistent with existing blog pages:
 - article tag
 - article metadata
 - readable article body
-- author card
+- no old author card at the end of blog posts
 - consultation CTA
 
 ## Website Optimization Chat Role
@@ -272,3 +275,12 @@ Before finalizing content, check:
 - ქართულში, როცა ერთ წინადადებაში ორი ზმნაა და ისინი ერთ სინტაქსურ კონსტრუქციაში არ ერწყმის ერთმანეთს, მათ შორის ხშირად საჭიროა მძიმე.
   არასწორი: შეგვიძლია რამდენიმე მიმართულებით ვიმუშაოთ.
   სწორი: შეგვიძლია, რამდენიმე მიმართულებით ვიმუშაოთ.
+- ტექნიკურ ქართულშიც მოერიდე ბუნდოვან, მძიმის გარეშე მიბმულ მდგომარეობის აღწერას. თუ წინადადებაში ჯერ ფაქტია ნათქვამი და შემდეგ მდგომარეობა/განმარტება ემატება, გამოყავი მძიმით ან გადააკეთე დამოკიდებულ წინადადებად.
+  ნაკლებად ბუნებრივი: სამუშაო დირექტორიაში რამდენიმე ლოკალური/staged ცვლილებაა ჯერ არაკომიტებული.
+  უკეთესი: სამუშაო დირექტორიაში რამდენიმე ლოკალური/staged ცვლილებაა, რომლებიც ჯერ დაკომიტებული არ არის.
+- როცა `მაგალითად`-ის შემდეგ ჩამონათვალი მოდის, ორწერტილი გამოიყენე.
+  ნაკლებად ბუნებრივი: მაგალითად, ახალ ადამიანებთან შეხვედრის, საჯაროდ საუბრის ან ჯგუფში აზრის გამოთქმის წინ.
+  უკეთესი: მაგალითად: ახალ ადამიანებთან შეხვედრის, საჯაროდ საუბრის ან ჯგუფში აზრის გამოთქმის წინ.
+- ჩამონათვალში, როცა ორი ან მეტი განსაზღვრება `და` კავშირით ებმის ერთმანეთს, `და`-ს წინ მდგომ სიტყვას ზოგჯერ ბოლოში `-ა` ემატება.
+  ნაკლებად ბუნებრივი: საკუთარი თავის მკაცრ და უარყოფით შეფასებას.
+  უკეთესი: საკუთარი თავის მკაცრსა და უარყოფით შეფასებას.

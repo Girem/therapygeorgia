@@ -4,15 +4,80 @@
 
 [[redirects]]
   from = "/psychotherapist-tbilisi.html"
-  to = "/fsiqoterapevti-tbilisshi.html"
+  to = "/fsiqoterapevti-tbilisshi"
   status = 301
 
 [[redirects]]
   from = "/services.html"
-  to = "/fsiqoterapevti-tbilisshi.html"
+  to = "/fsiqoterapevti-tbilisshi"
   status = 301
 
 [[redirects]]
   from = "/about.html"
-  to = "/chems-shesakheb.html"
+  to = "/chems-shesakheb"
   status = 301
+
+[[redirects]]
+  from = "/fsiqoterapevti-tbilisshi.html"
+  to = "/fsiqoterapevti-tbilisshi"
+  status = 301
+
+[[redirects]]
+  from = "/chems-shesakheb.html"
+  to = "/chems-shesakheb"
+  status = 301
+
+[[redirects]]
+  from = "/konfidencialurobis-politika.html"
+  to = "/konfidencialurobis-politika"
+  status = 301
+
+[[redirects]]
+  from = "/blog/socialuri-shfotva.html"
+  to = "/blog/socialuri-shfotva"
+  status = 301
+
+[[redirects]]
+  from = "/blog/blog-psiqologi-psiqoterapevti-psiqiatri.html"
+  to = "/blog/blog-psiqologi-psiqoterapevti-psiqiatri"
+  status = 301
+
+[[redirects]]
+  from = "/blog/buneba.html"
+  to = "/blog/buneba"
+  status = 301
+
+[[redirects]]
+  from = "/blog/blog-therapiis-7-rchevebi.html"
+  to = "/blog/blog-therapiis-7-rchevebi"
+  status = 301
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

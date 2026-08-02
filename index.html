@@ -69,6 +69,28 @@
     }
 
     a { color: inherit; }
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 100;
+      transform: translateY(-140%);
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+      padding: 0.7rem 1rem;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .skip-link:focus-visible {
+      transform: translateY(0);
+      outline: 3px solid rgba(47, 111, 98, 0.35);
+      outline-offset: 3px;
+    }
+    :focus-visible {
+      outline: 3px solid rgba(47, 111, 98, 0.38);
+      outline-offset: 3px;
+    }
     img,
     svg { max-width: 100%; }
     .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
@@ -153,6 +175,36 @@
     .language-switcher button[aria-pressed="true"] {
       background: var(--green-dark);
       color: #fff;
+    }
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--green-dark);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-toggle span {
+      width: 20px;
+      height: 2px;
+      border-radius: 99px;
+      background: currentColor;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
     }
 
     .hero {
@@ -472,6 +524,35 @@
       margin: 0 auto;
       padding: 0.5rem;
     }
+    .faq-section-heading {
+      max-width: 980px;
+      margin: 0 auto 1rem;
+    }
+    .faq-section-toggle {
+      width: 100%;
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .faq-section-icon,
+    .faq-icon {
+      color: var(--green-dark);
+      font-weight: 650;
+      line-height: 1;
+    }
+    .faq-section.is-collapsed .faq-box {
+      display: none;
+    }
     .faq-item + .faq-item {
       border-top: 1px solid rgba(47, 111, 98, 0.12);
     }
@@ -533,6 +614,26 @@
       font-size: 14px;
       overflow-wrap: anywhere;
     }
+    .contact-list a.social-link {
+      width: fit-content;
+      min-height: 36px;
+      padding: 7px 12px;
+      border-radius: var(--radius);
+      color: #fff;
+      font-weight: 650;
+    }
+    .whatsapp-action,
+    .mobile-wa {
+      border-color: transparent !important;
+      background: #25D366 !important;
+      color: #fff !important;
+    }
+    .instagram-action {
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #833AB4 0%, #E1306C 48%, #FCAF45 100%) !important;
+      color: #fff !important;
+      gap: 0.4rem;
+    }
     .form-group {
       display: grid;
       gap: 0.45rem;
@@ -561,6 +662,41 @@
     .hidden-field {
       display: none;
     }
+    .form-help,
+    .form-privacy,
+    .form-error {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .form-help,
+    .form-privacy {
+      color: var(--text);
+    }
+    .form-error {
+      color: #6f342f;
+      font-weight: 650;
+    }
+    .consent-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 0.65rem;
+      margin: 1rem 0;
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .consent-row input {
+      width: 18px;
+      height: 18px;
+      margin-top: 0.2rem;
+      accent-color: var(--green-dark);
+    }
+    .form-privacy a,
+    .consent-row a {
+      color: var(--green-dark);
+      font-weight: 650;
+    }
     .form-submit {
       width: 100%;
       min-height: 52px;
@@ -579,6 +715,11 @@
       color: var(--green-dark);
       font-size: 14px;
       font-weight: 650;
+      text-align: center;
+    }
+    .form-error {
+      display: none;
+      margin-top: 1rem;
       text-align: center;
     }
     footer {
@@ -606,13 +747,22 @@
     @media (max-width: 680px) {
       .page { padding-top: 1rem; padding-bottom: 5.6rem; }
       .wrap { width: min(100% - 28px, 1450px); }
-      .header { grid-template-columns: 1fr; }
+      .header { grid-template-columns: 1fr auto; align-items: center; }
       .brand img { width: 190px; }
-      .header-actions { justify-self: stretch; justify-content: space-between; }
+      .header-actions { justify-self: end; justify-content: flex-end; }
+      .menu-toggle { display: inline-flex; }
       .top-cta { display: none; }
-      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .nav {
+        display: none;
+        grid-column: 1 / -1;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding-top: 0.75rem;
+      }
+      .nav.open { display: grid; }
       .nav a {
-        padding: 8px 10px;
+        padding: 11px 12px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: rgba(255,255,255,0.58);
@@ -637,11 +787,19 @@
         width: calc(100% + 28px);
         margin-left: -14px;
         margin-right: -14px;
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 24px;
+        padding-right: 24px;
         padding-bottom: 3rem;
       }
-      .section-head { display: grid; gap: 0.75rem; }
+      .hero-text .kicker,
+      .hero-text .ornament {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+      }
+      .section-head { display: grid; gap: 0.75rem; text-align: center; }
+      .section-link { justify-self: center; }
       .blog-grid { grid-template-columns: 1fr; }
       .blog-card,
       .contact-panel,
@@ -672,16 +830,15 @@
         font-weight: 600;
       }
       .mobile-call { background: var(--green-dark); color: #fff; }
-      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
     }
 
     @media (max-width: 420px) {
       .page { padding-top: 0.8rem; }
       .wrap { width: min(100% - 22px, 1450px); }
-      .brand img { width: 172px; }
+      .brand img { width: 150px; }
       .header-actions { gap: 0.55rem; }
-      .language-switcher button { min-width: 31px; font-size: 11px; }
-      .nav { grid-template-columns: 1fr; }
+      .language-switcher button { min-width: 29px; font-size: 11px; }
+      .menu-toggle { width: 40px; height: 40px; }
       h1 { font-size: 30px; line-height: 1.22; }
       .section-title { font-size: 27px; }
       .hero { padding-top: 2rem; }
@@ -697,16 +854,17 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">მთავარ შინაარსზე გადასვლა</a>
   <div class="page">
     <header class="wrap header">
       <a href="/" class="brand" aria-label="TherapyGeorgia">
-        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" width="728" height="184" alt="TherapyGeorgia" />
       </a>
-      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+      <nav class="nav" id="mainNav" aria-label="მთავარი ნავიგაცია">
         <a href="#top" data-i18n="nav.home">მთავარი</a>
-        <a href="/fsiqoterapevti-tbilisshi.html" data-i18n="nav.services">მომსახურებები</a>
+        <a href="/fsiqoterapevti-tbilisshi" data-i18n="nav.services">მომსახურებები</a>
         <a href="/blog/" data-i18n="nav.blog">ბლოგი</a>
-        <a href="/chems-shesakheb.html" data-i18n="nav.about">ჩემს შესახებ</a>
+        <a href="/chems-shesakheb" data-i18n="nav.about">ჩემს შესახებ</a>
         <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
       </nav>
       <div class="header-actions">
@@ -715,11 +873,17 @@
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
           <button type="button" data-lang="ru" aria-pressed="false">RU</button>
         </div>
+        <button class="menu-toggle" type="button" aria-label="მენიუს გახსნა" aria-controls="mainNav" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <a class="top-cta" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
       </div>
     </header>
 
-    <main id="top">
+    <main id="main">
+      <span id="top"></span>
       <section class="wrap hero" aria-label="TherapyGeorgia მთავარი სექცია">
         <div class="hero-text">
           <div class="kicker" data-i18n="hero.kicker">ფსიქოთერაპია</div>
@@ -741,22 +905,22 @@
           <p class="lead" data-i18n="hero.lead">ინტეგრირებული, ადამიანზე ორიენტირებული მიდგომა, რომელიც გეხმარებათ, უკეთ გაიგოთ საკუთარი თავი, ემოციები და ურთიერთობები.</p>
           <div class="actions">
             <a class="btn-main" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
-            <a class="btn-secondary" href="/fsiqoterapevti-tbilisshi.html" data-i18n="cta.services">სერვისების ნახვა →</a>
+          <a class="btn-secondary" href="/fsiqoterapevti-tbilisshi" data-i18n="cta.services">სერვისების ნახვა →</a>
           </div>
         </div>
 
         <div class="visual" aria-label="თერაპიული საუბრის ილუსტრაცია">
-          <img src="/preview-assets/therapy-hero-full.webp" alt="თერაპიული საუბრის ილუსტრაცია" />
+          <img src="/preview-assets/therapy-hero-full.webp" width="980" height="772" fetchpriority="high" decoding="async" alt="თერაპიული საუბრის ილუსტრაცია" />
         </div>
       </section>
 
       <section class="wrap section soft" id="blog" aria-label="ბლოგი">
         <div class="section-head">
-          <h2 class="section-title" data-i18n="blog.title">სტატიები ფსიქიკური ჯანმრთელობის შესახებ</h2>
+          <h2 class="section-title" data-i18n="blog.title">უახლესი სტატიები ფსიქოთერაპიასა და მენტალურ ჯანმრთელობაზე</h2>
           <a class="section-link" href="/blog/" data-i18n="blog.all">ყველა სტატია →</a>
         </div>
         <div class="blog-grid">
-          <a href="/blog/socialuri-shfotva.html" class="blog-card">
+          <a href="/blog/socialuri-shfotva" class="blog-card">
             <div>
               <div class="blog-tag" data-i18n="blog.social.tag">შფოთვა</div>
               <h3 data-i18n="blog.social.title">სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ</h3>
@@ -764,7 +928,7 @@
             </div>
             <div class="blog-date" data-i18n="blog.social.date">2026 · 10-12 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri.html" class="blog-card">
+          <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri" class="blog-card">
             <div>
               <div class="blog-tag" data-i18n="blog.professions.tag">ფსიქიკური ჯანმრთელობა</div>
               <h3 data-i18n="blog.professions.title">ფსიქოლოგი, ფსიქოთერაპევტი თუ ფსიქიატრი - ვის მივმართო?</h3>
@@ -772,7 +936,7 @@
             </div>
             <div class="blog-date" data-i18n="blog.professions.date">2026 · 8 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/buneba.html" class="blog-card">
+          <a href="/blog/buneba" class="blog-card">
             <div>
               <div class="blog-tag" data-i18n="blog.nature.tag">ჰოლისტური</div>
               <h3 data-i18n="blog.nature.title">ბუნებასთან ქრონიკული გაუცხოება - ფსიქოთერაპიული პერსპექტივა</h3>
@@ -780,7 +944,7 @@
             </div>
             <div class="blog-date" data-i18n="blog.nature.date">2026 · 8 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/blog-therapiis-7-rchevebi.html" class="blog-card">
+          <a href="/blog/blog-therapiis-7-rchevebi" class="blog-card">
             <div>
               <div class="blog-tag" data-i18n="blog.tips.tag">ფსიქიკური ჯანმრთელობა</div>
               <h3 data-i18n="blog.tips.title">თერაპიის 7 რჩევა: სესიებიდან მეტის მისაღებად</h3>
@@ -797,30 +961,33 @@
             <h2 class="section-title" data-i18n="about.title">გიორგი ირემაშვილი, MD</h2>
             <p data-i18n="about.text">ექიმი და ფსიქოთერაპევტი. ვმუშაობ ინდივიდუალურ შეხვედრებში თბილისში და ონლაინ, ჰუმანისტურ-ეგზისტენციალური ორიენტაციით.</p>
           </div>
-          <a class="btn-main" href="/chems-shesakheb.html" data-i18n="about.link">ჩემს შესახებ</a>
+          <a class="btn-main" href="/chems-shesakheb" data-i18n="about.link">ჩემს შესახებ</a>
         </article>
       </section>
 
-      <section class="wrap section soft" aria-label="ხშირად დასმული კითხვები">
-        <div class="section-head">
-          <h2 class="section-title" data-i18n="faq.title">ხშირად დასმული კითხვები</h2>
-        </div>
-        <div class="faq-box">
+      <section class="wrap section soft faq-section is-collapsed" aria-label="ხშირად დასმული კითხვები">
+        <h2 class="section-title faq-section-heading">
+          <button class="faq-section-toggle" type="button" aria-expanded="false" aria-controls="faqList">
+            <span data-i18n="faq.title">ხშირად დასმული კითხვები</span>
+            <span class="faq-section-icon" aria-hidden="true">+</span>
+          </button>
+        </h2>
+        <div class="faq-box" id="faqList">
           <article class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.price.q">სესია რა ღირს?</span><span aria-hidden="true">+</span></button>
-            <div class="faq-a" data-i18n="faq.price.a">სესიის სტანდარტული საფასური 75₾-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, სხვა ფასდაკლებული ტარიფით სარგებლობაც შესაძლებელია.</div>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqPrice"><span data-i18n="faq.price.q">სესია რა ღირს?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-a" id="faqPrice" hidden data-i18n="faq.price.a">სესიის სტანდარტული საფასური 75₾-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, სხვა ფასდაკლებული ტარიფით სარგებლობაც შესაძლებელია.</div>
           </article>
           <article class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.first.q">პირველი შეხვედრა რას გულისხმობს?</span><span aria-hidden="true">+</span></button>
-            <div class="faq-a" data-i18n="faq.first.a">პირველი შეხვედრა უფასოა და გაცნობითი ხასიათისაა. ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და შემდეგ ნაბიჯებს.</div>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqFirst"><span data-i18n="faq.first.q">პირველი შეხვედრა რას გულისხმობს?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-a" id="faqFirst" hidden data-i18n="faq.first.a">პირველი გასაუბრება უფასოა და გაცნობითი ხასიათისაა. ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და შემდეგ ნაბიჯებს.</div>
           </article>
           <article class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.online.q">ონლაინ სესია შესაძლებელია?</span><span aria-hidden="true">+</span></button>
-            <div class="faq-a" data-i18n="faq.online.a">დიახ, ვმუშაობ როგორც პირისპირ, ასევე ონლაინ ფორმატში.</div>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqOnline"><span data-i18n="faq.online.q">ონლაინ სესია შესაძლებელია?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-a" id="faqOnline" hidden data-i18n="faq.online.a">დიახ, ვმუშაობ როგორც პირისპირ, ასევე ონლაინ ფორმატში.</div>
           </article>
           <article class="faq-item">
-            <button class="faq-q" type="button" aria-expanded="false"><span data-i18n="faq.confidential.q">შეხვედრა კონფიდენციალურია?</span><span aria-hidden="true">+</span></button>
-            <div class="faq-a" data-i18n="faq.confidential.a">სესიების შინაარსი კონფიდენციალურია და მესამე მხარეს არ გადაეცემა, გარდა კანონით განსაზღვრული უსაფრთხოების გამონაკლისებისა.</div>
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faqConfidential"><span data-i18n="faq.confidential.q">შეხვედრა კონფიდენციალურია?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-a" id="faqConfidential" hidden data-i18n="faq.confidential.a">სესიების შინაარსი კონფიდენციალურია და მესამე მხარეს არ გადაეცემა, გარდა კანონით განსაზღვრული უსაფრთხოების გამონაკლისებისა.</div>
           </article>
         </div>
       </section>
@@ -829,60 +996,68 @@
         <div class="contact-grid">
           <div class="contact-panel">
             <div class="kicker" data-i18n="contact.kicker">კონტაქტი</div>
-            <h2 class="section-title" data-i18n="contact.title">მზად ხართ დაიწყოთ?</h2>
-            <p data-i18n="contact.text">დამიკავშირდით ნომერზე ან შეავსეთ ფორმა. პირველ უფასო გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი.</p>
-            <div class="contact-note" data-i18n="contact.note">პირველი გასაუბრებისთვის სესიის ტიპში აირჩიეთ საწყისი კონსულტაცია.</div>
+            <h2 class="section-title" data-i18n="contact.title">მზად ხარ, დავიწყოთ?</h2>
+            <p data-i18n="contact.text">დამიკავშირდით ნომერზე ან შეავსეთ ფორმა. პირველ უფასო გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და პროცესი როგორ შეიძლება გაგრძელდეს.</p>
+            <div class="contact-note" data-i18n="contact.note">პირველი გასაუბრებისთვის სესიის ტიპში აირჩიეთ პირველი უფასო გასაუბრება.</div>
             <div class="contact-list">
-              <span data-i18n="contact.location">თბილისი, საქართველო</span>
+              <span data-i18n="contact.location">📍 თბილისი, საქართველო</span>
               <a href="tel:+995579070205">+995 579 070 205</a>
               <a href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
-              <a href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
-              <a href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+              <a class="social-link whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="social-link instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
             </div>
           </div>
 
           <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden-field"><label>არ შეავსოთ: <input name="bot-field" /></label></p>
+            <p class="hidden-field" aria-hidden="true"><label tabindex="-1">არ შეავსოთ: <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <p class="form-privacy" data-i18n="form.privacy">ფორმით იგზავნება თქვენი სახელი, ტელეფონი, სურვილის შემთხვევაში ელ-ფოსტა, სესიის ტიპი და შეტყობინება, რათა დაგიკავშირდეთ პირველ უფასო გასაუბრებაზე.</p>
             <div class="form-group">
               <label for="fname" data-i18n="form.name">სახელი</label>
-              <input type="text" id="fname" name="name" placeholder="თქვენი სახელი" required />
+              <input type="text" id="fname" name="name" placeholder="თქვენი სახელი" autocomplete="name" required />
             </div>
             <div class="form-group">
               <label for="femail" data-i18n="form.email">ელ-ფოსტა (არასავალდებულო)</label>
-              <input type="email" id="femail" name="email" placeholder="name@example.com" />
+              <input type="email" id="femail" name="email" placeholder="name@example.com" autocomplete="email" />
             </div>
             <div class="form-group">
               <label for="fphone" data-i18n="form.phone">ტელეფონი</label>
-              <input type="tel" id="fphone" name="phone" placeholder="+995 5XX XXX XXX" autocomplete="tel" required />
+              <input type="tel" id="fphone" name="phone" placeholder="+995 5XX XXX XXX" autocomplete="tel" inputmode="tel" required />
+              <small class="form-help" data-i18n="form.phone.help">შეგიძლიათ, მიუთითოთ ქართული ან საერთაშორისო ნომერი.</small>
             </div>
             <div class="form-group">
               <label for="ftype" data-i18n="form.type">სესიის ტიპი</label>
-              <select id="ftype" name="type">
+              <select id="ftype" name="type" required>
                 <option value="" data-i18n="form.choose">აირჩიეთ...</option>
                 <option data-i18n="form.individual">ინდივიდუალური თერაპია</option>
                 <option data-i18n="form.online">ონლაინ სესია</option>
-                <option data-i18n="form.initial">საწყისი კონსულტაცია</option>
+                <option data-i18n="form.initial">პირველი უფასო გასაუბრება</option>
               </select>
             </div>
             <div class="form-group">
               <label for="fmsg" data-i18n="form.message">შეტყობინება</label>
               <textarea id="fmsg" name="message" rows="4" placeholder="მოკლედ აღწერეთ, რითი შეიძლება დაგეხმაროთ..."></textarea>
+              <p class="form-help" data-i18n="form.message.help">გთხოვთ, არ გააგზავნოთ ზედმეტი სამედიცინო ან განსაკუთრებით მგრძნობიარე ინფორმაცია.</p>
             </div>
+            <label class="consent-row">
+              <input type="checkbox" name="privacy-consent" required />
+              <span data-i18n="form.consent">ვეთანხმები, რომ ჩემი მონაცემები დამუშავდეს პასუხის დასაბრუნებლად და წავიკითხე <a href="/konfidencialurobis-politika" target="_blank" rel="noopener">კონფიდენციალურობის პოლიტიკა</a>.</span>
+            </label>
             <button type="submit" class="form-submit" data-i18n="form.submit">გაგზავნა</button>
             <div class="success-msg" id="successMsg" data-i18n="form.success">გმადლობთ! დაგიკავშირდებით 24 საათში.</div>
+            <div class="form-error" id="errorMsg" data-i18n="form.error">შეტყობინების გაგზავნა ვერ მოხერხდა. გთხოვთ, დამიკავშირდეთ ტელეფონით ან WhatsApp-ით.</div>
           </form>
         </div>
       </section>
 
       <footer class="wrap">
-        <p>© 2026 therapygeorgia.ge · გიორგი ირემაშვილი, MD</p>
+        <p>© 2026 therapygeorgia.ge · გიორგი ირემაშვილი, MD · <a href="/konfidencialurobis-politika">კონფიდენციალურობის პოლიტიკა</a></p>
       </footer>
     </main>
   </div>
 
   <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
-    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">დარეკვა</a>
+    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">📞 დარეკვა</a>
     <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <script>
@@ -895,19 +1070,19 @@
         "nav.contact": "კონტაქტი",
         "cta.contact": "დამიკავშირდი",
         "cta.services": "სერვისების ნახვა →",
-        "mobile.call": "დარეკვა",
+        "mobile.call": "📞 დარეკვა",
         "hero.kicker": "ფსიქოთერაპია",
         "hero.title": "შინაგანი ზრდისა და ცვლილების სივრცე",
         "hero.lead": "ინტეგრირებული, ადამიანზე ორიენტირებული მიდგომა, რომელიც გეხმარებათ, უკეთ გაიგოთ საკუთარი თავი, ემოციები და ურთიერთობები.",
         "services.kicker": "მომსახურებები",
         "services.title": "ფსიქოთერაპევტი თბილისში და ონლაინ",
-        "services.lead": "თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia არის ჩემი - ექიმი გიორგი ირემაშვილის ინდივიდუალური ფსიქოთერაპიული პრაქტიკა. სამუშაო სივრცე მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.",
+        "services.lead": "თუ ეძებთ ფსიქოთერაპევტს თბილისში ან გირჩევნიათ ონლაინ სესია, TherapyGeorgia ჩემი — ექიმ გიორგი ირემაშვილის — ინდივიდუალური ფსიქოთერაპიული პრაქტიკაა. სამუშაო სივრცე შექმნილია მშვიდი, კონფიდენციალური და ადამიანზე ორიენტირებული პროცესისთვის.",
         "service.format.title": "ფორმატი",
         "service.format.text": "პირისპირ შეხვედრები თბილისში ან ონლაინ სესიები.",
         "service.languages.title": "ენები",
         "service.languages.text": "ქართული, ინგლისური, რუსული და გერმანული.",
         "service.first.title": "პირველი გასაუბრება",
-        "service.first.text": "პირველი შეხვედრა უფასოა - ერთად გავარკვევთ შემდეგ ნაბიჯებს.",
+        "service.first.text": "პირველი გასაუბრება უფასოა - ერთად გავარკვევთ შემდეგ ნაბიჯებს.",
         "service.approaches.title": "მიდგომები",
         "service.approaches.text": "ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომები.",
         "service.step1.title": "დამიკავშირდით",
@@ -916,7 +1091,7 @@
         "service.step2.text": "განვიხილავთ თქვენს სიტუაციას, მოლოდინებს, სამუშაო ფორმატს და შესაძლო შემდეგ ნაბიჯებს.",
         "service.step3.title": "თერაპიული პროცესი",
         "service.step3.text": "თუ ერთად მუშაობა შესაფერისი იქნება, შევთანხმდებით სესიების ფორმატზე, სიხშირეზე და მიზნებზე.",
-        "blog.title": "სტატიები ფსიქიკური ჯანმრთელობის შესახებ",
+        "blog.title": "უახლესი სტატიები ფსიქოთერაპიასა და მენტალურ ჯანმრთელობაზე",
         "blog.all": "ყველა სტატია →",
         "blog.social.tag": "შფოთვა",
         "blog.social.title": "სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ",
@@ -941,27 +1116,33 @@
         "faq.price.q": "სესია რა ღირს?",
         "faq.price.a": "სესიის სტანდარტული საფასური 75₾-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, სხვა ფასდაკლებული ტარიფით სარგებლობაც შესაძლებელია.",
         "faq.first.q": "პირველი შეხვედრა რას გულისხმობს?",
-        "faq.first.a": "პირველი შეხვედრა უფასოა და გაცნობითი ხასიათისაა. ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და შემდეგ ნაბიჯებს.",
+        "faq.first.a": "პირველი გასაუბრება უფასოა და გაცნობითი ხასიათისაა. ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და შემდეგ ნაბიჯებს.",
         "faq.online.q": "ონლაინ სესია შესაძლებელია?",
         "faq.online.a": "დიახ, ვმუშაობ როგორც პირისპირ, ასევე ონლაინ ფორმატში.",
         "faq.confidential.q": "შეხვედრა კონფიდენციალურია?",
         "faq.confidential.a": "სესიების შინაარსი კონფიდენციალურია და მესამე მხარეს არ გადაეცემა, გარდა კანონით განსაზღვრული უსაფრთხოების გამონაკლისებისა.",
         "contact.kicker": "კონტაქტი",
-        "contact.title": "მზად ხართ დაიწყოთ?",
-        "contact.text": "დამიკავშირდით ნომერზე ან შეავსეთ ფორმა. პირველ უფასო გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი.",
-        "contact.note": "პირველი გასაუბრებისთვის სესიის ტიპში აირჩიეთ საწყისი კონსულტაცია.",
-        "contact.location": "თბილისი, საქართველო",
+        "contact.title": "მზად ხარ, დავიწყოთ?",
+        "contact.text": "დამიკავშირდით ნომერზე ან შეავსეთ ფორმა. პირველ უფასო გასაუბრებაზე ერთად გავარკვევთ, რა გჭირდებათ და პროცესი როგორ შეიძლება გაგრძელდეს.",
+        "contact.note": "პირველი გასაუბრებისთვის სესიის ტიპში აირჩიეთ პირველი უფასო გასაუბრება.",
+        "contact.location": "📍 თბილისი, საქართველო",
+        "form.privacy": "ფორმით იგზავნება თქვენი სახელი, ტელეფონი, სურვილის შემთხვევაში ელ-ფოსტა, სესიის ტიპი და შეტყობინება, რათა დაგიკავშირდეთ პირველ უფასო გასაუბრებაზე.",
         "form.name": "სახელი",
         "form.email": "ელ-ფოსტა (არასავალდებულო)",
         "form.phone": "ტელეფონი",
+        "form.phone.help": "შეგიძლიათ, მიუთითოთ ქართული ან საერთაშორისო ნომერი.",
         "form.type": "სესიის ტიპი",
         "form.choose": "აირჩიეთ...",
         "form.individual": "ინდივიდუალური თერაპია",
         "form.online": "ონლაინ სესია",
-        "form.initial": "საწყისი კონსულტაცია",
+        "form.initial": "პირველი უფასო გასაუბრება",
         "form.message": "შეტყობინება",
+        "form.message.help": "გთხოვთ, არ გააგზავნოთ ზედმეტი სამედიცინო ან განსაკუთრებით მგრძნობიარე ინფორმაცია.",
+        "form.consent": "ვეთანხმები, რომ ჩემი მონაცემები დამუშავდეს პასუხის დასაბრუნებლად და წავიკითხე კონფიდენციალურობის პოლიტიკა.",
         "form.submit": "გაგზავნა",
-        "form.success": "გმადლობთ! დაგიკავშირდებით 24 საათში."
+        "form.loading": "იგზავნება...",
+        "form.success": "გმადლობთ! დაგიკავშირდებით 24 საათში.",
+        "form.error": "შეტყობინების გაგზავნა ვერ მოხერხდა. გთხოვთ, დამიკავშირდეთ ტელეფონით ან WhatsApp-ით."
       },
       en: {
         "nav.home": "Home",
@@ -971,7 +1152,7 @@
         "nav.contact": "Contact",
         "cta.contact": "Contact me",
         "cta.services": "View services →",
-        "mobile.call": "Call",
+        "mobile.call": "📞 Call",
         "hero.kicker": "Psychotherapy",
         "hero.title": "A space for inner growth and change",
         "hero.lead": "An integrated, person-centered approach that helps you better understand yourself, your emotions, and your relationships.",
@@ -992,7 +1173,7 @@
         "service.step2.text": "We discuss your situation, expectations, working format, and possible next steps.",
         "service.step3.title": "Therapeutic process",
         "service.step3.text": "If working together is appropriate, we agree on the session format, frequency, and goals.",
-        "blog.title": "Articles About Mental Health",
+        "blog.title": "Latest articles on psychotherapy and mental health",
         "blog.all": "All articles →",
         "blog.social.tag": "Anxiety",
         "blog.social.title": "Social anxiety: what it is, how it appears, and how to manage it",
@@ -1024,20 +1205,26 @@
         "faq.confidential.a": "Session content is confidential and is not shared with third parties, except for legally defined safety exceptions.",
         "contact.kicker": "Contact",
         "contact.title": "Ready to begin?",
-        "contact.text": "Contact me by phone or fill out the form. During the first free consultation, we can clarify what you need and how the process may continue.",
+        "contact.text": "Contact me by phone or fill out the form. During the first free conversation, we can clarify what you need and how the process may continue.",
         "contact.note": "For the first conversation, choose Initial consultation as the session type.",
-        "contact.location": "Tbilisi, Georgia",
+        "contact.location": "📍 Tbilisi, Georgia",
+        "form.privacy": "The form sends your name, phone number, optional email, session type, and message so I can contact you about the first free conversation.",
         "form.name": "Name",
         "form.email": "Email (optional)",
         "form.phone": "Phone",
+        "form.phone.help": "You can enter a Georgian or international phone number.",
         "form.type": "Session type",
         "form.choose": "Choose...",
         "form.individual": "Individual therapy",
         "form.online": "Online session",
         "form.initial": "Initial consultation",
         "form.message": "Message",
+        "form.message.help": "Please do not send excessive medical or especially sensitive information.",
+        "form.consent": "I agree that my data may be processed to respond to me, and I have read the privacy policy.",
         "form.submit": "Send",
-        "form.success": "Thank you! I will contact you within 24 hours."
+        "form.loading": "Sending...",
+        "form.success": "Thank you! I will contact you within 24 hours.",
+        "form.error": "The message could not be sent. Please contact me by phone or WhatsApp."
       },
       ru: {
         "nav.home": "Главная",
@@ -1047,7 +1234,7 @@
         "nav.contact": "Контакты",
         "cta.contact": "Связаться",
         "cta.services": "Посмотреть услуги →",
-        "mobile.call": "Позвонить",
+        "mobile.call": "📞 Позвонить",
         "hero.kicker": "Психотерапия",
         "hero.title": "Пространство для внутреннего роста и изменений",
         "hero.lead": "Интегрированный, ориентированный на человека подход, который помогает лучше понять себя, свои эмоции и отношения.",
@@ -1068,7 +1255,7 @@
         "service.step2.text": "Мы обсудим вашу ситуацию, ожидания, формат работы и возможные следующие шаги.",
         "service.step3.title": "Терапевтический процесс",
         "service.step3.text": "Если совместная работа будет подходящей, мы согласуем формат, частоту и цели сессий.",
-        "blog.title": "Статьи о ментальном здоровье",
+        "blog.title": "Новые статьи о психотерапии и ментальном здоровье",
         "blog.all": "Все статьи →",
         "blog.social.tag": "Тревога",
         "blog.social.title": "Социальная тревога: что это, как проявляется и как с ней справляться",
@@ -1102,30 +1289,51 @@
         "contact.title": "Готовы начать?",
         "contact.text": "Свяжитесь со мной по телефону или заполните форму. На первой бесплатной консультации мы уточним, что вам нужно и как процесс может продолжиться.",
         "contact.note": "Для первой беседы выберите тип сессии: Первичная консультация.",
-        "contact.location": "Тбилиси, Грузия",
+        "contact.location": "📍 Тбилиси, Грузия",
+        "form.privacy": "Через форму отправляются ваше имя, телефон, при желании email, тип сессии и сообщение, чтобы я мог связаться с вами по поводу первого бесплатного разговора.",
         "form.name": "Имя",
         "form.email": "Email (необязательно)",
         "form.phone": "Телефон",
+        "form.phone.help": "Можно указать грузинский или международный номер.",
         "form.type": "Тип сессии",
         "form.choose": "Выберите...",
         "form.individual": "Индивидуальная терапия",
         "form.online": "Онлайн-сессия",
         "form.initial": "Первичная консультация",
         "form.message": "Сообщение",
+        "form.message.help": "Пожалуйста, не отправляйте лишнюю медицинскую или особенно чувствительную информацию.",
+        "form.consent": "Я согласен(-на), чтобы мои данные были обработаны для ответа, и прочитал(-а) политику конфиденциальности.",
         "form.submit": "Отправить",
-        "form.success": "Спасибо! Я свяжусь с вами в течение 24 часов."
+        "form.loading": "Отправляется...",
+        "form.success": "Спасибо! Я свяжусь с вами в течение 24 часов.",
+        "form.error": "Сообщение не удалось отправить. Пожалуйста, свяжитесь со мной по телефону или WhatsApp."
       }
     };
 
     const languageButtons = document.querySelectorAll("[data-lang]");
     const translatableNodes = document.querySelectorAll("[data-i18n]");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("mainNav");
 
     function setLanguage(lang) {
       const dictionary = translations[lang] || translations.ka;
       document.documentElement.lang = lang;
       translatableNodes.forEach((node) => {
         const value = dictionary[node.dataset.i18n];
-        if (value) node.textContent = value;
+        if (!value) return;
+        if (node.dataset.i18n === "form.consent") {
+          const privacyLabel = lang === "en" ? "privacy policy" : lang === "ru" ? "политику конфиденциальности" : "კონფიდენციალურობის პოლიტიკა";
+          node.textContent = "";
+          node.append(document.createTextNode(value.replace(privacyLabel, "")));
+          const link = document.createElement("a");
+          link.href = "/konfidencialurobis-politika";
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = privacyLabel;
+          node.append(link, document.createTextNode("."));
+          return;
+        }
+        node.textContent = value;
       });
       languageButtons.forEach((button) => {
         button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
@@ -1137,13 +1345,49 @@
       button.addEventListener("click", () => setLanguage(button.dataset.lang));
     });
 
+    function closeMenu() {
+      mainNav?.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "მენიუს გახსნა");
+    }
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mainNav?.classList.toggle("open") || false;
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "მენიუს დახურვა" : "მენიუს გახსნა");
+      if (isOpen) mainNav?.querySelector("a")?.focus();
+    });
+
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+
     setLanguage(localStorage.getItem("therapygeorgia-lang") || "ka");
+
+    const faqSectionToggle = document.querySelector(".faq-section-toggle");
+    faqSectionToggle?.addEventListener("click", () => {
+      const section = faqSectionToggle.closest(".faq-section");
+      const isOpen = section.classList.toggle("is-collapsed") === false;
+      faqSectionToggle.setAttribute("aria-expanded", String(isOpen));
+      const icon = faqSectionToggle.querySelector(".faq-section-icon");
+      if (icon) icon.textContent = isOpen ? "-" : "+";
+    });
 
     document.querySelectorAll(".faq-q").forEach((button) => {
       button.addEventListener("click", () => {
         const item = button.closest(".faq-item");
         const isOpen = item.classList.toggle("open");
         button.setAttribute("aria-expanded", String(isOpen));
+        const answer = document.getElementById(button.getAttribute("aria-controls"));
+        if (answer) answer.hidden = !isOpen;
+        const icon = button.querySelector(".faq-icon");
+        if (icon) icon.textContent = isOpen ? "-" : "+";
       });
     });
 
@@ -1151,8 +1395,16 @@
       event.preventDefault();
       const form = event.currentTarget;
       const success = document.getElementById("successMsg");
+      const errorMsg = document.getElementById("errorMsg");
       const submit = form.querySelector(".form-submit");
-      if (submit) submit.disabled = true;
+      const currentLang = localStorage.getItem("therapygeorgia-lang") || "ka";
+      const dictionary = translations[currentLang] || translations.ka;
+      if (success) success.style.display = "none";
+      if (errorMsg) errorMsg.style.display = "none";
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = dictionary["form.loading"] || "იგზავნება...";
+      }
       try {
         const formData = new FormData(form);
         await fetch("/", {
@@ -1163,11 +1415,17 @@
           if (!response.ok) throw new Error("Form submission failed");
         });
         form.reset();
-        if (submit) submit.style.display = "none";
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = dictionary["form.submit"] || "გაგზავნა";
+        }
         if (success) success.style.display = "block";
       } catch (error) {
-        if (submit) submit.disabled = false;
-        alert("შეტყობინების გაგზავნა ვერ მოხერხდა. გთხოვთ, დამიკავშირდეთ ტელეფონით ან WhatsApp-ით.");
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = dictionary["form.submit"] || "გაგზავნა";
+        }
+        if (errorMsg) errorMsg.style.display = "block";
       }
     });
   </script>

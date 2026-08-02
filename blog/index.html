@@ -16,6 +16,23 @@
   <meta name="twitter:title" content="ბლოგი | therapygeorgia.ge" />
   <meta name="twitter:description" content="სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://therapygeorgia.ge/blog/#blog",
+    "name": "TherapyGeorgia.ge ბლოგი",
+    "description": "სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ.",
+    "url": "https://therapygeorgia.ge/blog/",
+    "inLanguage": "ka",
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://therapygeorgia.ge/#practice",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/"
+    }
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -40,8 +57,15 @@
       line-height: 1.7;
     }
     a { color: inherit; }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(47, 111, 98, 0.35);
+      outline-offset: 3px;
+    }
     img,
     svg { max-width: 100%; }
+    .skip-link { position: absolute; left: 1rem; top: 1rem; z-index: 1000; transform: translateY(-160%); padding: 0.75rem 1rem; border-radius: var(--radius); background: var(--green-dark); color: #fff; text-decoration: none; font-weight: 700; }
+    .skip-link:focus-visible { transform: translateY(0); }
     .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
     .wrap { width: min(1450px, calc(100vw - 86px)); margin: 0 auto; }
     .header {
@@ -72,6 +96,24 @@
     .top-cta { min-height: 40px; padding: 9px 20px; font-size: 14px; }
     .btn-main { min-height: 54px; padding: 14px 24px; font-size: 15px; }
     .btn-secondary { color: var(--green-dark); text-decoration: none; font-size: 14px; font-weight: 650; }
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--green-dark);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-toggle span { width: 20px; height: 2px; border-radius: 99px; background: currentColor; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .hero { max-width: 900px; margin: 0 auto; padding: 5rem 0 3.5rem; text-align: center; }
     .kicker { color: var(--green); font-size: 15px; font-weight: 500; margin-bottom: 0.65rem; }
     .ornament {
@@ -181,6 +223,18 @@
       justify-content: center;
     }
     .contact-action.primary { border-color: transparent; background: var(--green-dark); color: #fff; }
+    .whatsapp-action,
+    .mobile-wa {
+      border-color: transparent !important;
+      background: #25D366 !important;
+      color: #fff !important;
+    }
+    .instagram-action {
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #833AB4 0%, #E1306C 48%, #FCAF45 100%) !important;
+      color: #fff !important;
+      gap: 0.4rem;
+    }
     footer { padding: 3rem 0 0; color: var(--green-muted); font-size: 13px; text-align: center; }
     .mobile-contact { display: none; }
     @media (max-width: 1120px) {
@@ -193,11 +247,14 @@
     @media (max-width: 680px) {
       .page { padding-top: 1rem; padding-bottom: 5.6rem; }
       .wrap { width: min(100% - 28px, 1450px); }
+      .header { grid-template-columns: 1fr auto; align-items: center; }
       .brand img { width: 190px; }
       .top-cta { display: none; }
-      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .menu-toggle { display: inline-flex; }
+      .nav { display: none; grid-column: 1 / -1; width: 100%; grid-template-columns: 1fr; gap: 0.5rem; padding-top: 0.75rem; }
+      .nav.open { display: grid; }
       .nav a {
-        padding: 8px 10px;
+        padding: 11px 12px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: rgba(255,255,255,0.58);
@@ -212,7 +269,7 @@
         width: calc(100% + 28px);
         margin-left: -14px;
         margin-right: -14px;
-        padding: 3rem 14px;
+        padding: 3rem 24px;
       }
       .blog-grid { grid-template-columns: 1fr; }
       .blog-card,
@@ -242,14 +299,13 @@
         font-weight: 600;
       }
       .mobile-call { background: var(--green-dark); color: #fff; }
-      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
     }
 
     @media (max-width: 420px) {
       .page { padding-top: 0.8rem; }
       .wrap { width: min(100% - 22px, 1450px); }
-      .brand img { width: 172px; }
-      .nav { grid-template-columns: 1fr; }
+      .brand img { width: 150px; }
+      .menu-toggle { width: 40px; height: 40px; }
       h1 { font-size: 30px; line-height: 1.22; }
       .section-title { font-size: 27px; }
       .hero { padding-top: 2rem; }
@@ -257,8 +313,8 @@
         width: calc(100% + 22px);
         margin-left: -11px;
         margin-right: -11px;
-        padding-left: 11px;
-        padding-right: 11px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       .blog-card,
       .contact-panel { padding: 1.1rem; }
@@ -267,22 +323,28 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">მთავარ შინაარსზე გადასვლა</a>
   <div class="page">
     <header class="wrap header">
       <a href="/" class="brand" aria-label="TherapyGeorgia">
-        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" width="728" height="184" alt="TherapyGeorgia" />
       </a>
-      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+      <nav class="nav" id="mainNav" aria-label="მთავარი ნავიგაცია">
         <a href="/">მთავარი</a>
-        <a href="/fsiqoterapevti-tbilisshi.html">მომსახურებები</a>
+        <a href="/fsiqoterapevti-tbilisshi">მომსახურებები</a>
         <a class="active" href="/blog/">ბლოგი</a>
-        <a href="/chems-shesakheb.html">ჩემს შესახებ</a>
+        <a href="/chems-shesakheb">ჩემს შესახებ</a>
         <a href="#contact">კონტაქტი</a>
       </nav>
+      <button class="menu-toggle" type="button" aria-label="მენიუს გახსნა" aria-controls="mainNav" aria-expanded="false">
+        <span>Instagram </span>
+        <span>Instagram </span>
+        <span>Instagram </span>
+      </button>
       <a class="top-cta" href="#contact">დამიკავშირდი</a>
     </header>
 
-    <main>
+    <main id="main">
       <section class="wrap hero" aria-label="ბლოგი">
         <div class="kicker">ბლოგი</div>
         <div class="ornament" aria-hidden="true">
@@ -305,7 +367,7 @@
 
       <section class="blog-section" aria-label="სტატიების სია">
         <div class="wrap blog-grid">
-          <a href="/blog/socialuri-shfotva.html" class="blog-card">
+          <a href="/blog/socialuri-shfotva" class="blog-card">
             <div>
               <div class="blog-tag">შფოთვა</div>
               <h2>სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ</h2>
@@ -313,7 +375,7 @@
             </div>
             <div class="blog-date">2026 · 10-12 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri.html" class="blog-card">
+          <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri" class="blog-card">
             <div>
               <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
               <h2>ფსიქოლოგი, ფსიქოთერაპევტი თუ ფსიქიატრი - ვის მივმართო?</h2>
@@ -321,7 +383,7 @@
             </div>
             <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/buneba.html" class="blog-card">
+          <a href="/blog/buneba" class="blog-card">
             <div>
               <div class="blog-tag">ჰოლისტური</div>
               <h2>ბუნებასთან ქრონიკული გაუცხოება - ფსიქოთერაპიული პერსპექტივა</h2>
@@ -329,7 +391,7 @@
             </div>
             <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
           </a>
-          <a href="/blog/blog-therapiis-7-rchevebi.html" class="blog-card">
+          <a href="/blog/blog-therapiis-7-rchevebi" class="blog-card">
             <div>
               <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
               <h2>თერაპიის 7 რჩევა: სესიებიდან მეტის მისაღებად</h2>
@@ -347,22 +409,46 @@
           <p>თუ რომელიმე ტექსტში საკუთარი გამოცდილება ამოიცანით, პირველი გასაუბრება შეიძლება დაგეხმაროთ, გაარკვიოთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი.</p>
           <div class="contact-actions">
             <a class="contact-action primary" href="tel:+995579070205">დარეკვა</a>
-            <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="contact-action whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
             <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
-            <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+            <a class="contact-action instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
           </div>
         </div>
       </section>
 
       <footer class="wrap">
-        <p>© 2026 therapygeorgia.ge · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
+        <p>© 2026 therapygeorgia.ge · ყველა უფლება დაცულია · გიორგი ირემაშვილი</p>
       </footer>
     </main>
   </div>
 
   <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
-    <a class="mobile-call" href="tel:+995579070205">დარეკვა</a>
+    <a class="mobile-call" href="tel:+995579070205">📞 დარეკვა</a>
     <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
   </div>
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("mainNav");
+    function closeMenu() {
+      mainNav?.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "მენიუს გახსნა");
+    }
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mainNav?.classList.toggle("open") || false;
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "მენიუს დახურვა" : "მენიუს გახსნა");
+      if (isOpen) mainNav?.querySelector("a")?.focus();
+    });
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  </script>
 </body>
 </html>

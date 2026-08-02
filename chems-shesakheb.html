@@ -5,17 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ჩემს შესახებ | გიორგი ირემაშვილი, MD | TherapyGeorgia.ge</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="canonical" href="https://therapygeorgia.ge/chems-shesakheb.html" />
+  <link rel="canonical" href="https://therapygeorgia.ge/chems-shesakheb" />
   <meta name="description" content="გიორგი ირემაშვილი, MD - ექიმი და ფსიქოთერაპევტი. ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომები თბილისში და ონლაინ." />
   <meta property="og:title" content="ჩემს შესახებ | გიორგი ირემაშვილი, MD" />
   <meta property="og:description" content="ექიმი და ფსიქოთერაპევტი. ინდივიდუალური შეხვედრები თბილისში და ონლაინ, ჰუმანისტურ-ეგზისტენციალური ორიენტაციით." />
   <meta property="og:image" content="https://therapygeorgia.ge/og-image.png" />
-  <meta property="og:url" content="https://therapygeorgia.ge/chems-shesakheb.html" />
+  <meta property="og:url" content="https://therapygeorgia.ge/chems-shesakheb" />
   <meta property="og:type" content="profile" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ჩემს შესახებ | გიორგი ირემაშვილი, MD" />
   <meta name="twitter:description" content="ექიმი და ფსიქოთერაპევტი. ინდივიდუალური შეხვედრები თბილისში და ონლაინ." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://therapygeorgia.ge/chems-shesakheb#giorgi-iremashvili",
+    "name": "გიორგი ირემაშვილი",
+    "alternateName": "Giorgi Iremashvili",
+    "jobTitle": "ექიმი · ფსიქოთერაპევტი",
+    "honorificSuffix": "MD",
+    "url": "https://therapygeorgia.ge/chems-shesakheb",
+    "image": "https://therapygeorgia.ge/preview-assets/about-portrait.webp",
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://therapygeorgia.ge/#practice",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/"
+    },
+    "knowsLanguage": ["ka", "en", "ru", "de"]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -41,8 +61,18 @@
       line-height: 1.7;
     }
     a { color: inherit; }
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid rgba(47, 111, 98, 0.35);
+      outline-offset: 3px;
+    }
     img,
     svg { max-width: 100%; }
+    .skip-link { position: absolute; left: 1rem; top: 1rem; z-index: 1000; transform: translateY(-160%); padding: 0.75rem 1rem; border-radius: var(--radius); background: var(--green-dark); color: #fff; text-decoration: none; font-weight: 700; }
+    .skip-link:focus-visible { transform: translateY(0); }
     .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
     .wrap { width: min(1450px, calc(100vw - 86px)); margin: 0 auto; }
 
@@ -119,6 +149,24 @@
       background: var(--green-dark);
       color: #fff;
     }
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--green-dark);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .menu-toggle span { width: 20px; height: 2px; border-radius: 99px; background: currentColor; transition: transform 0.2s ease, opacity 0.2s ease; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .top-banner {
       padding: 3.2rem 0 1.5rem;
@@ -388,6 +436,18 @@
       color: #fff;
       box-shadow: 0 16px 34px rgba(35, 82, 73, 0.16);
     }
+    .whatsapp-action,
+    .mobile-wa {
+      border-color: transparent !important;
+      background: #25D366 !important;
+      color: #fff !important;
+    }
+    .instagram-action {
+      border-color: transparent !important;
+      background: linear-gradient(135deg, #833AB4 0%, #E1306C 48%, #FCAF45 100%) !important;
+      color: #fff !important;
+      gap: 0.4rem;
+    }
 
     .mobile-contact { display: none; }
 
@@ -404,13 +464,15 @@
     @media (max-width: 680px) {
       .page { padding-top: 1rem; padding-bottom: 5.6rem; }
       .wrap { width: min(100% - 28px, 1450px); }
-      .header { grid-template-columns: 1fr; }
+      .header { grid-template-columns: 1fr auto; align-items: center; }
       .brand img { width: 190px; }
-      .header-actions { justify-self: stretch; justify-content: space-between; }
+      .header-actions { justify-self: end; justify-content: flex-end; }
+      .menu-toggle { display: inline-flex; }
       .top-cta { display: none; }
-      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .nav { display: none; grid-column: 1 / -1; width: 100%; grid-template-columns: 1fr; gap: 0.5rem; padding-top: 0.75rem; }
+      .nav.open { display: grid; }
       .nav a {
-        padding: 8px 10px;
+        padding: 11px 12px;
         border: 1px solid var(--line);
         border-radius: var(--radius);
         background: rgba(255,255,255,0.58);
@@ -418,8 +480,7 @@
         font-size: 13px;
         white-space: normal;
       }
-      .top-banner { padding-top: 2rem; }
-      .banner-frame { height: 220px; min-height: 0; border-radius: 12px; }
+      .top-banner { display: none; }
       .about-hero { padding: 2.5rem 0 2rem; gap: 2rem; }
       h1 { font-size: 36px; }
       .lead { font-size: 15px; }
@@ -433,8 +494,8 @@
         width: calc(100% + 28px);
         margin-left: -14px;
         margin-right: -14px;
-        padding-left: 14px;
-        padding-right: 14px;
+        padding-left: 24px;
+        padding-right: 24px;
       }
       .card-grid,
       .card-grid.four { grid-template-columns: 1fr; }
@@ -466,18 +527,15 @@
         font-weight: 600;
       }
       .mobile-call { background: var(--green-dark); color: #fff; }
-      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
     }
 
     @media (max-width: 420px) {
       .page { padding-top: 0.8rem; }
       .wrap { width: min(100% - 22px, 1450px); }
-      .brand img { width: 172px; }
+      .brand img { width: 150px; }
       .header-actions { gap: 0.55rem; }
-      .language-switcher button { min-width: 31px; font-size: 11px; }
-      .nav { grid-template-columns: 1fr; }
-      .top-banner { padding-top: 1.4rem; }
-      .banner-frame { height: 180px; }
+      .language-switcher button { min-width: 29px; font-size: 11px; }
+      .menu-toggle { width: 40px; height: 40px; }
       h1 { font-size: 30px; line-height: 1.22; }
       .name-line { font-size: 32px; }
       .credential-line { font-size: 22px; }
@@ -486,8 +544,8 @@
         width: calc(100% + 22px);
         margin-left: -11px;
         margin-right: -11px;
-        padding-left: 11px;
-        padding-right: 11px;
+        padding-left: 20px;
+        padding-right: 20px;
       }
       .info-card,
       .approach,
@@ -497,16 +555,17 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">მთავარ შინაარსზე გადასვლა</a>
   <div class="page">
     <header class="wrap header">
       <a href="/" class="brand" aria-label="TherapyGeorgia">
-        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" width="728" height="184" alt="TherapyGeorgia" />
       </a>
-      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+      <nav class="nav" id="mainNav" aria-label="მთავარი ნავიგაცია">
         <a href="/" data-i18n="nav.home">მთავარი</a>
-        <a href="/fsiqoterapevti-tbilisshi.html" data-i18n="nav.services">მომსახურებები</a>
+        <a href="/fsiqoterapevti-tbilisshi" data-i18n="nav.services">მომსახურებები</a>
         <a href="/blog/" data-i18n="nav.blog">ბლოგი</a>
-        <a href="/chems-shesakheb.html" class="active" data-i18n="nav.about">ჩემს შესახებ</a>
+        <a href="/chems-shesakheb" class="active" data-i18n="nav.about">ჩემს შესახებ</a>
         <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
       </nav>
       <div class="header-actions">
@@ -515,20 +574,25 @@
           <button type="button" data-lang="en" aria-pressed="false">EN</button>
           <button type="button" data-lang="ru" aria-pressed="false">RU</button>
         </div>
+        <button class="menu-toggle" type="button" aria-label="მენიუს გახსნა" aria-controls="mainNav" aria-expanded="false">
+          <span>Instagram </span>
+          <span>Instagram </span>
+          <span>Instagram </span>
+        </button>
         <a class="top-cta" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="wrap top-banner" aria-label="გიორგი ირემაშვილის ფოტო">
         <div class="banner-frame">
-          <img src="/preview-assets/about-banner-tbilisi-office.webp" alt="თერაპიული სივრცე თბილისში" />
+          <img src="/preview-assets/about-banner-tbilisi-office.webp" width="1890" height="832" fetchpriority="high" decoding="async" alt="თერაპიული სივრცე თბილისში" />
         </div>
       </section>
 
       <section class="wrap about-hero" aria-label="ჩემს შესახებ">
         <figure class="portrait">
-          <img src="/preview-assets/about-portrait.webp" alt="გიორგი ირემაშვილი" />
+          <img src="/preview-assets/about-portrait.webp" width="1122" height="1402" loading="lazy" decoding="async" alt="გიორგი ირემაშვილი" />
         </figure>
         <div>
           <div class="kicker" data-i18n="about.kicker">ჩემს შესახებ</div>
@@ -553,7 +617,7 @@
             <span class="name-line" data-i18n="about.name">გიორგი ირემაშვილი</span>
             <span class="credential-line" data-i18n="about.credential">მედიცინის დოქტორი (MD)</span>
           </h1>
-          <p class="lead" data-i18n="about.subtitle">ექიმი . ფსიქოთერაპევტი</p>
+          <p class="lead" data-i18n="about.subtitle">ექიმი · ფსიქოთერაპევტი</p>
           <p class="lead" data-i18n="about.lead">მჯერა, რომ თითოეულ ადამიანს აქვს ცვლილებისა და განვითარების უნარი. ფსიქოთერაპია არის უსაფრთხო და მშვიდი სივრცე, სადაც შეგიძლიათ უკეთ გაიგოთ საკუთარი თავი, გამოიკვლიოთ ემოციები, ურთიერთობები და ცხოვრებისეული გამოწვევები, და იპოვოთ თქვენთვის მნიშვნელოვანი ცვლილების გზა.</p>
           <div class="actions">
             <a class="btn-main" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
@@ -590,9 +654,9 @@
       <section class="wrap content-section" aria-label="თერაპიული მიდგომა">
         <article class="approach">
           <h2 class="section-title" data-i18n="approach.title">თერაპიული მიდგომა</h2>
-          <p data-i18n="approach.p1">თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავს — არა მხოლოდ სიმპტომებით.</p>
+          <p data-i18n="approach.p1">თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავენ — არა მხოლოდ სიმპტომებით.</p>
           <p data-i18n="approach.p2">სადაც საჭიროა, ვაერთიანებ CBT-ის პრაქტიკულ ტექნიკებს და ფილოსოფიური ტრადიციის სიბრძნეს — სტოიციზმს, ეგზისტენციალიზმს — ცვლილების გზის გასაადვილებლად.</p>
-          <p data-i18n="approach.p3">სამედიცინო განათლება კი საშუალებას მაძლევს, მენტალური ჯანმრთელობა ფიზიკურ და სოციალურ ჰოლისტიკურ ჭრილში დავინახო.</p>
+          <p data-i18n="approach.p3">სამედიცინო განათლება კი საშუალებას მაძლევს, ფსიქიკური ჯანმრთელობა ფიზიკურ, ფსიქოლოგიურ და სოციალურ კონტექსტში დავინახო.</p>
         </article>
       </section>
 
@@ -627,9 +691,9 @@
           <p data-i18n="contact.text">პირველი გასაუბრება უფასოა. შეგიძლიათ დამიკავშირდეთ ტელეფონით, WhatsApp-ით, ელ-ფოსტით ან Instagram-ზე.</p>
           <div class="contact-actions">
             <a class="contact-action primary" href="tel:+995579070205" data-i18n="contact.call">დარეკვა</a>
-            <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="contact-action whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
             <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
-            <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+            <a class="contact-action instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
           </div>
         </div>
       </section>
@@ -637,7 +701,7 @@
   </div>
 
   <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
-    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">დარეკვა</a>
+    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">📞 დარეკვა</a>
     <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 
@@ -651,11 +715,11 @@
         "nav.contact": "კონტაქტი",
         "cta.contact": "დამიკავშირდი",
         "cta.back": "მთავარ გვერდზე დაბრუნება →",
-        "mobile.call": "დარეკვა",
+        "mobile.call": "📞 დარეკვა",
         "about.kicker": "ჩემს შესახებ",
         "about.name": "გიორგი ირემაშვილი",
         "about.credential": "მედიცინის დოქტორი (MD)",
-        "about.subtitle": "ექიმი . ფსიქოთერაპევტი",
+        "about.subtitle": "ექიმი · ფსიქოთერაპევტი",
         "about.lead": "მჯერა, რომ თითოეულ ადამიანს აქვს ცვლილებისა და განვითარების უნარი. ფსიქოთერაპია არის უსაფრთხო და მშვიდი სივრცე, სადაც შეგიძლიათ უკეთ გაიგოთ საკუთარი თავი, გამოიკვლიოთ ემოციები, ურთიერთობები და ცხოვრებისეული გამოწვევები, და იპოვოთ თქვენთვის მნიშვნელოვანი ცვლილების გზა.",
         "education.title": "განათლება და პროფესიული გზა",
         "fact.education.label": "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
@@ -669,9 +733,9 @@
         "fact.languages.label": "ენები",
         "fact.languages.text": "GE ქართული · GB ინგლისური · RU რუსული · DE გერმანული",
         "approach.title": "თერაპიული მიდგომა",
-        "approach.p1": "თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავს — არა მხოლოდ სიმპტომებით.",
+        "approach.p1": "თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავენ — არა მხოლოდ სიმპტომებით.",
         "approach.p2": "სადაც საჭიროა, ვაერთიანებ CBT-ის პრაქტიკულ ტექნიკებს და ფილოსოფიური ტრადიციის სიბრძნეს — სტოიციზმს, ეგზისტენციალიზმს — ცვლილების გზის გასაადვილებლად.",
-        "approach.p3": "სამედიცინო განათლება კი საშუალებას მაძლევს, მენტალური ჯანმრთელობა ფიზიკურ და სოციალურ ჰოლისტიკურ ჭრილში დავინახო.",
+        "approach.p3": "სამედიცინო განათლება კი საშუალებას მაძლევს, ფსიქიკური ჯანმრთელობა ფიზიკურ, ფსიქოლოგიურ და სოციალურ კონტექსტში დავინახო.",
         "principles.title": "პროფესიული პრინციპები",
         "principle.safety.title": "უსაფრთხოება",
         "principle.safety.text": "თერაპიული სივრცე მშვიდი, კონფიდენციალური და განსჯისგან თავისუფალია.",
@@ -692,7 +756,7 @@
         "nav.contact": "Contact",
         "cta.contact": "Contact me",
         "cta.back": "Back to home →",
-        "mobile.call": "Call",
+        "mobile.call": "📞 Call",
         "about.kicker": "About me",
         "about.name": "Giorgi Iremashvili",
         "about.credential": "Doctor of Medicine (MD)",
@@ -733,7 +797,7 @@
         "nav.contact": "Контакты",
         "cta.contact": "Связаться",
         "cta.back": "Вернуться на главную →",
-        "mobile.call": "Позвонить",
+        "mobile.call": "📞 Позвонить",
         "about.kicker": "Обо мне",
         "about.name": "Гиорги Иремашвили",
         "about.credential": "доктор медицины (MD)",
@@ -770,6 +834,8 @@
 
     const languageButtons = document.querySelectorAll("[data-lang]");
     const translatableNodes = document.querySelectorAll("[data-i18n]");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.getElementById("mainNav");
 
     function setLanguage(lang) {
       const dictionary = translations[lang] || translations.ka;
@@ -786,6 +852,29 @@
 
     languageButtons.forEach((button) => {
       button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    function closeMenu() {
+      mainNav?.classList.remove("open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "მენიუს გახსნა");
+    }
+
+    menuToggle?.addEventListener("click", () => {
+      const isOpen = mainNav?.classList.toggle("open") || false;
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "მენიუს დახურვა" : "მენიუს გახსნა");
+      if (isOpen) mainNav?.querySelector("a")?.focus();
+    });
+
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
     });
 
     setLanguage(localStorage.getItem("therapygeorgia-lang") || "ka");
