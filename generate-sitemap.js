@@ -21,6 +21,7 @@ const blogLinks = [...blogIndexNoComments.matchAll(/href="\/blog\/([^"]+\.html)"
 const pages = [
   { path: 'index.html',      url: '/',       priority: '1.0', changefreq: 'weekly'  },
   { path: 'fsiqoterapevti-tbilisshi.html', url: '/fsiqoterapevti-tbilisshi.html', priority: '0.95', changefreq: 'monthly' },
+  { path: 'chems-shesakheb.html', url: '/chems-shesakheb.html', priority: '0.85', changefreq: 'monthly' },
   { path: 'blog/index.html', url: '/blog/',  priority: '0.9', changefreq: 'weekly'  },
   ...blogLinks.map(p => ({ path: p, url: `/${p}`, priority: '0.8', changefreq: 'monthly' }))
 ];

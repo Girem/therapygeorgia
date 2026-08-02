@@ -19,108 +19,350 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --teal: #1D9E75; --teal-light: #E1F5EE; --teal-dark: #0F6E56; --teal-mid: #5DCAA5;
-      --text-primary: #1a1a1a; --text-secondary: #555; --text-muted: #888;
-      --bg: #ffffff; --bg-secondary: #f5f5f3;
-      --border: rgba(0,0,0,0.1); --border-med: rgba(0,0,0,0.18);
-      --radius-md: 8px; --radius-lg: 12px;
+      --bg: #fcf9f6;
+      --green: #2f6f62;
+      --green-dark: #235249;
+      --green-muted: #6e9188;
+      --ink: #303231;
+      --text: #626966;
+      --line: rgba(47, 111, 98, 0.22);
+      --panel: rgba(246, 250, 247, 0.82);
+      --radius: 8px;
+      --shadow: 0 24px 80px rgba(52, 67, 62, 0.08);
     }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text-primary); background: var(--bg); font-size: 16px; line-height: 1.7; }
-    .page { max-width: 860px; margin: 0 auto; padding: 0 1.5rem 4rem; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-bottom: 0.5px solid var(--border); margin-bottom: 3rem; }
-    .logo { font-size: 15px; font-weight: 500; color: var(--text-primary); letter-spacing: 0.02em; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-    .logo span { color: var(--teal-mid); }
-    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
-    .nav-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; }
-    .nav-links a:hover { color: var(--text-primary); }
-    .section-label { font-size: 12px; font-weight: 500; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; }
-    .page-title { font-size: 28px; font-weight: 500; margin-bottom: 0.5rem; }
-    .page-subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 2.5rem; }
-    .blog-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .blog-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; text-decoration: none; color: inherit; display: block; transition: border-color 0.15s; }
-    .blog-card:hover { border-color: var(--border-med); }
-    .blog-tag { font-size: 11px; color: var(--teal); font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; text-transform: uppercase; }
-    .blog-card h2 { font-size: 16px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
-    .blog-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-    .blog-date { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
-    footer { text-align: center; padding-top: 2rem; border-top: 0.5px solid var(--border); font-size: 13px; color: var(--text-muted); margin-top: 3rem; }
-    footer a { color: var(--teal); text-decoration: none; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text-primary); border-radius: 2px; }
-    @media (max-width: 640px) {
-      .page { padding: 0 1rem 3rem; }
-      nav { flex-wrap: wrap; margin-bottom: 2rem; }
-      .hamburger { display: flex; }
-      .nav-links { display: none; width: 100%; flex-direction: column; gap: 0; border-top: 0.5px solid var(--border); margin-top: 1rem; padding-top: 0.25rem; }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 0.75rem 0; border-bottom: 0.5px solid var(--border); font-size: 15px; }
-      .nav-links a:last-child { border-bottom: none; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    img,
+    svg { max-width: 100%; }
+    .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
+    .wrap { width: min(1450px, calc(100vw - 86px)); margin: 0 auto; }
+    .header {
+      min-height: 54px;
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .brand { display: inline-flex; align-items: center; color: var(--green-dark); text-decoration: none; }
+    .brand img { display: block; width: 226px; height: auto; }
+    .nav { display: flex; align-items: center; justify-content: center; gap: clamp(2rem, 5vw, 5.2rem); min-width: 0; }
+    .nav a { color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 500; white-space: nowrap; }
+    .nav a.active { color: var(--green-dark); }
+    .top-cta,
+    .btn-main {
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 650;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 34px rgba(35, 82, 73, 0.16);
+      text-align: center;
+    }
+    .top-cta { min-height: 40px; padding: 9px 20px; font-size: 14px; }
+    .btn-main { min-height: 54px; padding: 14px 24px; font-size: 15px; }
+    .btn-secondary { color: var(--green-dark); text-decoration: none; font-size: 14px; font-weight: 650; }
+    .hero { max-width: 900px; margin: 0 auto; padding: 5rem 0 3.5rem; text-align: center; }
+    .kicker { color: var(--green); font-size: 15px; font-weight: 500; margin-bottom: 0.65rem; }
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 132px;
+      margin: 0 auto 1.45rem;
+      color: var(--green);
+    }
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      background: currentColor;
+      opacity: 0.72;
+      flex: 1;
+    }
+    .ornament-mark { width: 18px; height: 22px; display: block; flex: 0 0 auto; }
+    h1,
+    .section-title {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    h1 { margin-bottom: 1.25rem; font-size: clamp(42px, 5vw, 72px); }
+    .lead { max-width: 680px; margin: 0 auto; font-size: 17px; line-height: 1.85; }
+    .blog-section {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 4.4rem max(43px, calc((100vw - 1450px) / 2));
+      border-top: 1px solid rgba(47, 111, 98, 0.12);
+      border-bottom: 1px solid rgba(47, 111, 98, 0.12);
+      background: rgba(246, 250, 247, 0.54);
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .blog-card {
+      min-height: 255px;
+      padding: 1.35rem;
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+    }
+    .blog-card:hover { border-color: rgba(47, 111, 98, 0.2); }
+    .blog-tag {
+      width: fit-content;
+      margin-bottom: 1rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(47, 111, 98, 0.09);
+      color: var(--green-dark);
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .blog-card h2 {
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 650;
+      line-height: 1.45;
+    }
+    .blog-card p { color: var(--text); font-size: 13px; line-height: 1.7; }
+    .blog-date { margin-top: 1.25rem; color: var(--green-muted); font-size: 12px; font-weight: 600; }
+    .contact-section { padding: 4.4rem 0 0; }
+    .contact-panel {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .section-title { margin-bottom: 0.8rem; font-size: clamp(30px, 3vw, 44px); }
+    .contact-panel p { max-width: 660px; margin: 0.65rem auto 1.5rem; font-size: 15px; line-height: 1.8; }
+    .contact-actions { display: flex; align-items: center; justify-content: center; gap: 0.85rem; flex-wrap: wrap; }
+    .contact-action {
+      min-height: 46px;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--green-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      text-align: center;
+      overflow-wrap: anywhere;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-action.primary { border-color: transparent; background: var(--green-dark); color: #fff; }
+    footer { padding: 3rem 0 0; color: var(--green-muted); font-size: 13px; text-align: center; }
+    .mobile-contact { display: none; }
+    @media (max-width: 1120px) {
+      .wrap { width: min(100% - 40px, 1450px); }
+      .header { grid-template-columns: 1fr; gap: 1rem; padding-bottom: 1rem; }
+      .nav { justify-content: flex-start; gap: 1rem; overflow-x: auto; padding: 0.2rem 0; }
+      .top-cta { justify-self: start; }
+      .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .page { padding-top: 1rem; padding-bottom: 5.6rem; }
+      .wrap { width: min(100% - 28px, 1450px); }
+      .brand img { width: 190px; }
+      .top-cta { display: none; }
+      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .nav a {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255,255,255,0.58);
+        text-align: center;
+        font-size: 13px;
+        white-space: normal;
+      }
+      .hero { padding: 3rem 0 2.5rem; }
+      h1 { font-size: 36px; }
+      .lead { font-size: 15px; }
+      .blog-section {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+        margin-right: -14px;
+        padding: 3rem 14px;
+      }
       .blog-grid { grid-template-columns: 1fr; }
-      .page-title { font-size: 22px; }
+      .blog-card,
+      .contact-panel { border-radius: 12px; }
+      .contact-actions { display: grid; grid-template-columns: 1fr; }
+      .mobile-contact {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+        background: rgba(251, 248, 240, 0.96);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-contact a {
+        min-height: 44px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .mobile-call { background: var(--green-dark); color: #fff; }
+      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
+    }
+
+    @media (max-width: 420px) {
+      .page { padding-top: 0.8rem; }
+      .wrap { width: min(100% - 22px, 1450px); }
+      .brand img { width: 172px; }
+      .nav { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; line-height: 1.22; }
+      .section-title { font-size: 27px; }
+      .hero { padding-top: 2rem; }
+      .blog-section {
+        width: calc(100% + 22px);
+        margin-left: -11px;
+        margin-right: -11px;
+        padding-left: 11px;
+        padding-right: 11px;
+      }
+      .blog-card,
+      .contact-panel { padding: 1.1rem; }
+      .mobile-contact { gap: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; }
     }
   </style>
 </head>
 <body>
-<div class="page">
+  <div class="page">
+    <header class="wrap header">
+      <a href="/" class="brand" aria-label="TherapyGeorgia">
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+      </a>
+      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+        <a href="/">მთავარი</a>
+        <a href="/fsiqoterapevti-tbilisshi.html">მომსახურებები</a>
+        <a class="active" href="/blog/">ბლოგი</a>
+        <a href="/chems-shesakheb.html">ჩემს შესახებ</a>
+        <a href="#contact">კონტაქტი</a>
+      </nav>
+      <a class="top-cta" href="#contact">დამიკავშირდი</a>
+    </header>
 
-  <nav>
-    <a href="/" class="logo">
-      <img src="/logo-horizontal.svg" alt="TherapyGeorgia.ge" width="137" height="36" decoding="async" />
-    </a>
-    <button class="hamburger" id="hamburger" type="button" aria-label="მენიუ" aria-controls="navLinks" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="/fsiqoterapevti-tbilisshi.html">ფსიქოთერაპევტი</a>
-      <a href="/#approaches">თერაპიული მიდგომები</a>
-      <a href="/blog/" style="background:#E1F5EE; color:#0F6E56; font-weight:500; padding:3px 10px; border-radius:99px; font-size:13px;">ბლოგი</a>
-      <a href="/#about">ჩემს შესახებ</a>
-      <a href="/#contact">კონტაქტი</a>
-    </div>
-  </nav>
+    <main>
+      <section class="wrap hero" aria-label="ბლოგი">
+        <div class="kicker">ბლოგი</div>
+        <div class="ornament" aria-hidden="true">
+          <svg class="ornament-mark" viewBox="45 30 110 110" focusable="false">
+            <defs>
+              <linearGradient id="blog-ornament-leaf-shade" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#1d7267"/>
+                <stop offset="1" stop-color="#0b584d"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#blog-ornament-leaf-shade)" d="M100 34C88.1 48.8 82.4 62.2 83.7 74.6C84.8 85.2 90.2 94.6 99.4 102.3C108.8 92.8 116.2 82.6 116.4 69.6C116.6 57.4 110.8 45.4 100 34Z"/>
+            <path fill="url(#blog-ornament-leaf-shade)" d="M53.2 81.8C54.7 95.4 60.7 106 71.1 112.8C78.3 117.5 86.9 119.7 96.5 119.5C94.4 108.1 90 99.3 82.7 93.1C75.5 87 65.6 83.3 53.2 81.8Z"/>
+            <path fill="url(#blog-ornament-leaf-shade)" d="M147 81.8C133.6 82.2 123.2 85.5 115.4 92C108.6 97.7 104.1 106.7 102.1 119.5C112.9 118.2 122 114.7 129.3 108.8C138.5 101.3 144.4 92.3 147 81.8Z"/>
+            <path stroke="#0b584d" stroke-width="4" stroke-linecap="round" d="M100 102V134M97.5 119.5L73.8 96.8M102.5 119.5L126.3 96.8"/>
+          </svg>
+        </div>
+        <h1>სტატიები ფსიქიკური ჯანმრთელობის შესახებ</h1>
+        <p class="lead">ფსიქოთერაპია, ფილოსოფია და თვითგანვითარება - პრაქტიკული შეხედულებები საკუთარი თავის, ემოციებისა და ურთიერთობების უკეთ გასაგებად.</p>
+      </section>
 
-  <div class="section-label">ბლოგი</div>
-  <h1 class="page-title">სტატიები ფსიქიკური ჯანმრთელობის შესახებ</h1>
-  <p class="page-subtitle">ფსიქოთერაპია, ფილოსოფია და თვითგანვითარება — პრაქტიკული შეხედულებები.</p>
+      <section class="blog-section" aria-label="სტატიების სია">
+        <div class="wrap blog-grid">
+          <a href="/blog/socialuri-shfotva.html" class="blog-card">
+            <div>
+              <div class="blog-tag">შფოთვა</div>
+              <h2>სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ</h2>
+              <p>როგორ ვლინდება სოციალური შფოთვა, რა ინარჩუნებს მას და რა გზებით შეიძლება მისი მართვა.</p>
+            </div>
+            <div class="blog-date">2026 · 10-12 წუთიანი საკითხავი</div>
+          </a>
+          <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri.html" class="blog-card">
+            <div>
+              <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
+              <h2>ფსიქოლოგი, ფსიქოთერაპევტი თუ ფსიქიატრი - ვის მივმართო?</h2>
+              <p>რა განსხვავებაა სამ პროფესიას შორის და როდის რომელი სპეციალისტი გჭირდებათ.</p>
+            </div>
+            <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
+          </a>
+          <a href="/blog/buneba.html" class="blog-card">
+            <div>
+              <div class="blog-tag">ჰოლისტური</div>
+              <h2>ბუნებასთან ქრონიკული გაუცხოება - ფსიქოთერაპიული პერსპექტივა</h2>
+              <p>ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი და ბუნებაში ყოფნის პრაქტიკა.</p>
+            </div>
+            <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
+          </a>
+          <a href="/blog/blog-therapiis-7-rchevebi.html" class="blog-card">
+            <div>
+              <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
+              <h2>თერაპიის 7 რჩევა: სესიებიდან მეტის მისაღებად</h2>
+              <p>7 პრაქტიკული რჩევა, რომელიც დაგეხმარებათ, თერაპიის სესიებიდან მეტი სარგებელი მიიღოთ.</p>
+            </div>
+            <div class="blog-date">2026 · 10 წუთიანი საკითხავი</div>
+          </a>
+        </div>
+      </section>
 
-  <div class="blog-grid">
-    <a href="/blog/socialuri-shfotva.html" class="blog-card">
-      <div class="blog-tag">შფოთვა</div>
-      <h2>სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ</h2>
-      <p>როგორ ვლინდება სოციალური შფოთვა, რა ინარჩუნებს მას და რა გზებით შეიძლება მისი მართვა.</p>
-      <div class="blog-date">2026 · 10-12 წუთიანი საკითხავი</div>
-    </a>
-    <a href="/blog/blog-psiqologi-psiqoterapevti-psiqiatri.html" class="blog-card">
-      <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
-      <h2>ფსიქოლოგი, ფსიქოთერაპევტი თუ ფსიქიატრი — ვის მივმართო?</h2>
-      <p>რა განსხვავებაა სამ პროფესიას შორის და როდის რომელი სპეციალისტი გჭირდება.</p>
-      <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
-    </a>
-    <a href="/blog/buneba.html" class="blog-card">
-      <div class="blog-tag">ჰოლისტური</div>
-      <h2>ბუნებასთან ქრონიკული გაუცხოება — ფსიქოთერაპიული პერსპექტივა</h2>
-      <p>ბუნებასთან გაუცხოება, როგორც ფსიქიკური ჯანმრთელობის რისკ-ფაქტორი და shinrin-yoku პრაქტიკა.</p>
-      <div class="blog-date">2026 · 8 წუთიანი საკითხავი</div>
-    </a>
-    <a href="/blog/blog-therapiis-7-rchevebi.html" class="blog-card">
-      <div class="blog-tag">ფსიქიკური ჯანმრთელობა</div>
-      <h2>თერაპიის 7 რჩევა: სესიებიდან მეტის მისაღებად</h2>
-      <p>7 პრაქტიკული რჩევა, რომელიც დაგეხმარებათ თერაპიის სესიებიდან მეტი სარგებლის მიღებაში.</p>
-      <div class="blog-date">2026 · 10 წუთიანი საკითხავი</div>
-    </a>
+      <section class="wrap contact-section" id="contact" aria-label="კონტაქტი">
+        <div class="contact-panel">
+          <div class="kicker">კონტაქტი</div>
+          <h2 class="section-title">დამიკავშირდი</h2>
+          <p>თუ რომელიმე ტექსტში საკუთარი გამოცდილება ამოიცანით, პირველი გასაუბრება შეიძლება დაგეხმაროთ, გაარკვიოთ, რა გჭირდებათ და როგორ შეიძლება გაგრძელდეს პროცესი.</p>
+          <div class="contact-actions">
+            <a class="contact-action primary" href="tel:+995579070205">დარეკვა</a>
+            <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
+            <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="wrap">
+        <p>© 2026 therapygeorgia.ge · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
+      </footer>
+    </main>
   </div>
 
-  <footer>
-    <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი, MD</p>
-  </footer>
-
-</div>
-<script>
-  document.getElementById('hamburger').addEventListener('click', function() {
-    var navLinks = document.getElementById('navLinks');
-    var isOpen = navLinks.classList.toggle('open');
-    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-</script>
+  <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
+    <a class="mobile-call" href="tel:+995579070205">დარეკვა</a>
+    <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </body>
 </html>

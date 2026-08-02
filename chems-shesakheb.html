@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ჩემს შესახებ | გიორგი ირემაშვილი, MD | TherapyGeorgia.ge</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="canonical" href="https://therapygeorgia.ge/chems-shesakheb.html" />
+  <meta name="description" content="გიორგი ირემაშვილი, MD - ექიმი და ფსიქოთერაპევტი. ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომები თბილისში და ონლაინ." />
+  <meta property="og:title" content="ჩემს შესახებ | გიორგი ირემაშვილი, MD" />
+  <meta property="og:description" content="ექიმი და ფსიქოთერაპევტი. ინდივიდუალური შეხვედრები თბილისში და ონლაინ, ჰუმანისტურ-ეგზისტენციალური ორიენტაციით." />
+  <meta property="og:image" content="https://therapygeorgia.ge/og-image.png" />
+  <meta property="og:url" content="https://therapygeorgia.ge/chems-shesakheb.html" />
+  <meta property="og:type" content="profile" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ჩემს შესახებ | გიორგი ირემაშვილი, MD" />
+  <meta name="twitter:description" content="ექიმი და ფსიქოთერაპევტი. ინდივიდუალური შეხვედრები თბილისში და ონლაინ." />
+  <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #fcf9f6;
+      --green: #2f6f62;
+      --green-dark: #235249;
+      --green-muted: #6e9188;
+      --ink: #303231;
+      --text: #626966;
+      --line: rgba(47, 111, 98, 0.22);
+      --panel: rgba(246, 250, 247, 0.82);
+      --radius: 8px;
+      --shadow: 0 24px 80px rgba(52, 67, 62, 0.08);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    img,
+    svg { max-width: 100%; }
+    .page { min-height: 100vh; padding: 1.75rem 0 2rem; }
+    .wrap { width: min(1450px, calc(100vw - 86px)); margin: 0 auto; }
+
+    .header {
+      height: 54px;
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      color: var(--green-dark);
+      text-decoration: none;
+    }
+    .brand img { display: block; width: 226px; height: auto; }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5.2rem);
+      min-width: 0;
+    }
+    .nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .header-actions {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .top-cta {
+      min-height: 40px;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.58);
+    }
+    .language-switcher button {
+      min-width: 34px;
+      min-height: 30px;
+      border: 0;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--green-dark);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 650;
+    }
+    .language-switcher button[aria-pressed="true"] {
+      background: var(--green-dark);
+      color: #fff;
+    }
+
+    .top-banner {
+      padding: 3.2rem 0 1.5rem;
+    }
+    .banner-frame {
+      height: min(320px, 28vw);
+      min-height: 220px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #f4efe6;
+      box-shadow: var(--shadow);
+    }
+    .banner-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    .about-hero {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.78fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(3rem, 6vw, 5.6rem);
+      padding: 2.5rem 0 4rem;
+    }
+    .kicker {
+      color: var(--green);
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 0.65rem;
+    }
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 132px;
+      color: var(--green);
+      margin-bottom: 1.45rem;
+    }
+    .ornament::before,
+    .ornament::after {
+      content: "";
+      height: 1px;
+      background: currentColor;
+      opacity: 0.72;
+      flex: 1;
+    }
+    .ornament-mark {
+      width: 18px;
+      height: 22px;
+      display: block;
+      flex: 0 0 auto;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin-bottom: 1.55rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 5vw, 72px);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    .name-line {
+      display: block;
+    }
+    .credential-line {
+      display: block;
+      margin-top: 0.55rem;
+      color: var(--green-dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: clamp(18px, 1.55vw, 25px);
+      font-weight: 600;
+      line-height: 1.45;
+    }
+    .lead {
+      max-width: 650px;
+      margin-bottom: 1.9rem;
+      color: var(--text);
+      font-size: 17px;
+      line-height: 1.78;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-main {
+      min-width: 190px;
+      min-height: 58px;
+      padding: 15px 28px;
+      border-radius: var(--radius);
+      background: var(--green-dark);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 16px 34px rgba(35, 82, 73, 0.16);
+    }
+    .btn-secondary {
+      color: var(--green-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .portrait {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #f4efe6;
+      aspect-ratio: 0.82 / 1;
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .content-section {
+      padding: 4.2rem 0;
+      border-top: 1px solid rgba(47, 111, 98, 0.12);
+    }
+    .content-section.soft {
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding-left: max(43px, calc((100vw - 1450px) / 2));
+      padding-right: max(43px, calc((100vw - 1450px) / 2));
+      background: rgba(246, 250, 247, 0.54);
+    }
+    .section-head {
+      max-width: 720px;
+      margin: 0 auto 2.4rem;
+      text-align: center;
+    }
+    .section-head p {
+      margin-top: 0.7rem;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+      max-width: 940px;
+      margin: 0 auto;
+    }
+    .card-grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      max-width: 1180px;
+    }
+    .info-card,
+    .approach {
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .info-card {
+      min-height: 150px;
+      padding: 1.45rem;
+      text-align: center;
+    }
+    .info-card .icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 1rem;
+      color: var(--green);
+      stroke-width: 1.55;
+    }
+    .info-card strong {
+      display: block;
+      margin-bottom: 0.55rem;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+    .info-card span {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.65;
+      white-space: pre-line;
+    }
+    .approach {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      text-align: center;
+    }
+    .section-title {
+      margin-bottom: 1.2rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .approach p {
+      max-width: 780px;
+      margin: 0 auto 1rem;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    .approach p:last-child { margin-bottom: 0; }
+
+    .contact-section {
+      padding: 4.2rem 0 0;
+      border-top: 1px solid rgba(47, 111, 98, 0.12);
+    }
+    .contact-panel {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .contact-panel p {
+      max-width: 660px;
+      margin: 0.65rem auto 1.5rem;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .contact-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .contact-action {
+      min-height: 46px;
+      padding: 11px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--green-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      overflow-wrap: anywhere;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-action.primary {
+      border-color: transparent;
+      background: var(--green-dark);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(35, 82, 73, 0.16);
+    }
+
+    .mobile-contact { display: none; }
+
+    @media (max-width: 1120px) {
+      .wrap { width: min(100% - 40px, 1450px); }
+      .header { grid-template-columns: 1fr auto; height: auto; gap: 1rem; padding-bottom: 1rem; }
+      .nav { order: 3; grid-column: 1 / -1; justify-content: flex-start; gap: 1rem; overflow-x: auto; padding: 0.2rem 0; }
+      .about-hero { grid-template-columns: 1fr; padding-top: 3rem; }
+      .portrait { max-width: 520px; }
+      .card-grid,
+      .card-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      .page { padding-top: 1rem; padding-bottom: 5.6rem; }
+      .wrap { width: min(100% - 28px, 1450px); }
+      .header { grid-template-columns: 1fr; }
+      .brand img { width: 190px; }
+      .header-actions { justify-self: stretch; justify-content: space-between; }
+      .top-cta { display: none; }
+      .nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .nav a {
+        padding: 8px 10px;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255,255,255,0.58);
+        text-align: center;
+        font-size: 13px;
+        white-space: normal;
+      }
+      .top-banner { padding-top: 2rem; }
+      .banner-frame { height: 220px; min-height: 0; border-radius: 12px; }
+      .about-hero { padding: 2.5rem 0 2rem; gap: 2rem; }
+      h1 { font-size: 36px; }
+      .lead { font-size: 15px; }
+      .actions { display: grid; grid-template-columns: 1fr; }
+      .btn-main { min-width: 0; min-height: 54px; }
+      .btn-secondary { text-align: center; }
+      .portrait { border-radius: 12px; }
+      .content-section { padding: 3rem 0; }
+      .contact-section { padding-top: 3rem; }
+      .content-section.soft {
+        width: calc(100% + 28px);
+        margin-left: -14px;
+        margin-right: -14px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      .card-grid,
+      .card-grid.four { grid-template-columns: 1fr; }
+      .info-card,
+      .approach,
+      .contact-panel { border-radius: 12px; }
+      .contact-actions { display: grid; grid-template-columns: 1fr; }
+      .mobile-contact {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+        background: rgba(251, 248, 240, 0.96);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-contact a {
+        min-height: 44px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .mobile-call { background: var(--green-dark); color: #fff; }
+      .mobile-wa { background: rgba(255,255,255,0.64); color: var(--green-dark); border: 1px solid var(--line); }
+    }
+
+    @media (max-width: 420px) {
+      .page { padding-top: 0.8rem; }
+      .wrap { width: min(100% - 22px, 1450px); }
+      .brand img { width: 172px; }
+      .header-actions { gap: 0.55rem; }
+      .language-switcher button { min-width: 31px; font-size: 11px; }
+      .nav { grid-template-columns: 1fr; }
+      .top-banner { padding-top: 1.4rem; }
+      .banner-frame { height: 180px; }
+      h1 { font-size: 30px; line-height: 1.22; }
+      .name-line { font-size: 32px; }
+      .credential-line { font-size: 22px; }
+      .section-title { font-size: 27px; }
+      .content-section.soft {
+        width: calc(100% + 22px);
+        margin-left: -11px;
+        margin-right: -11px;
+        padding-left: 11px;
+        padding-right: 11px;
+      }
+      .info-card,
+      .approach,
+      .contact-panel { padding: 1.1rem; }
+      .mobile-contact { gap: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="wrap header">
+      <a href="/" class="brand" aria-label="TherapyGeorgia">
+        <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
+      </a>
+      <nav class="nav" aria-label="მთავარი ნავიგაცია">
+        <a href="/" data-i18n="nav.home">მთავარი</a>
+        <a href="/fsiqoterapevti-tbilisshi.html" data-i18n="nav.services">მომსახურებები</a>
+        <a href="/blog/" data-i18n="nav.blog">ბლოგი</a>
+        <a href="/chems-shesakheb.html" class="active" data-i18n="nav.about">ჩემს შესახებ</a>
+        <a href="#contact" data-i18n="nav.contact">კონტაქტი</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switcher" aria-label="ენის არჩევა">
+          <button type="button" data-lang="ka" aria-pressed="true">KA</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+        </div>
+        <a class="top-cta" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="wrap top-banner" aria-label="გიორგი ირემაშვილის ფოტო">
+        <div class="banner-frame">
+          <img src="/preview-assets/about-banner-tbilisi-office.webp" alt="თერაპიული სივრცე თბილისში" />
+        </div>
+      </section>
+
+      <section class="wrap about-hero" aria-label="ჩემს შესახებ">
+        <figure class="portrait">
+          <img src="/preview-assets/about-portrait.webp" alt="გიორგი ირემაშვილი" />
+        </figure>
+        <div>
+          <div class="kicker" data-i18n="about.kicker">ჩემს შესახებ</div>
+          <div class="ornament" aria-hidden="true">
+            <svg class="ornament-mark" viewBox="45 30 110 110" focusable="false">
+              <defs>
+                <linearGradient id="ornament-leaf-shade" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0b5549"/>
+                  <stop offset="1" stop-color="#17685a"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#ornament-leaf-shade)" d="M100 34C88.1 48.8 82.4 62.2 83.7 74.6C84.8 85.2 90.2 94.6 99.4 102.3C108.8 92.8 116.2 82.6 116.4 69.6C116.6 57.4 110.8 45.4 100 34Z"/>
+              <path fill="url(#ornament-leaf-shade)" d="M53.2 81.8C54.7 95.4 60.7 106 71.1 112.8C78.3 117.5 86.9 119.7 96.5 119.5C94.4 108.1 90 99.3 82.7 93.1C75.5 87 65.6 83.3 53.2 81.8Z"/>
+              <path fill="url(#ornament-leaf-shade)" d="M147 81.8C133.6 82.2 123.2 85.5 115.4 92C108.6 97.7 104.1 106.7 102.1 119.5C112.9 118.2 122 114.7 129.3 108.8C138.5 101.3 144.4 92.3 147 81.8Z"/>
+              <path fill="none" stroke="#0d594c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M100 134.5C98.8 120 99.2 106.2 100 92.6C100.7 80.5 100.2 67.9 99.9 54.8M100 122.1C91.2 108 82.4 99.9 70.1 91.3M100 122.5C108.3 105.7 118.7 95.7 131.7 89.8"/>
+              <path fill="none" stroke="#b4c8bd" stroke-width="1.15" stroke-linecap="round" opacity=".88" d="M99.9 96.2C100.2 81.5 100.1 65.7 100 49.1"/>
+              <path fill="none" stroke="#b4c8bd" stroke-width="1.15" stroke-linecap="round" opacity=".88" d="M92.7 114.7C84.3 105.2 76.8 97.7 67.4 90.9"/>
+              <path fill="none" stroke="#b4c8bd" stroke-width="1.15" stroke-linecap="round" opacity=".88" d="M106.1 113.8C114 103.9 122.1 96.2 132.5 89.5"/>
+            </svg>
+          </div>
+          <h1>
+            <span class="name-line" data-i18n="about.name">გიორგი ირემაშვილი</span>
+            <span class="credential-line" data-i18n="about.credential">მედიცინის დოქტორი (MD)</span>
+          </h1>
+          <p class="lead" data-i18n="about.subtitle">ექიმი . ფსიქოთერაპევტი</p>
+          <p class="lead" data-i18n="about.lead">მჯერა, რომ თითოეულ ადამიანს აქვს ცვლილებისა და განვითარების უნარი. ფსიქოთერაპია არის უსაფრთხო და მშვიდი სივრცე, სადაც შეგიძლიათ უკეთ გაიგოთ საკუთარი თავი, გამოიკვლიოთ ემოციები, ურთიერთობები და ცხოვრებისეული გამოწვევები, და იპოვოთ თქვენთვის მნიშვნელოვანი ცვლილების გზა.</p>
+          <div class="actions">
+            <a class="btn-main" href="#contact" data-i18n="cta.contact">დამიკავშირდი</a>
+            <a class="btn-secondary" href="/" data-i18n="cta.back">მთავარ გვერდზე დაბრუნება →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap content-section soft" aria-label="განათლება და პროფესიული გზა">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="education.title">განათლება და პროფესიული გზა</h2>
+        </div>
+        <div class="card-grid">
+          <div class="info-card">
+            <strong data-i18n="fact.education.label">თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი</strong>
+            <span data-i18n="fact.education.text">მედიცინის დოქტორი (MD)</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="fact.training.label">ფსიქოთერაპიული განათლება</strong>
+            <span data-i18n="fact.training.text">IAIP ინტეგრირებული ფსიქოთერაპიის აკადემია
+დამოუკიდებელი პროფესიული განვითარება</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="fact.approach.label">თერაპიული მიდგომები</strong>
+            <span data-i18n="fact.approach.text">ჰუმანისტური და ეგზისტენციური ორიენტაცია</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="fact.format.label">ფორმატი</strong>
+            <span data-i18n="fact.format.text">ინდივიდუალური შეხვედრები თბილისში და ონლაინ</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap content-section" aria-label="თერაპიული მიდგომა">
+        <article class="approach">
+          <h2 class="section-title" data-i18n="approach.title">თერაპიული მიდგომა</h2>
+          <p data-i18n="approach.p1">თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავს — არა მხოლოდ სიმპტომებით.</p>
+          <p data-i18n="approach.p2">სადაც საჭიროა, ვაერთიანებ CBT-ის პრაქტიკულ ტექნიკებს და ფილოსოფიური ტრადიციის სიბრძნეს — სტოიციზმს, ეგზისტენციალიზმს — ცვლილების გზის გასაადვილებლად.</p>
+          <p data-i18n="approach.p3">სამედიცინო განათლება კი საშუალებას მაძლევს, მენტალური ჯანმრთელობა ფიზიკურ და სოციალურ ჰოლისტიკურ ჭრილში დავინახო.</p>
+        </article>
+      </section>
+
+      <section class="wrap content-section soft" aria-label="პროფესიული პრინციპები">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="principles.title">პროფესიული პრინციპები</h2>
+        </div>
+        <div class="card-grid four">
+          <div class="info-card">
+            <strong data-i18n="principle.safety.title">უსაფრთხოება</strong>
+            <span data-i18n="principle.safety.text">თერაპიული სივრცე მშვიდი, კონფიდენციალური და განსჯისგან თავისუფალია.</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="principle.human.title">ადამიანზე ორიენტირება</strong>
+            <span data-i18n="principle.human.text">მუშაობის ცენტრში არის ადამიანი, მისი ისტორია და მისთვის მნიშვნელოვანი ცვლილება.</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="principle.depth.title">სიღრმე და პრაქტიკულობა</strong>
+            <span data-i18n="principle.depth.text">პროცესი აერთიანებს შინაგან გააზრებას და საჭიროებისამებრ პრაქტიკულ ნაბიჯებს.</span>
+          </div>
+          <div class="info-card">
+            <strong data-i18n="fact.languages.label">ენები</strong>
+            <span data-i18n="fact.languages.text">ქართული, ინგლისური, რუსული, გერმანული</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap contact-section" id="contact" aria-label="კონტაქტი">
+        <div class="contact-panel">
+          <div class="kicker" data-i18n="contact.kicker">კონტაქტი</div>
+          <h2 class="section-title" data-i18n="contact.title">დამიკავშირდი</h2>
+          <p data-i18n="contact.text">პირველი გასაუბრება უფასოა. შეგიძლიათ დამიკავშირდეთ ტელეფონით, WhatsApp-ით, ელ-ფოსტით ან Instagram-ზე.</p>
+          <div class="contact-actions">
+            <a class="contact-action primary" href="tel:+995579070205" data-i18n="contact.call">დარეკვა</a>
+            <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
+            <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
+    <a class="mobile-call" href="tel:+995579070205" data-i18n="mobile.call">დარეკვა</a>
+    <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
+  <script>
+    const translations = {
+      ka: {
+        "nav.home": "მთავარი",
+        "nav.services": "მომსახურებები",
+        "nav.about": "ჩემს შესახებ",
+        "nav.blog": "ბლოგი",
+        "nav.contact": "კონტაქტი",
+        "cta.contact": "დამიკავშირდი",
+        "cta.back": "მთავარ გვერდზე დაბრუნება →",
+        "mobile.call": "დარეკვა",
+        "about.kicker": "ჩემს შესახებ",
+        "about.name": "გიორგი ირემაშვილი",
+        "about.credential": "მედიცინის დოქტორი (MD)",
+        "about.subtitle": "ექიმი . ფსიქოთერაპევტი",
+        "about.lead": "მჯერა, რომ თითოეულ ადამიანს აქვს ცვლილებისა და განვითარების უნარი. ფსიქოთერაპია არის უსაფრთხო და მშვიდი სივრცე, სადაც შეგიძლიათ უკეთ გაიგოთ საკუთარი თავი, გამოიკვლიოთ ემოციები, ურთიერთობები და ცხოვრებისეული გამოწვევები, და იპოვოთ თქვენთვის მნიშვნელოვანი ცვლილების გზა.",
+        "education.title": "განათლება და პროფესიული გზა",
+        "fact.education.label": "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
+        "fact.education.text": "მედიცინის დოქტორი (MD)",
+        "fact.training.label": "ფსიქოთერაპიული განათლება",
+        "fact.training.text": "IAIP ინტეგრირებული ფსიქოთერაპიის აკადემია\nდამოუკიდებელი პროფესიული განვითარება",
+        "fact.approach.label": "თერაპიული მიდგომები",
+        "fact.approach.text": "ჰუმანისტური და ეგზისტენციური ორიენტაცია",
+        "fact.format.label": "ფორმატი",
+        "fact.format.text": "ინდივიდუალური შეხვედრები თბილისში და ონლაინ",
+        "fact.languages.label": "ენები",
+        "fact.languages.text": "GE ქართული · GB ინგლისური · RU რუსული · DE გერმანული",
+        "approach.title": "თერაპიული მიდგომა",
+        "approach.p1": "თერაპია ორ ადამიანს შორის უშუალო კომუნიკაციაა, რომელიც კლიენტის გამოწვევის ინდივიდუალურად მორგებული გზით გადაჭრაზეა მიმართული. ვიყენებ პიროვნებაზე ორიენტირებულ, ეგზისტენციურ და ფართოდ ჰუმანისტურ მიდგომებს, რომლებიც კლიენტს მთლიანობაში ხედავს — არა მხოლოდ სიმპტომებით.",
+        "approach.p2": "სადაც საჭიროა, ვაერთიანებ CBT-ის პრაქტიკულ ტექნიკებს და ფილოსოფიური ტრადიციის სიბრძნეს — სტოიციზმს, ეგზისტენციალიზმს — ცვლილების გზის გასაადვილებლად.",
+        "approach.p3": "სამედიცინო განათლება კი საშუალებას მაძლევს, მენტალური ჯანმრთელობა ფიზიკურ და სოციალურ ჰოლისტიკურ ჭრილში დავინახო.",
+        "principles.title": "პროფესიული პრინციპები",
+        "principle.safety.title": "უსაფრთხოება",
+        "principle.safety.text": "თერაპიული სივრცე მშვიდი, კონფიდენციალური და განსჯისგან თავისუფალია.",
+        "principle.human.title": "ადამიანზე ორიენტირება",
+        "principle.human.text": "მუშაობის ცენტრში არის ადამიანი, მისი ისტორია და მისთვის მნიშვნელოვანი ცვლილება.",
+        "principle.depth.title": "სიღრმე და პრაქტიკულობა",
+        "principle.depth.text": "პროცესი აერთიანებს შინაგან გააზრებას და საჭიროებისამებრ პრაქტიკულ ნაბიჯებს.",
+        "contact.kicker": "კონტაქტი",
+        "contact.title": "დამიკავშირდი",
+        "contact.text": "პირველი გასაუბრება უფასოა. შეგიძლიათ დამიკავშირდეთ ტელეფონით, WhatsApp-ით, ელ-ფოსტით ან Instagram-ზე.",
+        "contact.call": "დარეკვა"
+      },
+      en: {
+        "nav.home": "Home",
+        "nav.services": "Services",
+        "nav.about": "About",
+        "nav.blog": "Blog",
+        "nav.contact": "Contact",
+        "cta.contact": "Contact me",
+        "cta.back": "Back to home →",
+        "mobile.call": "Call",
+        "about.kicker": "About me",
+        "about.name": "Giorgi Iremashvili",
+        "about.credential": "Doctor of Medicine (MD)",
+        "about.subtitle": "Doctor . Psychotherapist",
+        "about.lead": "I believe that every person has the capacity for change and development. Psychotherapy is a safe and calm space where you can better understand yourself, explore emotions, relationships, and life challenges, and find a path toward change that is meaningful to you.",
+        "education.title": "Education and professional path",
+        "fact.education.label": "Tbilisi State Medical University",
+        "fact.education.text": "Doctor of Medicine (MD)",
+        "fact.training.label": "Psychotherapy training",
+        "fact.training.text": "IAIP Academy of Integrative Psychotherapy\nIndependent professional development",
+        "fact.approach.label": "Therapeutic approaches",
+        "fact.approach.text": "Humanistic and existential orientation",
+        "fact.format.label": "Format",
+        "fact.format.text": "Individual sessions in Tbilisi and online",
+        "fact.languages.label": "Languages",
+        "fact.languages.text": "GE Georgian · GB English · RU Russian · DE German",
+        "approach.title": "Therapeutic approach",
+        "approach.p1": "Therapy is direct communication between two people, aimed at addressing the client's challenge in an individually adapted way. I use person-centered, existential, and broadly humanistic approaches that see the client as a whole person - not only through symptoms.",
+        "approach.p2": "Where useful, I integrate practical CBT techniques and the wisdom of philosophical traditions - Stoicism and existentialism - to make the path of change more accessible.",
+        "approach.p3": "My medical education also allows me to view mental health in a holistic frame that includes physical and social dimensions.",
+        "principles.title": "Professional principles",
+        "principle.safety.title": "Safety",
+        "principle.safety.text": "The therapeutic space is calm, confidential, and free from judgment.",
+        "principle.human.title": "Person-centered work",
+        "principle.human.text": "The focus is the person, their story, and the change that matters to them.",
+        "principle.depth.title": "Depth and practicality",
+        "principle.depth.text": "The process combines inner understanding with practical steps when they are useful.",
+        "contact.kicker": "Contact",
+        "contact.title": "Contact me",
+        "contact.text": "The first conversation is free. You can contact me by phone, WhatsApp, email, or Instagram.",
+        "contact.call": "Call"
+      },
+      ru: {
+        "nav.home": "Главная",
+        "nav.services": "Услуги",
+        "nav.about": "Обо мне",
+        "nav.blog": "Блог",
+        "nav.contact": "Контакты",
+        "cta.contact": "Связаться",
+        "cta.back": "Вернуться на главную →",
+        "mobile.call": "Позвонить",
+        "about.kicker": "Обо мне",
+        "about.name": "Гиорги Иремашвили",
+        "about.credential": "доктор медицины (MD)",
+        "about.subtitle": "Врач . психотерапевт",
+        "about.lead": "Я верю, что у каждого человека есть способность к изменениям и развитию. Психотерапия - это безопасное и спокойное пространство, где можно лучше понять себя, исследовать эмоции, отношения и жизненные трудности, а также найти важный для вас путь изменений.",
+        "education.title": "Образование и профессиональный путь",
+        "fact.education.label": "Тбилисский государственный медицинский университет",
+        "fact.education.text": "Доктор медицины (MD)",
+        "fact.training.label": "Психотерапевтическое образование",
+        "fact.training.text": "IAIP Академия интегративной психотерапии\nСамостоятельное профессиональное развитие",
+        "fact.approach.label": "Терапевтические подходы",
+        "fact.approach.text": "Гуманистическая и экзистенциальная ориентация",
+        "fact.format.label": "Формат",
+        "fact.format.text": "Индивидуальные встречи в Тбилиси и онлайн",
+        "fact.languages.label": "Языки",
+        "fact.languages.text": "GE грузинский · GB английский · RU русский · DE немецкий",
+        "approach.title": "Терапевтический подход",
+        "approach.p1": "Терапия - это непосредственная коммуникация между двумя людьми, направленная на работу с трудностью клиента индивидуально подобранным способом. Я использую личностно-ориентированный, экзистенциальный и широко гуманистический подходы, которые видят клиента целостно - не только через симптомы.",
+        "approach.p2": "Там, где это уместно, я интегрирую практические техники CBT и мудрость философских традиций - стоицизма и экзистенциализма, чтобы сделать путь изменений более доступным.",
+        "approach.p3": "Медицинское образование также позволяет мне рассматривать ментальное здоровье в холистическом контексте, включающем физические и социальные аспекты.",
+        "principles.title": "Профессиональные принципы",
+        "principle.safety.title": "Безопасность",
+        "principle.safety.text": "Терапевтическое пространство остается спокойным, конфиденциальным и свободным от осуждения.",
+        "principle.human.title": "Ориентация на человека",
+        "principle.human.text": "В центре работы находится человек, его история и важные для него изменения.",
+        "principle.depth.title": "Глубина и практичность",
+        "principle.depth.text": "Процесс объединяет внутреннее понимание и практические шаги, когда они полезны.",
+        "contact.kicker": "Контакты",
+        "contact.title": "Связаться",
+        "contact.text": "Первый разговор бесплатный. Вы можете связаться со мной по телефону, WhatsApp, email или Instagram.",
+        "contact.call": "Позвонить"
+      }
+    };
+
+    const languageButtons = document.querySelectorAll("[data-lang]");
+    const translatableNodes = document.querySelectorAll("[data-i18n]");
+
+    function setLanguage(lang) {
+      const dictionary = translations[lang] || translations.ka;
+      document.documentElement.lang = lang;
+      translatableNodes.forEach((node) => {
+        const value = dictionary[node.dataset.i18n];
+        if (value) node.textContent = value;
+      });
+      languageButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+      });
+      localStorage.setItem("therapygeorgia-lang", lang);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    setLanguage(localStorage.getItem("therapygeorgia-lang") || "ka");
+  </script>
+</body>
+</html>

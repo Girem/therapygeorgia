@@ -117,33 +117,359 @@
       .article-header h1 { font-size: 22px; }
       .article-body p, .article-body h2 { font-size: 15px; }
     }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      background: #fcf9f6;
+      color: #626966;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    img, svg { max-width: 100%; }
+    .page {
+      max-width: none;
+      min-height: 100vh;
+      padding: 1.75rem 0 2rem;
+    }
+    .wrap {
+      width: min(1450px, calc(100vw - 86px));
+      margin: 0 auto;
+    }
+    nav { display: none; }
+    .site-header {
+      min-height: 54px;
+      display: grid;
+      grid-template-columns: 280px 1fr auto;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+    .brand { display: inline-flex; align-items: center; color: #235249; text-decoration: none; }
+    .brand img { display: block; width: 226px; height: auto; }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2rem, 5vw, 5.2rem);
+      min-width: 0;
+    }
+    .site-nav a {
+      color: #303231;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .site-nav a.active { color: #235249; }
+    .top-cta,
+    .contact-action.primary,
+    .mobile-call {
+      background: #235249;
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(35, 82, 73, 0.16);
+    }
+    .top-cta {
+      min-height: 40px;
+      padding: 9px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .article-shell {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .article-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .back-link {
+      margin: 0;
+      padding: 9px 14px;
+      border-color: rgba(47, 111, 98, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.58);
+      color: #235249;
+      font-size: 13px;
+    }
+    .article-header {
+      max-width: 860px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+    .article-tag {
+      margin-bottom: 1rem;
+      background: rgba(47, 111, 98, 0.09);
+      color: #235249;
+      font-weight: 650;
+    }
+    .article-header h1 {
+      color: #303231;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 66px);
+      font-weight: 500;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    .article-meta {
+      justify-content: center;
+      color: #6e9188;
+      font-weight: 600;
+    }
+    .article-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: clamp(1.4rem, 3vw, 2.6rem);
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: rgba(246, 250, 247, 0.82);
+      box-shadow: 0 24px 80px rgba(52, 67, 62, 0.08);
+      backdrop-filter: blur(10px);
+    }
+    .article-body p {
+      color: #626966;
+      font-size: 17px;
+      line-height: 1.92;
+    }
+    .article-body h2 {
+      color: #303231;
+      font-size: clamp(25px, 2.3vw, 34px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin-top: 3.2rem;
+    }
+    .article-body a { color: #235249; }
+    .article-body blockquote {
+      border-left: 0;
+      border-radius: 12px;
+      background: rgba(47, 111, 98, 0.08);
+    }
+    .bullet-list,
+    .number-list {
+      color: #626966;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+    .article-body table {
+      overflow: hidden;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+    .article-body th,
+    .article-body td {
+      border-color: rgba(47, 111, 98, 0.18);
+    }
+    .article-body th {
+      background: rgba(47, 111, 98, 0.08);
+    }
+    .btn-primary,
+    .btn-outline,
+    .contact-action {
+      border-radius: 8px;
+      font-weight: 650;
+      text-align: center;
+    }
+    .btn-primary { background: #235249; }
+    .btn-primary:hover { background: #1d473f; }
+    .btn-outline {
+      border-color: rgba(47, 111, 98, 0.22);
+      color: #235249;
+      background: rgba(255, 255, 255, 0.58);
+    }
+    .author-card {
+      background: rgba(255, 255, 255, 0.62);
+      border-color: rgba(47, 111, 98, 0.12);
+      border-radius: 12px;
+    }
+    .contact-section { padding: 4.4rem 0 0; }
+    .contact-panel {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(1.6rem, 3vw, 2.4rem);
+      border: 1px solid rgba(47, 111, 98, 0.09);
+      border-radius: 14px;
+      background: rgba(246, 250, 247, 0.82);
+      box-shadow: 0 24px 80px rgba(52, 67, 62, 0.08);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+    .contact-kicker { color: #2f6f62; font-size: 15px; font-weight: 500; margin-bottom: 0.55rem; }
+    .contact-panel h2 {
+      color: #303231;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(30px, 3vw, 44px);
+      font-weight: 500;
+      line-height: 1.18;
+      margin-bottom: 0.8rem;
+    }
+    .contact-panel p {
+      max-width: 660px;
+      margin: 0.65rem auto 1.5rem;
+      color: #626966;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .contact-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+    .contact-action {
+      min-height: 46px;
+      padding: 11px 18px;
+      border: 1px solid rgba(47, 111, 98, 0.22);
+      background: rgba(255, 255, 255, 0.62);
+      color: #235249;
+      text-decoration: none;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    footer {
+      width: min(1450px, calc(100vw - 86px));
+      margin: 3rem auto 0;
+      padding-top: 3rem;
+      border-top-color: rgba(47, 111, 98, 0.12);
+      color: #6e9188;
+    }
+    .mobile-contact { display: none; }
+    @media (max-width: 1120px) {
+      .wrap,
+      footer { width: min(100% - 40px, 1450px); }
+      .site-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 3rem; }
+      .site-nav { justify-content: flex-start; gap: 1rem; overflow-x: auto; padding: 0.2rem 0; }
+      .top-cta { justify-self: start; }
+    }
+    @media (max-width: 680px) {
+      .page { padding-top: 1rem; padding-bottom: 5.6rem; }
+      .wrap,
+      footer { width: min(100% - 28px, 1450px); }
+      .brand img { width: 190px; }
+      .top-cta { display: none; }
+      .site-nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+      }
+      .site-nav a {
+        padding: 8px 10px;
+        border: 1px solid rgba(47, 111, 98, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.58);
+        text-align: center;
+        font-size: 13px;
+        white-space: normal;
+      }
+      .article-header { margin-bottom: 2rem; }
+      .article-header h1 { font-size: 34px; }
+      .article-body {
+        padding: 1.1rem;
+        border-radius: 12px;
+      }
+      .article-body p,
+      .bullet-list,
+      .number-list { font-size: 15px; }
+      .article-body h2 { font-size: 24px; }
+      .article-body table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .cta-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+      .btn-outline { margin: 0; }
+      .author-card {
+        align-items: flex-start;
+        gap: 0.9rem;
+      }
+      .contact-panel { border-radius: 12px; }
+      .contact-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .mobile-contact {
+        position: fixed;
+        left: 0.9rem;
+        right: 0.9rem;
+        bottom: 0.9rem;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+        padding: 0.75rem;
+        border: 1px solid rgba(47, 111, 98, 0.12);
+        border-radius: 14px;
+        background: rgba(252, 249, 246, 0.94);
+        box-shadow: 0 20px 60px rgba(52, 67, 62, 0.16);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-contact a {
+        min-height: 44px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-wa {
+        border: 1px solid rgba(47, 111, 98, 0.22);
+        background: rgba(255, 255, 255, 0.74);
+        color: #235249;
+      }
+    }
+    @media (max-width: 420px) {
+      .wrap,
+      footer { width: min(100% - 22px, 1450px); }
+      .brand img { width: 176px; }
+      .site-nav { grid-template-columns: 1fr; }
+      .article-header h1 { font-size: 30px; }
+      .article-body h2 { font-size: 22px; }
+      .contact-panel { padding: 1.1rem; }
+      .mobile-contact { gap: 0.5rem; padding-left: 0.75rem; padding-right: 0.75rem; }
+    }
   </style>
 </head>
 <body>
 <div class="page">
 
-  <nav>
-    <a href="/" class="logo">
-      <img src="/logo-horizontal.svg" alt="TherapyGeorgia.ge" width="137" height="36" decoding="async" />
+  <header class="wrap site-header">
+    <a href="/" class="brand" aria-label="TherapyGeorgia">
+      <img src="/logo final/svg/therapy-georgia-recreated.svg" alt="TherapyGeorgia" />
     </a>
-    <button class="hamburger" id="hamburger" type="button" aria-label="მენიუ" aria-controls="navLinks" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="/fsiqoterapevti-tbilisshi.html">ფსიქოთერაპევტი</a>
-      <a href="/#approaches">თერაპიული მიდგომები</a>
-      <a href="/blog/" style="background:#E1F5EE; color:#0F6E56; font-weight:500; padding:3px 10px; border-radius:99px; font-size:13px;">ბლოგი</a>
-      <a href="/#about">ჩემს შესახებ</a>
-      <a href="/#contact">კონტაქტი</a>
-    </div>
-  </nav>
+    <nav class="site-nav" aria-label="მთავარი ნავიგაცია">
+      <a href="/">მთავარი</a>
+      <a href="/fsiqoterapevti-tbilisshi.html">მომსახურებები</a>
+      <a href="/blog/" class="active">ბლოგი</a>
+      <a href="/chems-shesakheb.html">ჩემს შესახებ</a>
+      <a href="#contact">კონტაქტი</a>
+    </nav>
+    <a class="top-cta" href="#contact">დამიკავშირდი</a>
+  </header>
 
-  <div style="display:flex; flex-direction:column; gap:0.5rem; margin-bottom:2rem; align-items:flex-start;">
-    <a href="/" class="back-link" style="margin-bottom:0;">← მთავარ გვერდზე დაბრუნება</a>
-    <a href="/blog/" class="back-link" style="margin-bottom:0;">← ბლოგზე დაბრუნება</a>
+  <div class="wrap article-shell">
+    <div class="article-breadcrumbs">
+      <a href="/" class="back-link">← მთავარ გვერდზე დაბრუნება</a>
+      <a href="/blog/" class="back-link">← ბლოგზე დაბრუნება</a>
+    </div>
   </div>
 
-  <div class="article-header">
+  <div class="wrap article-header">
     <div class="article-tag">ჰოლისტური</div>
     <h1>ბუნებასთან ქრონიკული გაუცხოება — ფსიქოთერაპიული პერსპექტივა</h1>
     <div class="article-meta">
@@ -153,7 +479,7 @@
     </div>
   </div>
 
-  <div class="article-body">
+  <article class="article-body">
 
     <p>თანამედროვე საზოგადოებაში ფსიქიკური ჯანმრთელობის პრობლემების ზრდა მოითხოვს ფართო, ინტერდისციპლინარულ გააზრებას. ტრადიციულად, ფსიქოთერაპია კონცენტრირდებოდა ინდივიდის შინაგან პროცესებზე, ოჯახურ დინამიკასა და სოციალურ ფაქტორებზე. თუმცა, ბოლო წლებში სულ უფრო მეტი ყურადღება ექცევა გარემოს როლს ადამიანის ფსიქიკურ კეთილდღეობაში. ამ თვალსაზრისით განსაკუთრებული მნიშვნელობა ბუნებასთან ურთიერთობას მინდა მივაბყრო.</p>
 
@@ -211,7 +537,7 @@
       <p>განსაკუთრებული ყურადღება ეთმობა სუნის, ხმებისა და ვიზუალური დეტალების აღქმას, სხეულზე ფოკუსირებას, ნელი ტემპის შენარჩუნებასა და გარემოსთან ურთიერთობის განცდას.</p>
     </blockquote>
 
-    <p>კვლევები მიუთითებს, რომ ასეთი პრაქტიკები ამცირებს კორტიზოლის დონეს, აუმჯობესებს განწყობას და ამცირებს შფოთვის სიმპტომებს. <a href="/#approaches">ფსიქოთერაპიაში</a> ბუნებაზე დაფუძნებული ინტერვენციები შეიძლება გამოყენებულ იქნეს, მაგალითად:</p>
+    <p>კვლევები მიუთითებს, რომ ასეთი პრაქტიკები ამცირებს კორტიზოლის დონეს, აუმჯობესებს განწყობას და ამცირებს შფოთვის სიმპტომებს. <a href="/fsiqoterapevti-tbilisshi.html">ფსიქოთერაპიაში</a> ბუნებაზე დაფუძნებული ინტერვენციები შეიძლება გამოყენებულ იქნეს, მაგალითად:</p>
 
     <ul class="bullet-list">
       <li>სესიის ნაწილი ღია სივრცეში ჩატარება</li>
@@ -231,11 +557,11 @@
 
     <p>ბუნებასთან კავშირი ადამიანის ფსიქიკური კეთილდღეობის მნიშვნელოვანი კომპონენტია, რომელიც თანამედროვე ცხოვრებაში ხშირად უგულებელყოფილია. ბუნებასთან ქრონიკული გაუცხოება ზრდის სტრესის, შფოთვისა და ემოციური დისრეგულაციის რისკს — მაშინ, როდესაც ბუნებასთან კონტაქტი წარმოადგენს მნიშვნელოვან რესურსს ნერვული სისტემის რეგულაციისა და ზოგადი ფსიქოლოგიური კეთილდღეობისთვის.</p>
 
-    <p>მომავალში შესაძლებელია, რომ ფსიქოთერაპია კიდევ უფრო მეტად განვითარდეს ეკოლოგიური მიმართულებით, სადაც ადამიანისა და გარემოს ურთიერთობა გახდება ცენტრალური თემა. თუ ეს თემა თქვენს გამოცდილებას ეხმიანება, შეგიძლიათ, <a href="/#contact">პირველი უფასო გასაუბრებით</a> დაიწყოთ.</p>
+    <p>მომავალში შესაძლებელია, რომ ფსიქოთერაპია კიდევ უფრო მეტად განვითარდეს ეკოლოგიური მიმართულებით, სადაც ადამიანისა და გარემოს ურთიერთობა გახდება ცენტრალური თემა. თუ ეს თემა თქვენს გამოცდილებას ეხმიანება, შეგიძლიათ, <a href="#contact">პირველი უფასო გასაუბრებით</a> დაიწყოთ.</p>
 
     <div style="margin: 2rem 0;">
-      <a href="/#contact" class="btn-primary">კონსულტაციის დაჯავშნა</a>
-      <a href="/#about" class="btn-outline">გაიგე მეტი</a>
+      <a href="#contact" class="btn-primary">კონსულტაციის დაჯავშნა</a>
+      <a href="/chems-shesakheb.html" class="btn-outline">გაიგე მეტი</a>
     </div>
 
     <div class="author-card">
@@ -246,15 +572,33 @@
       </div>
     </div>
 
-  </div>
+  </article>
+
+  <section class="wrap contact-section" id="contact" aria-label="კონტაქტი">
+    <div class="contact-panel">
+      <div class="contact-kicker">კონტაქტი</div>
+      <h2>პირველი გასაუბრება უფასოა</h2>
+      <p>თუ ეს თემა თქვენთვის ახლობელია, შეგიძლიათ, დამიკავშირდეთ ტელეფონით, WhatsApp-ით, ელ-ფოსტით ან Instagram-ზე.</p>
+      <div class="contact-actions">
+        <a class="contact-action primary" href="tel:+995579070205">დარეკვა</a>
+        <a class="contact-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
+        <a class="contact-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener">@therapygeorgia</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>© 2026 <a href="https://therapygeorgia.ge">therapygeorgia.ge</a> · ყველა უფლება დაცულია · გიორგი ირემაშვილი</p>
   </footer>
 
 </div>
+<div class="mobile-contact" aria-label="სწრაფი კონტაქტი">
+  <a class="mobile-call" href="tel:+995579070205">დარეკვა</a>
+  <a class="mobile-wa" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
+</div>
 <script>
-  document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('hamburger')?.addEventListener('click', function() {
     var navLinks = document.getElementById('navLinks');
     var isOpen = navLinks.classList.toggle('open');
     this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');

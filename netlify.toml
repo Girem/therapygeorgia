@@ -6,3 +6,13 @@
   from = "/psychotherapist-tbilisi.html"
   to = "/fsiqoterapevti-tbilisshi.html"
   status = 301
+
+[[redirects]]
+  from = "/services.html"
+  to = "/fsiqoterapevti-tbilisshi.html"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/chems-shesakheb.html"
+  status = 301
