@@ -2,7 +2,12 @@ const https = require('https');
 
 exports.handler = async function (event) {
   try {
-    const data = JSON.parse(event.body);
+    if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
+      console.warn('Telegram notification skipped: missing TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID.');
+      return { statusCode: 200 };
+    }
+
+    const data = JSON.parse(event.body || '{}');
     const d = data.data || {};
 
     const text =
@@ -29,7 +34,13 @@ exports.handler = async function (event) {
         }
       }, (res) => {
         res.on('data', () => {});
-        res.on('end', resolve);
+        res.on('end', () => {
+          if (res.statusCode >= 400) {
+            reject(new Error(`Telegram API returned ${res.statusCode}`));
+            return;
+          }
+          resolve();
+        });
       });
       req.on('error', reject);
       req.write(body);
@@ -39,6 +50,6 @@ exports.handler = async function (event) {
     return { statusCode: 200 };
   } catch (err) {
     console.error(err);
-    return { statusCode: 500 };
+    return { statusCode: 200 };
   }
 };
