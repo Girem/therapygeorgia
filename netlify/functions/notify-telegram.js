@@ -12,11 +12,11 @@ exports.handler = async function (event) {
 
     const text =
       `📬 ახალი კლიენტი!\n\n` +
-      `👤 სახელი: ${d.name || '—'}\n` +
-      `📧 ელ-ფოსტა: ${d.email || '—'}\n` +
-      `📞 ტელეფონი: ${d.phone || '—'}\n` +
-      `🗂 სესიის ტიპი: ${d.type || '—'}\n` +
-      `💬 შეტყობინება:\n${d.message || '—'}`;
+      `👤 სახელი: ${d.name || '-'}\n` +
+      `📧 ელ-ფოსტა: ${d.email || '-'}\n` +
+      `📞 ტელეფონი: ${d.phone || '-'}\n` +
+      `🗂 სესიის ტიპი: ${d.type || '-'}\n` +
+      `💬 შეტყობინება:\n${d.message || '-'}`;
 
     const body = JSON.stringify({
       chat_id: process.env.TELEGRAM_CHAT_ID,
