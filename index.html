@@ -19,30 +19,285 @@
   <meta name="twitter:description" content="ინტეგრირებული, ადამიანზე ორიენტირებული ფსიქოთერაპია თბილისში და ონლაინ. პირველი გასაუბრება უფასოა." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "@id": "https://therapygeorgia.ge/#practice",
-    "name": "TherapyGeorgia.ge",
-    "url": "https://therapygeorgia.ge/",
-    "image": "https://therapygeorgia.ge/og-image.png",
-    "telephone": "+995579070205",
-    "email": "contact@therapygeorgia.ge",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tbilisi",
-      "addressCountry": "GE"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://therapygeorgia.ge/#website",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/",
+      "inLanguage": [
+        "ka",
+        "en",
+        "ru"
+      ],
+      "publisher": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      }
     },
-    "founder": {
+    {
+      "@type": [
+        "MedicalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://therapygeorgia.ge/#practice",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/",
+      "image": "https://therapygeorgia.ge/og-image.png",
+      "logo": "https://therapygeorgia.ge/og-image.png",
+      "telephone": "+995579070205",
+      "priceRange": "75 GEL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tbilisi",
+        "addressCountry": "GE"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tbilisi"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia"
+        }
+      ],
+      "founder": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "employee": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+995579070205",
+        "contactType": "appointments and introductory consultation",
+        "availableLanguage": [
+          "ka",
+          "en",
+          "ru",
+          "de"
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/therapygeorgia/"
+      ],
+      "makesOffer": [
+        {
+          "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/#introductory-consultation"
+        }
+      ]
+    },
+    {
       "@type": "Person",
       "@id": "https://therapygeorgia.ge/#giorgi-iremashvili",
       "name": "გიორგი ირემაშვილი",
       "alternateName": "Giorgi Iremashvili",
       "honorificSuffix": "MD",
-      "jobTitle": "Psychotherapist"
+      "jobTitle": [
+        "ექიმი",
+        "ფსიქოთერაპევტი",
+        "Psychotherapist"
+      ],
+      "url": "https://therapygeorgia.ge/chems-shesakheb",
+      "image": "https://therapygeorgia.ge/preview-assets/about-portrait.webp",
+      "worksFor": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "ქართული",
+          "alternateName": "ka"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Русский",
+          "alternateName": "ru"
+        },
+        {
+          "@type": "Language",
+          "name": "Deutsch",
+          "alternateName": "de"
+        }
+      ],
+      "knowsAbout": [
+        "ფსიქოთერაპია",
+        "ფსიქოთერაპია თბილისში",
+        "ონლაინ ფსიქოთერაპია",
+        "ჰუმანისტური თერაპია",
+        "ეგზისტენციური თერაპია",
+        "პიროვნებაზე ორიენტირებული თერაპია",
+        "ინტეგრირებული ფსიქოთერაპია",
+        "ფილოსოფიური კონსულტირება",
+        "შფოთვა",
+        "დეპრესია",
+        "ურთიერთობები",
+        "მენტალური ჯანმრთელობა"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/therapygeorgia/"
+      ]
     },
-    "sameAs": ["https://www.instagram.com/therapygeorgia/"]
-  }
+    {
+      "@type": "Service",
+      "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service",
+      "name": "ფსიქოთერაპია თბილისში და ონლაინ",
+      "alternateName": "Individual psychotherapy in Tbilisi and online",
+      "serviceType": "Individual psychotherapy",
+      "description": "ინდივიდუალური ფსიქოთერაპიული შეხვედრები თბილისში და ონლაინ, ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომებით.",
+      "provider": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tbilisi"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia"
+        },
+        {
+          "@type": "Place",
+          "name": "Online"
+        }
+      ],
+      "availableLanguage": [
+        "ka",
+        "en",
+        "ru",
+        "de"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Adults considering psychotherapy in Georgia"
+      },
+      "offers": [
+        {
+          "@id": "https://therapygeorgia.ge/#introductory-consultation"
+        },
+        {
+          "@type": "Offer",
+          "name": "ინდივიდუალური ფსიქოთერაპიული სესია",
+          "price": "75",
+          "priceCurrency": "GEL",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "name": "პირისპირ შეხვედრა თბილისში",
+          "serviceLocation": {
+            "@type": "Place",
+            "name": "TherapyGeorgia.ge",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Tbilisi",
+              "addressCountry": "GE"
+            }
+          }
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "ონლაინ სესია",
+          "serviceUrl": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://therapygeorgia.ge/#introductory-consultation",
+      "name": "პირველი უფასო გასაუბრება",
+      "price": "0",
+      "priceCurrency": "GEL",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://therapygeorgia.ge/#webpage",
+      "url": "https://therapygeorgia.ge/",
+      "name": "ფსიქოთერაპია თბილისში და ონლაინ | TherapyGeorgia.ge",
+      "description": "ფსიქოთერაპია თბილისში და ონლაინ. გიორგი ირემაშვილი, MD - ექიმი და ფსიქოთერაპევტი. პირველი გასაუბრება უფასოა.",
+      "inLanguage": "ka",
+      "isPartOf": {
+        "@id": "https://therapygeorgia.ge/#website"
+      },
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "breadcrumb": {
+        "@id": "https://therapygeorgia.ge/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://therapygeorgia.ge/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "მთავარი",
+          "item": "https://therapygeorgia.ge/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://therapygeorgia.ge/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "სესია რა ღირს?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "სესიის სტანდარტული საფასური 75₾-ია. კლიენტის ფინანსური საჭიროებიდან გამომდინარე, სხვა ფასდაკლებული ტარიფით სარგებლობაც შესაძლებელია."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "პირველი შეხვედრა რას გულისხმობს?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "პირველი გასაუბრება უფასოა და გაცნობითი ხასიათისაა. ერთად განვიხილავთ თქვენს სიტუაციას, თერაპიის მიზნებს და შემდეგ ნაბიჯებს."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ონლაინ სესია შესაძლებელია?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "დიახ, ვმუშაობ როგორც პირისპირ, ასევე ონლაინ ფორმატში."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "შეხვედრა კონფიდენციალურია?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "სესიების შინაარსი კონფიდენციალურია და მესამე მხარეს არ გადაეცემა, გარდა კანონით განსაზღვრული უსაფრთხოების გამონაკლისებისა."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -927,6 +1182,14 @@
           <a class="section-link" href="/blog/" data-i18n="blog.all">ყველა სტატია →</a>
         </div>
         <div class="blog-grid">
+          <a href="/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia" class="blog-card">
+            <div>
+              <div class="blog-tag" data-i18n="blog.therapyStart.tag">თერაპიის დაწყება</div>
+              <h3 data-i18n="blog.therapyStart.title">როგორ გავიგო, მჭირდება თუ არა ფსიქოთერაპია?</h3>
+              <p data-i18n="blog.therapyStart.text">ნიშნები, რომლებიც შეიძლება მიგანიშნებდეთ, რომ ფსიქოთერაპიაზე ფიქრი დროა.</p>
+            </div>
+            <div class="blog-date" data-i18n="blog.therapyStart.date">2026 · 7-8 წუთიანი საკითხავი</div>
+          </a>
           <a href="/blog/socialuri-shfotva" class="blog-card">
             <div>
               <div class="blog-tag" data-i18n="blog.social.tag">შფოთვა</div>
@@ -1009,7 +1272,6 @@
             <div class="contact-list">
               <span data-i18n="contact.location">📍 თბილისი, საქართველო</span>
               <a href="tel:+995579070205">📞 +995 579 070 205</a>
-              <a href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
               <a class="social-link whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
               <a class="social-link instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
             </div>
@@ -1058,7 +1320,7 @@
       </section>
 
       <footer class="wrap">
-        <p>© 2026 therapygeorgia.ge · გიორგი ირემაშვილი, MD · <a href="/konfidencialurobis-politika">კონფიდენციალურობის პოლიტიკა</a></p>
+        <p>© 2025 therapygeorgia.ge · გიორგი ირემაშვილი, MD · <a href="/konfidencialurobis-politika">კონფიდენციალურობის პოლიტიკა</a></p>
       </footer>
     </main>
   </div>
@@ -1100,6 +1362,10 @@
         "service.step3.text": "თუ ერთად მუშაობა შესაფერისი იქნება, შევთანხმდებით სესიების ფორმატზე, სიხშირეზე და მიზნებზე.",
         "blog.title": "უახლესი სტატიები ფსიქოთერაპიასა და მენტალურ ჯანმრთელობაზე",
         "blog.all": "ყველა სტატია →",
+        "blog.therapyStart.tag": "თერაპიის დაწყება",
+        "blog.therapyStart.title": "როგორ გავიგო, მჭირდება თუ არა ფსიქოთერაპია?",
+        "blog.therapyStart.text": "ნიშნები, რომლებიც შეიძლება მიგანიშნებდეთ, რომ ფსიქოთერაპიაზე ფიქრი დროა.",
+        "blog.therapyStart.date": "2026 · 7-8 წუთიანი საკითხავი",
         "blog.social.tag": "შფოთვა",
         "blog.social.title": "სოციალური შფოთვა: რა არის, როგორ ვლინდება და როგორ ვმართოთ",
         "blog.social.text": "როგორ ვლინდება სოციალური შფოთვა, რა ინარჩუნებს მას და რა გზებით შეიძლება მისი მართვა.",
@@ -1182,6 +1448,10 @@
         "service.step3.text": "If working together is appropriate, we agree on the session format, frequency, and goals.",
         "blog.title": "Latest articles on psychotherapy and mental health",
         "blog.all": "All articles →",
+        "blog.therapyStart.tag": "Starting therapy",
+        "blog.therapyStart.title": "How do I know if I need psychotherapy?",
+        "blog.therapyStart.text": "Signs that it may be time to think about psychotherapy.",
+        "blog.therapyStart.date": "2026 · 7-8 min read",
         "blog.social.tag": "Anxiety",
         "blog.social.title": "Social anxiety: what it is, how it appears, and how to manage it",
         "blog.social.text": "How social anxiety appears, what maintains it, and what can help you manage it.",
@@ -1264,6 +1534,10 @@
         "service.step3.text": "Если совместная работа будет подходящей, мы согласуем формат, частоту и цели сессий.",
         "blog.title": "Новые статьи о психотерапии и ментальном здоровье",
         "blog.all": "Все статьи →",
+        "blog.therapyStart.tag": "Начало терапии",
+        "blog.therapyStart.title": "Как понять, нужна ли мне психотерапия?",
+        "blog.therapyStart.text": "Признаки, которые могут подсказать, что пора подумать о психотерапии.",
+        "blog.therapyStart.date": "2026 · 7-8 минут чтения",
         "blog.social.tag": "Тревога",
         "blog.social.title": "Социальная тревога: что это, как проявляется и как с ней справляться",
         "blog.social.text": "Как проявляется социальная тревога, что ее поддерживает и какие способы могут помочь.",

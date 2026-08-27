@@ -19,21 +19,144 @@
   <meta name="twitter:description" content="სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "@id": "https://therapygeorgia.ge/blog/#blog",
-    "name": "TherapyGeorgia.ge ბლოგი",
-    "description": "სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ.",
-    "url": "https://therapygeorgia.ge/blog/",
-    "inLanguage": "ka",
-    "publisher": {
-      "@type": "Organization",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://therapygeorgia.ge/#website",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/",
+      "inLanguage": [
+        "ka",
+        "en",
+        "ru"
+      ],
+      "publisher": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      }
+    },
+    {
+      "@type": [
+        "MedicalBusiness",
+        "ProfessionalService"
+      ],
       "@id": "https://therapygeorgia.ge/#practice",
       "name": "TherapyGeorgia.ge",
-      "url": "https://therapygeorgia.ge/"
+      "url": "https://therapygeorgia.ge/",
+      "image": "https://therapygeorgia.ge/og-image.png",
+      "logo": "https://therapygeorgia.ge/og-image.png",
+      "telephone": "+995579070205",
+      "priceRange": "75 GEL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tbilisi",
+        "addressCountry": "GE"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tbilisi"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia"
+        }
+      ],
+      "founder": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "sameAs": [
+        "https://www.instagram.com/therapygeorgia/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://therapygeorgia.ge/#giorgi-iremashvili",
+      "name": "გიორგი ირემაშვილი",
+      "alternateName": "Giorgi Iremashvili",
+      "honorificSuffix": "MD",
+      "jobTitle": [
+        "ექიმი",
+        "ფსიქოთერაპევტი",
+        "Psychotherapist"
+      ],
+      "url": "https://therapygeorgia.ge/chems-shesakheb",
+      "worksFor": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://therapygeorgia.ge/blog/#webpage",
+      "url": "https://therapygeorgia.ge/blog/",
+      "name": "ბლოგი | therapygeorgia.ge",
+      "description": "სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ.",
+      "inLanguage": "ka",
+      "isPartOf": {
+        "@id": "https://therapygeorgia.ge/#website"
+      },
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "breadcrumb": {
+        "@id": "https://therapygeorgia.ge/blog/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://therapygeorgia.ge/blog/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "მთავარი",
+          "item": "https://therapygeorgia.ge/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ბლოგი",
+          "item": "https://therapygeorgia.ge/blog/"
+        }
+      ]
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://therapygeorgia.ge/blog/#blog",
+      "name": "TherapyGeorgia.ge ბლოგი",
+      "description": "სტატიები ფსიქიკური ჯანმრთელობის, ფსიქოთერაპიის და თვითგანვითარების შესახებ.",
+      "url": "https://therapygeorgia.ge/blog/",
+      "inLanguage": "ka",
+      "publisher": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "author": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "blogPost": [
+        {
+          "@id": "https://therapygeorgia.ge/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia#article"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/blog/socialuri-shfotva#article"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/blog/blog-psiqologi-psiqoterapevti-psiqiatri#article"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/blog/buneba#article"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/blog/blog-therapiis-7-rchevebi#article"
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -369,6 +492,14 @@
 
       <section class="blog-section" aria-label="სტატიების სია">
         <div class="wrap blog-grid">
+          <a href="/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia" class="blog-card">
+            <div>
+              <div class="blog-tag">თერაპიის დაწყება</div>
+              <h2>როგორ გავიგო, მჭირდება თუ არა ფსიქოთერაპია?</h2>
+              <p>ნიშნები, რომლებიც შეიძლება მიგანიშნებდეთ, რომ ფსიქოთერაპიაზე ფიქრი დროა.</p>
+            </div>
+            <div class="blog-date">2026 · 7-8 წუთიანი საკითხავი</div>
+          </a>
           <a href="/blog/socialuri-shfotva" class="blog-card">
             <div>
               <div class="blog-tag">შფოთვა</div>
@@ -412,14 +543,13 @@
           <div class="contact-actions">
             <a class="contact-action primary" href="tel:+995579070205">დარეკვა</a>
             <a class="contact-action whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="contact-action" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
             <a class="contact-action instagram-action" href="https://www.instagram.com/therapygeorgia/" target="_blank" rel="noopener" aria-label="Instagram @therapygeorgia"><span aria-hidden="true">📷</span><span>@therapygeorgia</span></a>
           </div>
         </div>
       </section>
 
       <footer class="wrap">
-        <p>© 2026 therapygeorgia.ge · ყველა უფლება დაცულია · გიორგი ირემაშვილი</p>
+        <p>© 2025 therapygeorgia.ge · ყველა უფლება დაცულია · გიორგი ირემაშვილი</p>
       </footer>
     </main>
   </div>

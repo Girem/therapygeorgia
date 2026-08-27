@@ -5,6 +5,9 @@ const BASE_URL = 'https://therapygeorgia.ge';
 
 function getLastMod(filepath) {
   try {
+    const changed = execSync(`git status --short -- "${filepath}"`, { encoding: 'utf8' }).trim();
+    if (changed) return new Date().toISOString().split('T')[0];
+
     const date = execSync(`git log -1 --format=%ci "${filepath}"`, { encoding: 'utf8' }).trim();
     return date ? date.split(' ')[0] : new Date().toISOString().split('T')[0];
   } catch {

@@ -19,42 +19,253 @@
   <meta name="twitter:description" content="ინდივიდუალური ფსიქოთერაპიული შეხვედრები თბილისში და ონლაინ. პირველი გასაუბრება უფასოა." />
   <meta name="twitter:image" content="https://therapygeorgia.ge/og-image.png" />
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service",
-    "name": "ფსიქოთერაპია თბილისში და ონლაინ",
-    "serviceType": "Individual psychotherapy",
-    "areaServed": [
-      { "@type": "City", "name": "Tbilisi" },
-      { "@type": "Country", "name": "Georgia" }
-    ],
-    "availableChannel": [
-      {
-        "@type": "ServiceChannel",
-        "serviceLocation": {
-          "@type": "Place",
-          "name": "TherapyGeorgia.ge",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Tbilisi",
-            "addressCountry": "GE"
-          }
-        }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://therapygeorgia.ge/#website",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/",
+      "inLanguage": [
+        "ka",
+        "en",
+        "ru"
+      ],
+      "publisher": {
+        "@id": "https://therapygeorgia.ge/#practice"
       },
-      {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi"
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
       }
-    ],
-    "provider": {
+    },
+    {
+      "@type": [
+        "MedicalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://therapygeorgia.ge/#practice",
+      "name": "TherapyGeorgia.ge",
+      "url": "https://therapygeorgia.ge/",
+      "image": "https://therapygeorgia.ge/og-image.png",
+      "logo": "https://therapygeorgia.ge/og-image.png",
+      "telephone": "+995579070205",
+      "priceRange": "75 GEL",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tbilisi",
+        "addressCountry": "GE"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tbilisi"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia"
+        }
+      ],
+      "founder": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "employee": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+995579070205",
+        "contactType": "appointments and introductory consultation",
+        "availableLanguage": [
+          "ka",
+          "en",
+          "ru",
+          "de"
+        ]
+      },
+      "sameAs": [
+        "https://www.instagram.com/therapygeorgia/"
+      ],
+      "makesOffer": [
+        {
+          "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service"
+        },
+        {
+          "@id": "https://therapygeorgia.ge/#introductory-consultation"
+        }
+      ]
+    },
+    {
       "@type": "Person",
-      "@id": "https://therapygeorgia.ge/chems-shesakheb#giorgi-iremashvili",
+      "@id": "https://therapygeorgia.ge/#giorgi-iremashvili",
       "name": "გიორგი ირემაშვილი",
-      "jobTitle": "ექიმი · ფსიქოთერაპევტი",
-      "url": "https://therapygeorgia.ge/chems-shesakheb"
+      "alternateName": "Giorgi Iremashvili",
+      "honorificSuffix": "MD",
+      "jobTitle": [
+        "ექიმი",
+        "ფსიქოთერაპევტი",
+        "Psychotherapist"
+      ],
+      "url": "https://therapygeorgia.ge/chems-shesakheb",
+      "image": "https://therapygeorgia.ge/preview-assets/about-portrait.webp",
+      "worksFor": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "ქართული",
+          "alternateName": "ka"
+        },
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        },
+        {
+          "@type": "Language",
+          "name": "Русский",
+          "alternateName": "ru"
+        },
+        {
+          "@type": "Language",
+          "name": "Deutsch",
+          "alternateName": "de"
+        }
+      ],
+      "knowsAbout": [
+        "ფსიქოთერაპია",
+        "ფსიქოთერაპია თბილისში",
+        "ონლაინ ფსიქოთერაპია",
+        "ჰუმანისტური თერაპია",
+        "ეგზისტენციური თერაპია",
+        "პიროვნებაზე ორიენტირებული თერაპია",
+        "ინტეგრირებული ფსიქოთერაპია",
+        "ფილოსოფიური კონსულტირება",
+        "შფოთვა",
+        "დეპრესია",
+        "ურთიერთობები",
+        "მენტალური ჯანმრთელობა"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/therapygeorgia/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service",
+      "name": "ფსიქოთერაპია თბილისში და ონლაინ",
+      "alternateName": "Individual psychotherapy in Tbilisi and online",
+      "serviceType": "Individual psychotherapy",
+      "description": "ინდივიდუალური ფსიქოთერაპიული შეხვედრები თბილისში და ონლაინ, ჰუმანისტური, ეგზისტენციური და ინტეგრირებული მიდგომებით.",
+      "provider": {
+        "@id": "https://therapygeorgia.ge/#giorgi-iremashvili"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tbilisi"
+        },
+        {
+          "@type": "Country",
+          "name": "Georgia"
+        },
+        {
+          "@type": "Place",
+          "name": "Online"
+        }
+      ],
+      "availableLanguage": [
+        "ka",
+        "en",
+        "ru",
+        "de"
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Adults considering psychotherapy in Georgia"
+      },
+      "offers": [
+        {
+          "@id": "https://therapygeorgia.ge/#introductory-consultation"
+        },
+        {
+          "@type": "Offer",
+          "name": "ინდივიდუალური ფსიქოთერაპიული სესია",
+          "price": "75",
+          "priceCurrency": "GEL",
+          "availability": "https://schema.org/InStock"
+        }
+      ],
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "name": "პირისპირ შეხვედრა თბილისში",
+          "serviceLocation": {
+            "@type": "Place",
+            "name": "TherapyGeorgia.ge",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Tbilisi",
+              "addressCountry": "GE"
+            }
+          }
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "ონლაინ სესია",
+          "serviceUrl": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi"
+        }
+      ]
+    },
+    {
+      "@type": "Offer",
+      "@id": "https://therapygeorgia.ge/#introductory-consultation",
+      "name": "პირველი უფასო გასაუბრება",
+      "price": "0",
+      "priceCurrency": "GEL",
+      "availability": "https://schema.org/InStock",
+      "itemOffered": {
+        "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#service"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#webpage",
+      "url": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi",
+      "name": "ფსიქოთერაპევტი თბილისში და ონლაინ",
+      "description": "ინდივიდუალური ფსიქოთერაპიული შეხვედრები თბილისში და ონლაინ. პირველი გასაუბრება უფასოა.",
+      "inLanguage": "ka",
+      "isPartOf": {
+        "@id": "https://therapygeorgia.ge/#website"
+      },
+      "about": {
+        "@id": "https://therapygeorgia.ge/#practice"
+      },
+      "breadcrumb": {
+        "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "მთავარი",
+          "item": "https://therapygeorgia.ge/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "მომსახურება",
+          "item": "https://therapygeorgia.ge/fsiqoterapevti-tbilisshi"
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -560,13 +771,12 @@
           <div class="actions">
             <a class="btn-main" href="tel:+995579070205" data-i18n="cta.call">დარეკვა</a>
             <a class="btn-secondary whatsapp-action" href="https://wa.me/995579070205" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn-secondary" href="mailto:contact@therapygeorgia.ge">contact@therapygeorgia.ge</a>
           </div>
         </div>
       </section>
 
       <footer class="wrap">
-        <p>© 2026 therapygeorgia.ge · გიორგი ირემაშვილი, MD</p>
+        <p>© 2025 therapygeorgia.ge · გიორგი ირემაშვილი, MD</p>
       </footer>
     </main>
   </div>

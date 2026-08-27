@@ -52,6 +52,11 @@
   to = "/blog/blog-therapiis-7-rchevebi"
   status = 301
 
+[[redirects]]
+  from = "/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia.html"
+  to = "/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia"
+  status = 301
+
 [[headers]]
   for = "/*.html"
   [headers.values]
