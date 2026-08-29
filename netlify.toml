@@ -57,6 +57,11 @@
   to = "/blog/rogor-gavigo-mchirdeba-tu-ara-fsiqoterapia"
   status = 301
 
+[[redirects]]
+  from = "/blog/fsiqoterapevti-tbilisshi-rogor-avirchio.html"
+  to = "/blog/fsiqoterapevti-tbilisshi-rogor-avirchio"
+  status = 301
+
 [[headers]]
   for = "/*.html"
   [headers.values]
