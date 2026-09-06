@@ -18,6 +18,11 @@
   status = 301
 
 [[redirects]]
+  from = "/giorgi-iremashvili"
+  to = "/chems-shesakheb"
+  status = 301
+
+[[redirects]]
   from = "/fsiqoterapevti-tbilisshi.html"
   to = "/fsiqoterapevti-tbilisshi"
   status = 301
