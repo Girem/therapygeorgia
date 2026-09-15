@@ -10,13 +10,28 @@ exports.handler = async function (event) {
     const data = JSON.parse(event.body || '{}');
     const d = data.data || {};
 
-    const text =
-      `📬 ახალი კლიენტი!\n\n` +
-      `👤 სახელი: ${d.name || '-'}\n` +
-      `📧 ელ-ფოსტა: ${d.email || '-'}\n` +
-      `📞 ტელეფონი: ${d.phone || '-'}\n` +
-      `🗂 სესიის ტიპი: ${d.type || '-'}\n` +
-      `💬 შეტყობინება:\n${d.message || '-'}`;
+    const asText = (value) => {
+      if (Array.isArray(value)) return value.filter(Boolean).join(', ');
+      return value || '-';
+    };
+
+    const formName = data.form_name || d['form-name'] || 'contact';
+    const isConsultationForm = formName === 'four-consultations';
+
+    const text = isConsultationForm
+      ? `📬 ახალი რეგისტრაცია - 4 კონსულტაცია\n\n` +
+        `👤 სახელი და გვარი: ${asText(d.name)}\n` +
+        `📧 ელ-ფოსტა: ${asText(d.email)}\n` +
+        `📞 ტელეფონი: ${asText(d.phone)}\n` +
+        `📅 სასურველი დღეები: ${asText(d.preferred_days)}\n` +
+        `🕒 სასურველი დრო: ${asText(d.preferred_times)}\n` +
+        `💬 შეტყობინება:\n${asText(d.message)}`
+      : `📬 ახალი კლიენტი!\n\n` +
+        `👤 სახელი: ${asText(d.name)}\n` +
+        `📧 ელ-ფოსტა: ${asText(d.email)}\n` +
+        `📞 ტელეფონი: ${asText(d.phone)}\n` +
+        `🗂 სესიის ტიპი: ${asText(d.type)}\n` +
+        `💬 შეტყობინება:\n${asText(d.message)}`;
 
     const body = JSON.stringify({
       chat_id: process.env.TELEGRAM_CHAT_ID,

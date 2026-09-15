@@ -24,6 +24,7 @@ const blogLinks = [...blogIndexNoComments.matchAll(/href="\/blog\/([^"#/]+)(?:\.
 const pages = [
   { path: 'index.html',      url: '/',       priority: '1.0', changefreq: 'weekly'  },
   { path: 'fsiqoterapevti-tbilisshi.html', url: '/fsiqoterapevti-tbilisshi', priority: '0.95', changefreq: 'monthly' },
+  { path: '4-konsultatsia.html', url: '/4-konsultatsia', priority: '0.92', changefreq: 'weekly' },
   { path: 'chems-shesakheb.html', url: '/chems-shesakheb', priority: '0.85', changefreq: 'monthly' },
   { path: 'konfidencialurobis-politika.html', url: '/konfidencialurobis-politika', priority: '0.3', changefreq: 'yearly' },
   { path: 'blog/index.html', url: '/blog/',  priority: '0.9', changefreq: 'weekly'  },

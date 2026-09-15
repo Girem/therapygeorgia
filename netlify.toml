@@ -38,6 +38,11 @@
   status = 301
 
 [[redirects]]
+  from = "/4-konsultatsia.html"
+  to = "/4-konsultatsia"
+  status = 301
+
+[[redirects]]
   from = "/blog/socialuri-shfotva.html"
   to = "/blog/socialuri-shfotva"
   status = 301
