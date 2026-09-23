@@ -165,7 +165,9 @@
         "მენტალური ჯანმრთელობა"
       ],
       "sameAs": [
-        "https://www.instagram.com/therapygeorgia/"
+        "https://www.instagram.com/therapygeorgia/",
+        "https://www.instagram.com/iremis_shvili/",
+        "https://www.facebook.com/giorgi.iremashvili.785993"
       ]
     },
     {
@@ -467,6 +469,57 @@
       object-position: center top;
     }
 
+    .personal-socials {
+      padding: 1.6rem 0 2.2rem;
+      text-align: center;
+    }
+    .personal-socials-label {
+      margin-bottom: 0.9rem;
+      color: var(--green-muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+    .personal-socials-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .personal-social-link {
+      min-height: 46px;
+      padding: 10px 16px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      box-shadow: 0 10px 24px rgba(35, 82, 73, 0.12);
+      transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+    }
+    .personal-social-link:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(35, 82, 73, 0.18);
+    }
+    .personal-social-link.instagram {
+      background: linear-gradient(115deg, #833ab4 0%, #c13584 36%, #e1306c 62%, #f77737 100%);
+    }
+    .personal-social-link.facebook {
+      background: #1877f2;
+    }
+    .personal-social-link svg {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+      stroke: currentColor;
+      stroke-width: 1.8;
+    }
+
     .content-section {
       padding: 4.2rem 0;
       border-top: 1px solid rgba(47, 111, 98, 0.12);
@@ -658,6 +711,9 @@
       .btn-main { min-width: 0; min-height: 54px; }
       .btn-secondary { text-align: center; }
       .portrait { border-radius: 12px; }
+      .personal-socials { padding: 1rem 0 2rem; }
+      .personal-socials-links { display: grid; grid-template-columns: 1fr; }
+      .personal-social-link { justify-content: center; }
       .content-section { padding: 3rem 0; }
       .contact-section { padding-top: 3rem; }
       .content-section.soft {
@@ -796,6 +852,26 @@
         </div>
       </section>
 
+      <section class="wrap personal-socials" aria-label="პირადი სოციალური პროფილები">
+        <p class="personal-socials-label" data-i18n="socials.label">ჩემი სოციალური ქსელები</p>
+        <div class="personal-socials-links">
+          <a class="personal-social-link instagram" href="https://www.instagram.com/iremis_shvili/" target="_blank" rel="me noopener" aria-label="Instagram @iremis_shvili">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.4" cy="6.7" r="0.8" fill="currentColor" stroke="none"></circle>
+            </svg>
+            <span>@iremis_shvili</span>
+          </a>
+          <a class="personal-social-link facebook" href="https://www.facebook.com/giorgi.iremashvili.785993" target="_blank" rel="me noopener" aria-label="Facebook გიორგი ირემაშვილი">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+            <span data-i18n="socials.facebook">გიორგი ირემაშვილი</span>
+          </a>
+        </div>
+      </section>
+
       <section class="wrap content-section soft" aria-label="განათლება და პროფესიული გზა">
         <div class="section-head">
           <h2 class="section-title" data-i18n="education.title">განათლება და პროფესიული გზა</h2>
@@ -891,6 +967,8 @@
         "about.credential": "მედიცინის დოქტორი (MD)",
         "about.subtitle": "ექიმი · ფსიქოთერაპევტი",
         "about.lead": "თითოეულ ადამიანს ცვლილებისა და განვითარების უნარი აქვს. ეს არის უსაფრთხო და მშვიდი სივრცე, სადაც შეგიძლიათ, საკუთარ თავს უკეთ გაუგოთ, ემოციები, ურთიერთობები და ცხოვრებისეული გამოწვევები გამოიკვლიოთ და თქვენთვის მნიშვნელოვანი ცვლილების გზა იპოვოთ. მე შემიძლია, ამ პროცესში გაგყვეთ.",
+        "socials.label": "ჩემი სოციალური ქსელები",
+        "socials.facebook": "გიორგი ირემაშვილი",
         "about.context": "როგორც ექიმი და ფსიქოთერაპევტი, ადამიანთან შეხვედრას ვუყურებ ჰოლისტიკურად - არა მხოლოდ სიმპტომების, არამედ მთელი ცხოვრებისეული კონტექსტის ჭრილში. ჩემი პრაქტიკა თბილისში და ონლაინ ეყრდნობა უსაფრთხო, მშვიდ და ადამიანზე ორიენტირებულ საუბარს.",
         "education.title": "განათლება და პროფესიული გზა",
         "fact.education.label": "თბილისის სახელმწიფო სამედიცინო უნივერსიტეტი",
@@ -933,6 +1011,8 @@
         "about.credential": "Doctor of Medicine (MD)",
         "about.subtitle": "Doctor . Psychotherapist",
         "about.lead": "Every person has the capacity for change and development. This is a safe and calm space where you can better understand yourself, explore emotions, relationships, and life challenges, and find a path toward meaningful change. I can accompany you in this process.",
+        "socials.label": "My social profiles",
+        "socials.facebook": "Giorgi Iremashvili",
         "about.context": "As a doctor and psychotherapist, I approach each meeting holistically - not only through symptoms, but within the wider context of a person's life. My practice in Tbilisi and online is based on safe, calm, and person-centered conversation.",
         "education.title": "Education and professional path",
         "fact.education.label": "Tbilisi State Medical University",
@@ -975,6 +1055,8 @@
         "about.credential": "доктор медицины (MD)",
         "about.subtitle": "Врач . психотерапевт",
         "about.lead": "У каждого человека есть способность к изменениям и развитию. Это безопасное и спокойное пространство, где можно лучше понять себя, исследовать эмоции, отношения и жизненные трудности, а также найти важный для вас путь изменений. Я могу сопровождать вас в этом процессе.",
+        "socials.label": "Мои социальные сети",
+        "socials.facebook": "Гиорги Иремашвили",
         "about.context": "Как врач и психотерапевт, я смотрю на встречу с человеком холистически - не только через симптомы, но и в контексте всей жизненной ситуации. Моя практика в Тбилиси и онлайн опирается на безопасный, спокойный и ориентированный на человека разговор.",
         "education.title": "Образование и профессиональный путь",
         "fact.education.label": "Тбилисский государственный медицинский университет",
